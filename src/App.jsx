@@ -1,7 +1,7 @@
 import * as THREE from "three";
 import { useRef, useState, useEffect } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Trail, Float, Sphere, Stars, Text, Html } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Trail, Float, Sphere, Stars, Text, Html, CameraControls } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 export default function App() {
@@ -9,6 +9,7 @@ export default function App() {
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(0.8);
   const [showSlider, setShowSlider] = useState(false);
+  const [selectedAtom, setSelectedAtom] = useState(null);
 
   useEffect(() => {
     bgMusicRef.current = new Audio('/sounds/spacebg.mp3');
@@ -67,8 +68,98 @@ export default function App() {
   });
 
   return (
-    <Canvas camera={{ position: [0, 0, 9] }}>
-      <color attach="background" args={["black"]} />
+    <>
+      {selectedAtom !== null && (
+        <button
+          onClick={() => setSelectedAtom(null)}
+          style={{
+            position: 'fixed',
+            bottom: '20px',
+            left: '20px',
+            zIndex: 1000,
+            background: 'rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.3)',
+            borderRadius: '50%',
+            width: '50px',
+            height: '50px',
+            color: 'white',
+            cursor: 'pointer',
+            fontSize: '24px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backdropFilter: 'blur(10px)',
+            transition: 'all 0.3s ease'
+          }}
+        >
+          ←
+        </button>
+      )}
+
+      <div
+        style={{
+          position: 'fixed',
+          bottom: '20px',
+          right: '20px',
+          zIndex: 1000,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '10px'
+        }}
+        onMouseEnter={() => setShowSlider(true)}
+        onMouseLeave={() => setShowSlider(false)}
+      >
+        <div
+          style={{
+            opacity: showSlider ? 1 : 0,
+            transform: showSlider ? 'translateY(0)' : 'translateY(20px)',
+            transition: 'all 0.3s ease',
+            pointerEvents: showSlider ? 'auto' : 'none'
+          }}
+        >
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.01"
+            value={volume}
+            onChange={handleVolumeChange}
+            orient="vertical"
+            style={{
+              accentColor: 'white',
+              cursor: 'pointer',
+              writingMode: 'bt-lr',
+              WebkitAppearance: 'slider-vertical',
+              height: '100px',
+              width: '20px'
+            }}
+          />
+        </div>
+        <button
+          onClick={toggleMute}
+          style={{
+            background: 'rgba(255, 255, 255, 0.1)',
+            border: '1px solid rgba(255, 255, 255, 0.3)',
+            borderRadius: '50%',
+            width: '50px',
+            height: '50px',
+            color: 'white',
+            cursor: 'pointer',
+            fontSize: '20px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            backdropFilter: 'blur(10px)',
+            transition: 'all 0.3s ease'
+          }}
+        >
+          {isMuted ? '🔇' : '🔊'}
+        </button>
+      </div>
+
+      <Canvas camera={{ position: [0, 0, 9] }} eventSource={document.getElementById('root')} eventPrefix="client">
+        <color attach="background" args={["black"]} />
 
       <Float
         speed={4}
@@ -100,69 +191,6 @@ export default function App() {
         </group>
       </Float>
 
-      <Html fullscreen>
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '20px',
-            right: '20px',
-            zIndex: 1000,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: '10px'
-          }}
-          onMouseEnter={() => setShowSlider(true)}
-          onMouseLeave={() => setShowSlider(false)}
-        >
-          <div
-            style={{
-              opacity: showSlider ? 1 : 0,
-              transform: showSlider ? 'translateY(0)' : 'translateY(20px)',
-              transition: 'all 0.3s ease',
-              pointerEvents: showSlider ? 'auto' : 'none'
-            }}
-          >
-            <input
-              type="range"
-              min="0"
-              max="1"
-              step="0.01"
-              value={volume}
-              onChange={handleVolumeChange}
-              orient="vertical"
-              style={{
-                accentColor: 'white',
-                cursor: 'pointer',
-                writingMode: 'bt-lr',
-                WebkitAppearance: 'slider-vertical',
-                height: '100px',
-                width: '20px'
-              }}
-            />
-          </div>
-          <button
-            onClick={toggleMute}
-            style={{
-              background: 'rgba(255, 255, 255, 0.1)',
-              border: '1px solid rgba(255, 255, 255, 0.3)',
-              borderRadius: '50%',
-              width: '50px',
-              height: '50px',
-              color: 'white',
-              cursor: 'pointer',
-              fontSize: '20px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              backdropFilter: 'blur(10px)',
-              transition: 'all 0.3s ease'
-            }}
-          >
-            {isMuted ? '🔇' : '🔊'}
-          </button>
-        </div>
-      </Html>
 
       {atomPositions.map((position, index) => (
         <Float
@@ -172,19 +200,48 @@ export default function App() {
           floatIntensity={0.3}
           floatingRange={[-0.5, 0.5]}
         >
-          <Atom position={position} number={index + 1} />
+          <Atom
+            position={position}
+            number={index + 1}
+            onClick={() => setSelectedAtom(index)}
+            isSelected={selectedAtom === index}
+          />
         </Float>
       ))}
+
+      <Rig selectedAtom={selectedAtom} atomPositions={atomPositions} />
 
       <Stars saturation={0} count={400} speed={0.5} />
       <EffectComposer>
         <Bloom mipmapBlur luminanceThreshold={1} radius={0.7} />
       </EffectComposer>
-    </Canvas>
+      </Canvas>
+    </>
   );
 }
 
-function Atom({ number, ...props }) {
+function Rig({ selectedAtom, atomPositions }) {
+  const { controls } = useThree();
+
+  useEffect(() => {
+    if (selectedAtom !== null && controls) {
+      const targetPos = atomPositions[selectedAtom];
+      // Zoom in close to the atom
+      controls.setLookAt(
+        targetPos[0], targetPos[1], targetPos[2] + 2,
+        targetPos[0], targetPos[1], targetPos[2],
+        true
+      );
+    } else if (controls) {
+      // Zoom out to default view
+      controls.setLookAt(0, 0, 9, 0, 0, 0, true);
+    }
+  }, [selectedAtom, controls, atomPositions]);
+
+  return <CameraControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} />;
+}
+
+function Atom({ number, onClick, ...props }) {
   const [hovered, setHovered] = useState(false);
   const groupRef = useRef();
   const sphereMatRef = useRef();
@@ -221,6 +278,7 @@ function Atom({ number, ...props }) {
       <mesh
         onPointerEnter={handlePointerEnter}
         onPointerLeave={() => setHovered(false)}
+        onClick={onClick}
         visible={false}
       >
         <sphereGeometry args={[3]} />
