@@ -1,7 +1,14 @@
 import * as THREE from "three";
 import { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Trail, Float, Sphere, Stars, Text, Html, CameraControls } from "@react-three/drei";
+import {
+  Trail,
+  Float,
+  Sphere,
+  Stars,
+  Text,
+  CameraControls,
+} from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 export default function App() {
@@ -10,9 +17,10 @@ export default function App() {
   const [volume, setVolume] = useState(0.8);
   const [showSlider, setShowSlider] = useState(false);
   const [selectedAtom, setSelectedAtom] = useState(null);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   useEffect(() => {
-    bgMusicRef.current = new Audio('/sounds/spacebg.mp3');
+    bgMusicRef.current = new Audio("/sounds/spacebg.mp3");
     bgMusicRef.current.loop = true;
     bgMusicRef.current.volume = volume;
 
@@ -21,12 +29,12 @@ export default function App() {
       // If autoplay fails, wait for user interaction
       const playAudio = () => {
         bgMusicRef.current.play().catch(() => {});
-        document.removeEventListener('click', playAudio);
-        document.removeEventListener('touchstart', playAudio);
+        document.removeEventListener("click", playAudio);
+        document.removeEventListener("touchstart", playAudio);
       };
 
-      document.addEventListener('click', playAudio);
-      document.addEventListener('touchstart', playAudio);
+      document.addEventListener("click", playAudio);
+      document.addEventListener("touchstart", playAudio);
     });
 
     return () => {
@@ -73,39 +81,157 @@ export default function App() {
         <button
           onClick={() => setSelectedAtom(null)}
           style={{
-            position: 'fixed',
-            bottom: '20px',
-            left: '20px',
+            position: "fixed",
+            bottom: "20px",
+            left: "20px",
             zIndex: 1000,
-            background: 'rgba(255, 255, 255, 0.1)',
-            border: '1px solid rgba(255, 255, 255, 0.3)',
-            borderRadius: '50%',
-            width: '50px',
-            height: '50px',
-            color: 'white',
-            cursor: 'pointer',
-            fontSize: '24px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backdropFilter: 'blur(10px)',
-            transition: 'all 0.3s ease'
+            background: "rgba(255, 255, 255, 0.1)",
+            border: "1px solid rgba(255, 255, 255, 0.3)",
+            borderRadius: "50%",
+            width: "50px",
+            height: "50px",
+            color: "white",
+            cursor: "pointer",
+            fontSize: "24px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backdropFilter: "blur(10px)",
+            transition: "all 0.3s ease",
           }}
         >
           ←
         </button>
       )}
 
+      {selectedAtom !== null && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            right: 0,
+            width: "400px",
+            height: "100vh",
+            background: "rgba(0, 0, 0, 0.8)",
+            backdropFilter: "blur(20px)",
+            borderLeft: "1px solid rgba(255, 255, 255, 0.2)",
+            padding: "40px 30px",
+            zIndex: 999,
+            transform: showOverlay ? "translateX(0)" : "translateX(100%)",
+            transition: "transform 0.5s ease",
+            color: "white",
+            overflowY: "auto",
+            fontFamily: '"Inter", sans-serif',
+          }}
+        >
+          <h2
+            style={{
+              fontSize: "2rem",
+              marginBottom: "10px",
+              fontWeight: 700,
+            }}
+          >
+            Mandala {selectedAtom + 1}
+          </h2>
+          <p
+            style={{
+              fontSize: "0.9rem",
+              color: "rgba(255, 255, 255, 0.7)",
+              marginBottom: "30px",
+            }}
+          >
+            Book {selectedAtom + 1} of the Rig Veda
+          </p>
+
+          <div style={{ marginBottom: "25px" }}>
+            <h3
+              style={{
+                fontSize: "1.2rem",
+                marginBottom: "10px",
+                fontWeight: 600,
+              }}
+            >
+              Overview
+            </h3>
+            <p
+              style={{
+                lineHeight: "1.6",
+                color: "rgba(255, 255, 255, 0.8)",
+                fontSize: "0.95rem",
+              }}
+            >
+              The {selectedAtom + 1}
+              {selectedAtom === 0
+                ? "st"
+                : selectedAtom === 1
+                ? "nd"
+                : selectedAtom === 2
+                ? "rd"
+                : "th"}{" "}
+              Mandala contains hymns dedicated to various deities, exploring
+              themes of cosmology, ritual practices, and spiritual wisdom.
+            </p>
+          </div>
+
+          <div style={{ marginBottom: "25px" }}>
+            <h3
+              style={{
+                fontSize: "1.2rem",
+                marginBottom: "10px",
+                fontWeight: 600,
+              }}
+            >
+              Key Deities
+            </h3>
+            <ul
+              style={{
+                lineHeight: "1.8",
+                color: "rgba(255, 255, 255, 0.8)",
+                fontSize: "0.95rem",
+                paddingLeft: "20px",
+              }}
+            >
+              <li>Agni - God of Fire</li>
+              <li>Indra - King of Gods</li>
+              <li>Soma - Sacred Plant</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3
+              style={{
+                fontSize: "1.2rem",
+                marginBottom: "10px",
+                fontWeight: 600,
+              }}
+            >
+              Significance
+            </h3>
+            <p
+              style={{
+                lineHeight: "1.6",
+                color: "rgba(255, 255, 255, 0.8)",
+                fontSize: "0.95rem",
+              }}
+            >
+              This Mandala represents the eternal cycle of creation,
+              preservation, and transformation through sacred verses passed down
+              through millennia.
+            </p>
+          </div>
+        </div>
+      )}
+
       <div
         style={{
-          position: 'fixed',
-          bottom: '20px',
-          right: '20px',
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
           zIndex: 1000,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '10px'
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          gap: "10px",
         }}
         onMouseEnter={() => setShowSlider(true)}
         onMouseLeave={() => setShowSlider(false)}
@@ -113,9 +239,9 @@ export default function App() {
         <div
           style={{
             opacity: showSlider ? 1 : 0,
-            transform: showSlider ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 0.3s ease',
-            pointerEvents: showSlider ? 'auto' : 'none'
+            transform: showSlider ? "translateY(0)" : "translateY(20px)",
+            transition: "all 0.3s ease",
+            pointerEvents: showSlider ? "auto" : "none",
           }}
         >
           <input
@@ -127,148 +253,188 @@ export default function App() {
             onChange={handleVolumeChange}
             orient="vertical"
             style={{
-              accentColor: 'white',
-              cursor: 'pointer',
-              writingMode: 'bt-lr',
-              WebkitAppearance: 'slider-vertical',
-              height: '100px',
-              width: '20px'
+              accentColor: "white",
+              cursor: "pointer",
+              writingMode: "bt-lr",
+              WebkitAppearance: "slider-vertical",
+              height: "100px",
+              width: "20px",
             }}
           />
         </div>
         <button
           onClick={toggleMute}
           style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            border: '1px solid rgba(255, 255, 255, 0.3)',
-            borderRadius: '50%',
-            width: '50px',
-            height: '50px',
-            color: 'white',
-            cursor: 'pointer',
-            fontSize: '20px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backdropFilter: 'blur(10px)',
-            transition: 'all 0.3s ease'
+            background: "rgba(255, 255, 255, 0.1)",
+            border: "1px solid rgba(255, 255, 255, 0.3)",
+            borderRadius: "50%",
+            width: "50px",
+            height: "50px",
+            color: "white",
+            cursor: "pointer",
+            fontSize: "20px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            backdropFilter: "blur(10px)",
+            transition: "all 0.3s ease",
           }}
         >
-          {isMuted ? '🔇' : '🔊'}
+          {isMuted ? "🔇" : "🔊"}
         </button>
       </div>
 
-      <Canvas camera={{ position: [0, 0, 9] }} eventSource={document.getElementById('root')} eventPrefix="client">
+      <Canvas
+        camera={{ position: [0, 0, 9] }}
+        eventSource={document.getElementById("root")}
+        eventPrefix="client"
+      >
         <color attach="background" args={["black"]} />
 
-      <Float
-        speed={4}
-        rotationIntensity={0.2}
-        floatIntensity={1}
-        floatingRange={[-0.125, 0.125]}
-      >
-        <group>
-          <Text
-            position={[0, 0.7, 0]}
-            fontSize={1.5}
-            color="white"
-            anchorX="center"
-            anchorY="middle"
-            fontWeight={700}
-          >
-            RIG VEDA
-          </Text>
-          <Text
-            position={[0, -0.5, 0]}
-            fontSize={0.4}
-            color="white"
-            anchorX="center"
-            anchorY="middle"
-            fontWeight={300}
-          >
-            Navigate ancient wisdom through 3D space
-          </Text>
-        </group>
-      </Float>
-
-
-      {atomPositions.map((position, index) => (
         <Float
-          key={index}
-          speed={4 + index * 0.2}
-          rotationIntensity={0}
-          floatIntensity={0.3}
-          floatingRange={[-0.5, 0.5]}
+          speed={4}
+          rotationIntensity={0.2}
+          floatIntensity={1}
+          floatingRange={[-0.125, 0.125]}
         >
-          <Atom
-            position={position}
-            number={index + 1}
-            onClick={() => setSelectedAtom(index)}
-            isSelected={selectedAtom === index}
-          />
+          <group>
+            <Text
+              position={[0, 0.7, 0]}
+              fontSize={1.5}
+              color="white"
+              anchorX="center"
+              anchorY="middle"
+              fontWeight={700}
+            >
+              RIG VEDA
+            </Text>
+            <Text
+              position={[0, -0.5, 0]}
+              fontSize={0.4}
+              color="white"
+              anchorX="center"
+              anchorY="middle"
+              fontWeight={300}
+            >
+              Navigate ancient wisdom through 3D space
+            </Text>
+          </group>
         </Float>
-      ))}
 
-      <Rig selectedAtom={selectedAtom} atomPositions={atomPositions} />
+        {atomPositions.map((position, index) => (
+          <Float
+            key={index}
+            speed={4 + index * 0.2}
+            rotationIntensity={0}
+            floatIntensity={0.3}
+            floatingRange={[-0.5, 0.5]}
+          >
+            <Atom
+              position={position}
+              number={index + 1}
+              onClick={() => setSelectedAtom(index)}
+              isZoomed={selectedAtom !== null}
+            />
+          </Float>
+        ))}
 
-      <Stars saturation={0} count={400} speed={0.5} />
-      <EffectComposer>
-        <Bloom mipmapBlur luminanceThreshold={1} radius={0.7} />
-      </EffectComposer>
+        <Rig
+          selectedAtom={selectedAtom}
+          atomPositions={atomPositions}
+          setShowOverlay={setShowOverlay}
+        />
+
+        <Stars saturation={0} count={400} speed={0.5} />
+        <EffectComposer>
+          <Bloom mipmapBlur luminanceThreshold={1} radius={0.7} />
+        </EffectComposer>
       </Canvas>
     </>
   );
 }
 
-function Rig({ selectedAtom, atomPositions }) {
+function Rig({ selectedAtom, atomPositions, setShowOverlay }) {
   const { controls } = useThree();
 
   useEffect(() => {
     if (selectedAtom !== null && controls) {
       const targetPos = atomPositions[selectedAtom];
-      // Zoom in close to the atom
+      // First zoom in centered on atom
       controls.setLookAt(
-        targetPos[0], targetPos[1], targetPos[2] + 2,
-        targetPos[0], targetPos[1], targetPos[2],
+        targetPos[0],
+        targetPos[1],
+        targetPos[2] + 2,
+        targetPos[0],
+        targetPos[1],
+        targetPos[2],
         true
       );
+
+      // Wait 800ms then show overlay AND shift camera position
+      const timer = setTimeout(() => {
+        setShowOverlay(true);
+        // Pan camera to the right - makes atom appear on left side of 2D screen
+        controls.setLookAt(
+          targetPos[0] + 0.5,
+          targetPos[1],
+          targetPos[2] + 2,
+          targetPos[0] + 0.5,
+          targetPos[1],
+          targetPos[2],
+          true
+        );
+      }, 500);
+
+      return () => clearTimeout(timer);
     } else if (controls) {
+      // Hide overlay immediately when zooming out
+      setShowOverlay(false);
       // Zoom out to default view
       controls.setLookAt(0, 0, 9, 0, 0, 0, true);
     }
-  }, [selectedAtom, controls, atomPositions]);
+  }, [selectedAtom, controls, atomPositions, setShowOverlay]);
 
-  return <CameraControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} />;
+  return (
+    <CameraControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
+  );
 }
 
-function Atom({ number, onClick, ...props }) {
+function Atom({ number, onClick, isZoomed, ...props }) {
   const [hovered, setHovered] = useState(false);
   const groupRef = useRef();
   const sphereMatRef = useRef();
   const audioRef = useRef(null);
 
   const handlePointerEnter = () => {
+    if (isZoomed) return;
     setHovered(true);
     if (!audioRef.current) {
-      audioRef.current = new Audio('/sounds/hover.mp3');
+      audioRef.current = new Audio("/sounds/hover.mp3");
       audioRef.current.volume = 1.0;
     }
     audioRef.current.currentTime = 0;
     audioRef.current.play().catch(() => {});
   };
 
+  useEffect(() => {
+    if (isZoomed) {
+      setHovered(false);
+    }
+  }, [isZoomed]);
+
   useFrame(() => {
     if (groupRef.current) {
-      const targetScale = hovered ? 0.5 : 0.4;
+      const targetScale = hovered && !isZoomed ? 0.5 : 0.4;
       groupRef.current.scale.lerp(
         new THREE.Vector3(targetScale, targetScale, targetScale),
         0.1
       );
     }
     if (sphereMatRef.current) {
-      const targetColor = hovered
-        ? new THREE.Color(10, 2, 5)
-        : new THREE.Color(6, 0.5, 2);
+      const targetColor =
+        hovered && !isZoomed
+          ? new THREE.Color(10, 2, 5)
+          : new THREE.Color(6, 0.5, 2);
       sphereMatRef.current.color.lerp(targetColor, 0.1);
     }
   });
@@ -278,28 +444,32 @@ function Atom({ number, onClick, ...props }) {
       <mesh
         onPointerEnter={handlePointerEnter}
         onPointerLeave={() => setHovered(false)}
-        onClick={onClick}
+        onClick={isZoomed ? undefined : onClick}
         visible={false}
       >
         <sphereGeometry args={[3]} />
       </mesh>
-      <Electron position={[0, 0, 0.5]} speed={3} hovered={hovered} />
+      <Electron
+        position={[0, 0, 0.5]}
+        speed={3}
+        hovered={hovered && !isZoomed}
+      />
       <Electron
         position={[0, 0, 0.5]}
         rotation={[0, 0, Math.PI / 3]}
         speed={3.5}
-        hovered={hovered}
+        hovered={hovered && !isZoomed}
       />
       <Electron
         position={[0, 0, 0.5]}
         rotation={[0, 0, -Math.PI / 3]}
         speed={4}
-        hovered={hovered}
+        hovered={hovered && !isZoomed}
       />
       <Text
         position={[0, 0, 0]}
         fontSize={0.5}
-        color={hovered ? [0.2, 0.2, 0.2] : [10, 5, 10]}
+        color={hovered && !isZoomed ? [0.2, 0.2, 0.2] : [10, 5, 10]}
         anchorX="center"
         anchorY="middle"
       >
