@@ -1,3 +1,6 @@
+import { useNarration } from "../../contexts/NarrationContext";
+import { useEffect } from "react";
+
 const OVERLAY_STYLE = {
   position: "fixed",
   top: 0,
@@ -97,6 +100,16 @@ const BULLET_STYLE = {
 };
 
 export default function MandalaOverlay({ mandalaData, selectedAtom, showOverlay, onExplore }) {
+  const { playNarration } = useNarration();
+
+  // Play mandala-specific narration when overlay is shown
+  useEffect(() => {
+    if (showOverlay && selectedAtom !== null) {
+      const mandalaNumber = selectedAtom + 1;
+      playNarration(mandalaNumber.toString());
+    }
+  }, [showOverlay, selectedAtom, playNarration]);
+
   if (selectedAtom === null) return null;
 
   const mandala = mandalaData[selectedAtom];

@@ -19,6 +19,7 @@ import Rig from "./components/three/Rig";
 import Atom from "./components/three/Atom";
 import HymnCardsContainer from "./components/three/HymnCardsContainer";
 import useRigVedaSearch from "./hooks/useRigVedaSearch";
+import { useNarration } from "./contexts/NarrationContext";
 
 export default function App() {
   const bgMusicRef = useRef(null);
@@ -41,6 +42,8 @@ export default function App() {
   const [activeFilters, setActiveFilters] = useState({});
   const [targetVerseNumber, setTargetVerseNumber] = useState(null);
 
+  const { language, playNarration, stopNarration, toggleLanguage } = useNarration();
+
   // Search functionality
   const {
     search,
@@ -62,6 +65,8 @@ export default function App() {
       // If autoplay fails, wait for user interaction
       const playAudio = () => {
         bgMusicRef.current.play().catch(() => {});
+        // Also play intro narration on first user interaction
+        playNarration("intro");
         document.removeEventListener("click", playAudio);
         document.removeEventListener("touchstart", playAudio);
       };
@@ -225,6 +230,7 @@ export default function App() {
             setSelectedAtom(null);
             setIsExploring(false);
             setShowMandalaColor(false);
+            stopNarration();
           }}
         />
       )}
@@ -277,6 +283,7 @@ export default function App() {
         showOverlay={showOverlay}
         onExplore={() => {
           setShowOverlay(false);
+          stopNarration();
           setTimeout(() => setIsExploring(true), 500);
         }}
       />

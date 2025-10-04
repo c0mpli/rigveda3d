@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Navbar.css";
+import { useNarration } from "../../contexts/NarrationContext";
 
 const Navbar = ({
   // Volume controls
@@ -16,6 +17,7 @@ const Navbar = ({
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
+  const { language, toggleLanguage, isEnabled, toggleNarration } = useNarration();
 
   return (
     <nav className={`navbar ${isCollapsed ? "collapsed" : ""}`}>
@@ -200,6 +202,82 @@ const Navbar = ({
                   />
                 </svg>
                 <span>Dictionary</span>
+              </button>
+            </div>
+
+            {/* Narration Toggle */}
+            <div className="navbar-item">
+              <button
+                className="navbar-button"
+                onClick={toggleNarration}
+                aria-label={isEnabled ? "Disable narration" : "Enable narration"}
+              >
+                {isEnabled ? (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 9v6m3-8v8m3-5v2"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      fill="none"
+                    />
+                  </svg>
+                ) : (
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M9 9v6m3-8v8m3-5v2M3 3l18 18"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                    />
+                    <circle
+                      cx="12"
+                      cy="12"
+                      r="9"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      fill="none"
+                    />
+                  </svg>
+                )}
+                <span>Narration</span>
+              </button>
+            </div>
+
+            {/* Narration Language Toggle */}
+            <div className="navbar-item">
+              <button
+                className="navbar-button"
+                onClick={toggleLanguage}
+                aria-label="Toggle narration language"
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                  <path
+                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                  />
+                  <path
+                    d="M2 12H22"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                  />
+                  <path
+                    d="M12 2C14.5 4.5 16 8 16 12C16 16 14.5 19.5 12 22C9.5 19.5 8 16 8 12C8 8 9.5 4.5 12 2Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                  />
+                </svg>
+                <span>{language === "hi" ? "हिन्दी" : "English"}</span>
               </button>
             </div>
           </div>
