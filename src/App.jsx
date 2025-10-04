@@ -4,8 +4,10 @@ import { Float, Text } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { MANDALA_DATA } from "./data/MandalaData";
 import { loadRigVedaData, getAllHymnsFromMandala } from "./utils/DataLoader";
-import AudioControls from "./components/ui/AudioControls";
 import BackButton from "./components/ui/BackButton";
+import Navbar from "./components/ui/Navbar";
+import SearchModal from "./components/ui/SearchModal";
+import Dictionary from "./components/ui/Dictionary";
 import MandalaOverlay from "./components/ui/MandalaOverlay";
 import HymnsSidebar2D from "./components/ui/HymnsSidebar2D";
 import RotatingStars from "./components/three/RotatingStars";
@@ -13,12 +15,13 @@ import Background from "./components/three/Background";
 import Rig from "./components/three/Rig";
 import Atom from "./components/three/Atom";
 import HymnCardsContainer from "./components/three/HymnCardsContainer";
+import useRigVedaSearch from "./hooks/useRigVedaSearch";
 
 export default function App() {
   const bgMusicRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(0.8);
-  const [showSlider, setShowSlider] = useState(false);
+
   const [selectedAtom, setSelectedAtom] = useState(null);
   const [showOverlay, setShowOverlay] = useState(false);
   const [isExploring, setIsExploring] = useState(false);
@@ -27,6 +30,19 @@ export default function App() {
   const [hideAtoms, setHideAtoms] = useState(false);
   const [selectedHymnIndex, setSelectedHymnIndex] = useState(0);
   const [currentHymns, setCurrentHymns] = useState([]);
+  const [showSearchModal, setShowSearchModal] = useState(false);
+  const [showDictionary, setShowDictionary] = useState(false);
+
+  // Search functionality
+  const {
+    search,
+    browseFiltered,
+    loading: searchLoading,
+    results: searchResults,
+    error: searchError,
+    filterOptions,
+    versesIndex,
+  } = useRigVedaSearch();
 
   useEffect(() => {
     bgMusicRef.current = new Audio("/sounds/spacebg.mp3");
@@ -51,7 +67,7 @@ export default function App() {
         bgMusicRef.current.pause();
       }
     };
-  }, []);
+  }, [volume]);
 
   useEffect(() => {
     const loadData = async () => {
@@ -126,6 +142,37 @@ export default function App() {
         />
       )}
 
+      <Navbar
+        // Volume controls
+        isMuted={isMuted}
+        volume={volume}
+        onToggleMute={toggleMute}
+        onVolumeChange={handleVolumeChange}
+        // Search
+        onSearchClick={() => setShowSearchModal(true)}
+        // Stats
+        totalVerses={versesIndex?.length || 4948}
+        filteredCount={searchResults?.length}
+        // Dictionary
+        onDictionaryClick={() => setShowDictionary(true)}
+      />
+
+      <SearchModal
+        isOpen={showSearchModal}
+        onClose={() => setShowSearchModal(false)}
+        onSearch={search}
+        onBrowse={browseFiltered}
+        results={searchResults}
+        loading={searchLoading}
+        error={searchError}
+        filterOptions={filterOptions}
+      />
+
+      <Dictionary
+        isOpen={showDictionary}
+        onClose={() => setShowDictionary(false)}
+      />
+
       <MandalaOverlay
         mandalaData={MANDALA_DATA}
         selectedAtom={selectedAtom}
@@ -140,18 +187,10 @@ export default function App() {
         hymns={currentHymns}
         selectedHymnIndex={selectedHymnIndex}
         onHymnSelect={setSelectedHymnIndex}
-        color={selectedAtom !== null ? MANDALA_DATA[selectedAtom].color : "#ffffff"}
+        color={
+          selectedAtom !== null ? MANDALA_DATA[selectedAtom].color : "#ffffff"
+        }
         isVisible={isExploring}
-      />
-
-      <AudioControls
-        isMuted={isMuted}
-        volume={volume}
-        onToggleMute={toggleMute}
-        onVolumeChange={handleVolumeChange}
-        showSlider={showSlider}
-        onMouseEnter={() => setShowSlider(true)}
-        onMouseLeave={() => setShowSlider(false)}
       />
 
       <Canvas
@@ -159,7 +198,11 @@ export default function App() {
         eventSource={document.getElementById("root")}
         eventPrefix="client"
       >
-        <Background showMandalaColor={showMandalaColor} selectedAtom={selectedAtom} mandalaData={MANDALA_DATA} />
+        <Background
+          showMandalaColor={showMandalaColor}
+          selectedAtom={selectedAtom}
+          mandalaData={MANDALA_DATA}
+        />
 
         {!isExploring && (
           <Float
@@ -193,23 +236,24 @@ export default function App() {
           </Float>
         )}
 
-        {!hideAtoms && ATOM_POSITIONS.map((position, index) => (
-          <Float
-            key={index}
-            speed={4 + index * 0.2}
-            rotationIntensity={0}
-            floatIntensity={0.3}
-            floatingRange={[-0.5, 0.5]}
-          >
-            <Atom
-              position={position}
-              number={index + 1}
-              onClick={() => setSelectedAtom(index)}
-              isZoomed={selectedAtom !== null}
-              color={MANDALA_DATA[index].color}
-            />
-          </Float>
-        ))}
+        {!hideAtoms &&
+          ATOM_POSITIONS.map((position, index) => (
+            <Float
+              key={index}
+              speed={4 + index * 0.2}
+              rotationIntensity={0}
+              floatIntensity={0.3}
+              floatingRange={[-0.5, 0.5]}
+            >
+              <Atom
+                position={position}
+                number={index + 1}
+                onClick={() => setSelectedAtom(index)}
+                isZoomed={selectedAtom !== null}
+                color={MANDALA_DATA[index].color}
+              />
+            </Float>
+          ))}
 
         <Rig
           selectedAtom={selectedAtom}
@@ -237,7 +281,12 @@ export default function App() {
         />
 
         <EffectComposer>
-          <Bloom mipmapBlur luminanceThreshold={0.8} radius={0.9} intensity={1.5} />
+          <Bloom
+            mipmapBlur
+            luminanceThreshold={0.8}
+            radius={0.9}
+            intensity={1.5}
+          />
         </EffectComposer>
       </Canvas>
     </>

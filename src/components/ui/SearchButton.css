@@ -1,0 +1,71 @@
+.search-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.08) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+}
+
+.search-button:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 215, 0, 0.2) 0%,
+    rgba(255, 255, 255, 0.15) 100%
+  );
+  border-color: rgba(255, 215, 0, 0.4);
+  color: rgba(255, 215, 0, 0.95);
+  transform: scale(1.08);
+  box-shadow: 0 6px 25px rgba(255, 215, 0, 0.15), 0 3px 12px rgba(0, 0, 0, 0.2);
+}
+
+.search-icon {
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.2));
+}
+
+.search-icon.hovered {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 2px 6px rgba(255, 215, 0, 0.3));
+}
+
+.search-button:active {
+  transform: scale(0.96);
+  transition: all 0.1s ease;
+}
+
+/* Add a subtle pulse animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.15),
+      0 0 0 0 rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.15),
+      0 0 0 4px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.15),
+      0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.search-button:focus {
+  outline: none;
+  animation: pulse 1.5s ease-in-out;
+}
