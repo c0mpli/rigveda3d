@@ -9,7 +9,8 @@ const Navbar = ({
   onVolumeChange,
   // Search
   onSearchClick,
-  // Filter stats
+  // Filter
+  onFilterClick,
   // Dictionary
   onDictionaryClick,
 }) => {
@@ -132,11 +133,11 @@ const Navbar = ({
               </button>
             </div>
 
-            {/* Filter (this will open search modal with filters) */}
-            <div className="navbar-item">
+            {/* Filter */}
+            {/* <div className="navbar-item">
               <button
                 className="navbar-button"
-                onClick={onSearchClick}
+                onClick={onFilterClick}
                 aria-label="Filter verses"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -149,7 +150,7 @@ const Navbar = ({
                 </svg>
                 <span>Filter</span>
               </button>
-            </div>
+            </div> */}
 
             {/* Stats */}
             <div className="navbar-item">

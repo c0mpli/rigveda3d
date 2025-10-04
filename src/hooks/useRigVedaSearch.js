@@ -78,7 +78,7 @@ const useRigVedaSearch = () => {
       try {
         const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
-        // Always use semantic search if we have cached embeddings and API key
+        // Try semantic search first if we have embeddings and API key
         if (embeddingsMatrix && apiKey) {
           const searchResults = await searchRigVeda(
             query,
@@ -97,15 +97,9 @@ const useRigVedaSearch = () => {
             console.error("Semantic search error:", searchResults.error);
             setError(`Semantic search failed: ${searchResults.error}`);
           }
-        } else if (!apiKey) {
-          setError(
-            "OpenAI API key not configured - using text search fallback"
-          );
-        } else if (!embeddingsMatrix) {
-          setError("Embeddings not loaded - using text search fallback");
         }
 
-        // Fallback to text-based search only if semantic search fails
+        // Fallback to text-based search
         const textResults = textSearch(query, versesIndex, topK, filters);
         setResults(textResults);
       } catch (err) {

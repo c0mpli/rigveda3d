@@ -10,6 +10,7 @@ export default function HymnCardsContainer({
   isExploring,
   atomPositions,
   selectedHymnIndex,
+  targetVerseNumber,
   onWordSelect,
 }) {
   const [showCards, setShowCards] = useState(false);
@@ -64,6 +65,7 @@ export default function HymnCardsContainer({
           hymn={hymns[selectedHymnIndex]}
           color={mandalaData[selectedAtom].color}
           position={THEATER_POSITION}
+          targetVerseNumber={targetVerseNumber}
           onWordSelect={onWordSelect}
         />
       )}

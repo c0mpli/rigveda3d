@@ -5,11 +5,20 @@ const SearchModal = ({
   isOpen,
   onClose,
   onSearch,
+  onResultClick,
   results,
   loading,
   error,
+  filterOptions,
 }) => {
   const [query, setQuery] = useState("");
+  const [filters, setFilters] = useState({
+    mandala: "all",
+    hymnFrom: "",
+    hymnTo: "",
+    deity: "all",
+  });
+  const [showFilters, setShowFilters] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -24,8 +33,39 @@ const SearchModal = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     if (query.trim()) {
-      onSearch(query.trim(), 8);
+      const activeFilters = {};
+      if (filters.mandala !== "all") activeFilters.mandala = filters.mandala;
+      if (filters.hymnFrom) activeFilters.hymnFrom = filters.hymnFrom;
+      if (filters.hymnTo) activeFilters.hymnTo = filters.hymnTo;
+      if (filters.deity !== "all") activeFilters.deity = filters.deity;
+
+      onSearch(query.trim(), Infinity, activeFilters);
     }
+  };
+
+  const handleFilterChange = (key, value) => {
+    setFilters((prev) => ({
+      ...prev,
+      [key]: value,
+    }));
+  };
+
+  const handleClearFilters = () => {
+    setFilters({
+      mandala: "all",
+      hymnFrom: "",
+      hymnTo: "",
+      deity: "all",
+    });
+  };
+
+  const hasActiveFilters = () => {
+    return (
+      filters.mandala !== "all" ||
+      filters.hymnFrom !== "" ||
+      filters.hymnTo !== "" ||
+      filters.deity !== "all"
+    );
   };
 
   const handleKeyDown = (e) => {
@@ -76,6 +116,22 @@ const SearchModal = ({
               disabled={loading}
             />
             <button
+              type="button"
+              className="filter-toggle-button"
+              onClick={() => setShowFilters(!showFilters)}
+              title="Toggle filters"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.293A1 1 0 013 6.586V4z"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  fill={showFilters ? "currentColor" : "none"}
+                />
+              </svg>
+              {hasActiveFilters() && <span className="filter-dot"></span>}
+            </button>
+            <button
               type="submit"
               className="search-submit-button"
               disabled={loading || !query.trim()}
@@ -114,6 +170,76 @@ const SearchModal = ({
               )}
             </button>
           </div>
+
+          {/* Collapsible Filters */}
+          {showFilters && (
+            <div className="search-filters">
+              <div className="filters-row">
+                <div className="filter-group">
+                  <label>Mandala</label>
+                  <select
+                    value={filters.mandala}
+                    onChange={(e) => handleFilterChange("mandala", e.target.value)}
+                  >
+                    <option value="all">All Mandalas</option>
+                    {filterOptions?.mandalas?.map((mandala) => (
+                      <option key={mandala} value={mandala}>
+                        Mandala {mandala}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                <div className="filter-group">
+                  <label>Hymn Range</label>
+                  <div className="hymn-range">
+                    <input
+                      type="number"
+                      placeholder="From"
+                      value={filters.hymnFrom}
+                      onChange={(e) => handleFilterChange("hymnFrom", e.target.value)}
+                      min={filterOptions?.hymnRange?.min || 1}
+                      max={filterOptions?.hymnRange?.max || 191}
+                    />
+                    <span>—</span>
+                    <input
+                      type="number"
+                      placeholder="To"
+                      value={filters.hymnTo}
+                      onChange={(e) => handleFilterChange("hymnTo", e.target.value)}
+                      min={filterOptions?.hymnRange?.min || 1}
+                      max={filterOptions?.hymnRange?.max || 191}
+                    />
+                  </div>
+                </div>
+
+                <div className="filter-group">
+                  <label>Deity</label>
+                  <select
+                    value={filters.deity}
+                    onChange={(e) => handleFilterChange("deity", e.target.value)}
+                  >
+                    <option value="all">All Deities</option>
+                    {filterOptions?.deities?.map((deity) => (
+                      <option key={deity} value={deity}>
+                        {deity}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+
+                {hasActiveFilters() && (
+                  <button
+                    type="button"
+                    className="clear-filters-button"
+                    onClick={handleClearFilters}
+                  >
+                    Clear
+                  </button>
+                )}
+              </div>
+            </div>
+          )}
         </form>
 
         <div className="search-results-container">
@@ -129,7 +255,7 @@ const SearchModal = ({
           {loading && (
             <div className="search-loading">
               <div className="loading-spinner large"></div>
-              <p>🧠 AI-powered semantic search through ancient wisdom...</p>
+              <p>Searching through ancient wisdom...</p>
             </div>
           )}
 
@@ -148,7 +274,11 @@ const SearchModal = ({
               </div>
               <div className="results-list">
                 {results.map((verse, index) => (
-                  <div key={verse.id || index} className="result-item">
+                  <div
+                    key={verse.id || index}
+                    className="result-item"
+                    onClick={() => onResultClick && onResultClick(verse)}
+                  >
                     <div className="result-header">
                       <h4>{verse.title}</h4>
                       <span className="similarity-score">
@@ -194,7 +324,7 @@ const SearchModal = ({
                 wisdom.
               </p>
               <div className="search-tips">
-                <h4>Semantic Search Tips:</h4>
+                <h4>Search Tips:</h4>
                 <ul>
                   <li>
                     💭 Search by concepts: "divine light", "cosmic order",
@@ -205,7 +335,7 @@ const SearchModal = ({
                     "creation"
                   </li>
                   <li>
-                    ⚡ Find deities: "thunder god", "fire deity", "dawn goddess"
+                    ⚡ Find deities: "Agni", "Indra", "Soma", "Varuna"
                   </li>
                   <li>
                     🌟 Use emotions: "joy", "reverence", "strength", "wisdom"

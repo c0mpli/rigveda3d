@@ -17,6 +17,7 @@ export default function ScrollableHymnCard({
   mandala,
   color,
   position,
+  targetVerseNumber,
   onWordSelect,
   ...props
 }) {
@@ -76,11 +77,23 @@ export default function ScrollableHymnCard({
     setCurrentVerseIndex(0);
     setCurrentWordIndex(0);
 
-    // Reset scroll to top
+    // Reset scroll to top or scroll to target verse
     if (scrollContainerRef.current) {
-      scrollContainerRef.current.scrollTop = 0;
+      if (targetVerseNumber) {
+        // Scroll to the specific verse after a short delay to ensure DOM is ready
+        setTimeout(() => {
+          const verseElement = document.getElementById(
+            `verse-${targetVerseNumber - 1}`
+          );
+          if (verseElement) {
+            verseElement.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }, 100);
+      } else {
+        scrollContainerRef.current.scrollTop = 0;
+      }
     }
-  }, [hymn.hymnNumber, mandala]);
+  }, [hymn.hymnNumber, mandala, targetVerseNumber]);
 
   // Handle word click - notify parent
   const handleWordClick = (word) => {

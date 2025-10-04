@@ -62,8 +62,9 @@ export const semanticSearch = (
       similarity: item.similarity,
     }));
 
-  // Sort by similarity and return top-k
-  return results.sort((a, b) => b.similarity - a.similarity).slice(0, topK);
+  // Sort by similarity and return top-k (or all if topK is Infinity)
+  const sorted = results.sort((a, b) => b.similarity - a.similarity);
+  return topK === Infinity ? sorted : sorted.slice(0, topK);
 };
 
 /**
@@ -239,13 +240,15 @@ export const textSearch = (query, versesIndex, topK = 10, filters = {}) => {
   // Apply filters first
   let filteredVerses = applyFilters(versesIndex, filters);
 
-  return filteredVerses
+  const results = filteredVerses
     .filter(
       (verse) =>
         verse.translation.toLowerCase().includes(lowerQuery) ||
         verse.transliteration.toLowerCase().includes(lowerQuery) ||
         verse.sanskrit.includes(query)
     )
-    .slice(0, topK)
     .map((verse) => ({ ...verse, similarity: 0.5 })); // Dummy similarity score
+
+  // Return all results if topK is Infinity, otherwise slice
+  return topK === Infinity ? results : results.slice(0, topK);
 };

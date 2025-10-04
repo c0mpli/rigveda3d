@@ -7,6 +7,8 @@ import { loadRigVedaData, getAllHymnsFromMandala } from "./utils/DataLoader";
 import BackButton from "./components/ui/BackButton";
 import Navbar from "./components/ui/Navbar";
 import SearchModal from "./components/ui/SearchModal";
+import FilterModal from "./components/ui/FilterModal";
+import FilterIndicator from "./components/ui/FilterIndicator";
 import Dictionary from "./components/ui/Dictionary";
 import MandalaOverlay from "./components/ui/MandalaOverlay";
 import HymnsSidebar2D from "./components/ui/HymnsSidebar2D";
@@ -32,9 +34,12 @@ export default function App() {
   const [selectedHymnIndex, setSelectedHymnIndex] = useState(0);
   const [currentHymns, setCurrentHymns] = useState([]);
   const [showSearchModal, setShowSearchModal] = useState(false);
+  const [showFilterModal, setShowFilterModal] = useState(false);
   const [showDictionary, setShowDictionary] = useState(false);
   const [selectedWord, setSelectedWord] = useState(null);
   const [showWordSidebar, setShowWordSidebar] = useState(false);
+  const [activeFilters, setActiveFilters] = useState({});
+  const [targetVerseNumber, setTargetVerseNumber] = useState(null);
 
   // Search functionality
   const {
@@ -94,13 +99,13 @@ export default function App() {
   useEffect(() => {
     if (rigVedaData && selectedAtom !== null) {
       const mandalaNumber = selectedAtom + 1;
-      const hymns = getAllHymnsFromMandala(rigVedaData, mandalaNumber);
+      const hymns = getAllHymnsFromMandala(rigVedaData, mandalaNumber, activeFilters);
       setCurrentHymns(hymns);
       setSelectedHymnIndex(0);
     } else {
       setCurrentHymns([]);
     }
-  }, [rigVedaData, selectedAtom]);
+  }, [rigVedaData, selectedAtom, activeFilters]);
 
   const toggleMute = () => {
     if (bgMusicRef.current) {
@@ -126,6 +131,16 @@ export default function App() {
     }
   };
 
+  // Filter atoms based on mandala filter
+  const getVisibleAtomIndices = () => {
+    if (activeFilters.mandala && activeFilters.mandala !== "all") {
+      return [parseInt(activeFilters.mandala) - 1]; // Only show the filtered mandala
+    }
+    return Array.from({ length: 10 }, (_, i) => i); // Show all mandalas
+  };
+
+  const visibleAtomIndices = getVisibleAtomIndices();
+
   const ATOM_POSITIONS = Array.from({ length: 10 }, (_, i) => {
     const angle = -(i / 10) * Math.PI * 2 + (4 * Math.PI) / 6; // Start at 11 o'clock, clockwise
     const radiusX = 8;
@@ -136,6 +151,70 @@ export default function App() {
   const handleWordSelect = (word) => {
     setSelectedWord(word);
     setShowWordSidebar(true);
+  };
+
+  const handleApplyFilters = (filters) => {
+    setActiveFilters(filters);
+    // Optionally trigger a filtered browse or search with the new filters
+    // For now, we'll just store them. They can be used in search or browse functions
+  };
+
+  const handleClearFilters = () => {
+    setActiveFilters({});
+  };
+
+  const handleSearchResultClick = (verse) => {
+    // Close the search modal
+    setShowSearchModal(false);
+
+    // Reset exploration state if already exploring
+    if (isExploring) {
+      setIsExploring(false);
+      setSelectedAtom(null);
+      setShowOverlay(false);
+    }
+
+    // Get the mandala index (mandala number - 1)
+    const mandalaIndex = verse.mandala - 1;
+
+    // Small delay to ensure state is reset
+    setTimeout(() => {
+      // Set the selected atom to trigger the zoom animation
+      setSelectedAtom(mandalaIndex);
+
+      // Show the overlay first
+      setTimeout(() => {
+        setShowOverlay(true);
+
+        // Then hide overlay and start exploring
+        setTimeout(() => {
+          setShowOverlay(false);
+          setTimeout(() => {
+            setIsExploring(true);
+            setShowMandalaColor(true);
+
+            // Load the hymns for this mandala
+            if (rigVedaData) {
+              const hymns = getAllHymnsFromMandala(
+                rigVedaData,
+                verse.mandala,
+                activeFilters
+              );
+
+              // Find the index of the specific hymn
+              const hymnIndex = hymns.findIndex(
+                (h) => h.hymnNumber === verse.hymn
+              );
+
+              setCurrentHymns(hymns);
+              setSelectedHymnIndex(hymnIndex >= 0 ? hymnIndex : 0);
+              // Set the target verse number for scrolling
+              setTargetVerseNumber(verse.verse);
+            }
+          }, 600);
+        }, 500);
+      }, 100);
+    }, isExploring ? 100 : 0);
   };
 
   return (
@@ -158,6 +237,8 @@ export default function App() {
         onVolumeChange={handleVolumeChange}
         // Search
         onSearchClick={() => setShowSearchModal(true)}
+        // Filter
+        onFilterClick={() => setShowFilterModal(true)}
         // Stats
         totalVerses={versesIndex?.length || 4948}
         filteredCount={searchResults?.length}
@@ -168,12 +249,21 @@ export default function App() {
       <SearchModal
         isOpen={showSearchModal}
         onClose={() => setShowSearchModal(false)}
-        onSearch={search}
-        onBrowse={browseFiltered}
+        onSearch={(query, topK) => search(query, topK, activeFilters)}
+        onBrowse={(limit) => browseFiltered(activeFilters, limit)}
+        onResultClick={handleSearchResultClick}
         results={searchResults}
         loading={searchLoading}
         error={searchError}
         filterOptions={filterOptions}
+      />
+
+      <FilterModal
+        isOpen={showFilterModal}
+        onClose={() => setShowFilterModal(false)}
+        onApplyFilters={handleApplyFilters}
+        filterOptions={filterOptions}
+        initialFilters={activeFilters}
       />
 
       <Dictionary
@@ -208,6 +298,11 @@ export default function App() {
         color={
           selectedAtom !== null ? MANDALA_DATA[selectedAtom].color : "#ffffff"
         }
+      />
+
+      <FilterIndicator
+        activeFilters={activeFilters}
+        onClearFilters={handleClearFilters}
       />
 
       <Canvas
@@ -255,23 +350,28 @@ export default function App() {
         )}
 
         {!hideAtoms &&
-          ATOM_POSITIONS.map((position, index) => (
-            <Float
-              key={index}
-              speed={4 + index * 0.2}
-              rotationIntensity={0}
-              floatIntensity={0.3}
-              floatingRange={[-0.5, 0.5]}
-            >
-              <Atom
-                position={position}
-                number={index + 1}
-                onClick={() => setSelectedAtom(index)}
-                isZoomed={selectedAtom !== null}
-                color={MANDALA_DATA[index].color}
-              />
-            </Float>
-          ))}
+          ATOM_POSITIONS.map((position, index) => {
+            // Only render atoms that pass the filter
+            if (!visibleAtomIndices.includes(index)) return null;
+
+            return (
+              <Float
+                key={index}
+                speed={4 + index * 0.2}
+                rotationIntensity={0}
+                floatIntensity={0.3}
+                floatingRange={[-0.5, 0.5]}
+              >
+                <Atom
+                  position={position}
+                  number={index + 1}
+                  onClick={() => setSelectedAtom(index)}
+                  isZoomed={selectedAtom !== null}
+                  color={MANDALA_DATA[index].color}
+                />
+              </Float>
+            );
+          })}
 
         <Rig
           selectedAtom={selectedAtom}
@@ -296,6 +396,7 @@ export default function App() {
           isExploring={isExploring}
           atomPositions={ATOM_POSITIONS}
           selectedHymnIndex={selectedHymnIndex}
+          targetVerseNumber={targetVerseNumber}
           onWordSelect={handleWordSelect}
         />
 

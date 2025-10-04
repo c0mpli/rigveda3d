@@ -43,13 +43,22 @@ export const getRandomHymnsFromMandala = (mandalaData, mandalaNumber, count = 3)
 };
 
 // Get all hymns from a mandala
-export const getAllHymnsFromMandala = (mandalaData, mandalaNumber) => {
+export const getAllHymnsFromMandala = (mandalaData, mandalaNumber, filters = {}) => {
   if (!mandalaData || !mandalaData.mandalas) return [];
 
   const mandala = mandalaData.mandalas.find(m => m.number === mandalaNumber);
   if (!mandala || !mandala.hymns) return [];
 
-  return mandala.hymns.map(hymn => {
+  let hymns = mandala.hymns;
+
+  // Apply hymn range filter
+  if (filters.hymnFrom || filters.hymnTo) {
+    const hymnFrom = filters.hymnFrom ? parseInt(filters.hymnFrom) : 0;
+    const hymnTo = filters.hymnTo ? parseInt(filters.hymnTo) : Infinity;
+    hymns = hymns.filter(hymn => hymn.number >= hymnFrom && hymn.number <= hymnTo);
+  }
+
+  return hymns.map(hymn => {
     const verse = hymn.verses && hymn.verses.length > 0
       ? hymn.verses[0]
       : { sanskrit: '', transliteration: '', translation: 'No translation available' };
