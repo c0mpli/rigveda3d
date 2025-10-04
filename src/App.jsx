@@ -3,6 +3,7 @@ import { Canvas } from "@react-three/fiber";
 import { Float, Text } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { MANDALA_DATA } from "./data/MandalaData";
+import { loadRigVedaData } from "./utils/DataLoader";
 import AudioControls from "./components/ui/AudioControls";
 import BackButton from "./components/ui/BackButton";
 import MandalaOverlay from "./components/ui/MandalaOverlay";
@@ -10,6 +11,7 @@ import RotatingStars from "./components/three/RotatingStars";
 import Background from "./components/three/Background";
 import Rig from "./components/three/Rig";
 import Atom from "./components/three/Atom";
+import HymnCardsContainer from "./components/three/HymnCardsContainer";
 
 export default function App() {
   const bgMusicRef = useRef(null);
@@ -20,6 +22,7 @@ export default function App() {
   const [showOverlay, setShowOverlay] = useState(false);
   const [isExploring, setIsExploring] = useState(false);
   const [showMandalaColor, setShowMandalaColor] = useState(false);
+  const [rigVedaData, setRigVedaData] = useState(null);
 
   useEffect(() => {
     bgMusicRef.current = new Audio("/sounds/spacebg.mp3");
@@ -44,6 +47,14 @@ export default function App() {
         bgMusicRef.current.pause();
       }
     };
+  }, []);
+
+  useEffect(() => {
+    const loadData = async () => {
+      const data = await loadRigVedaData();
+      setRigVedaData(data);
+    };
+    loadData();
   }, []);
 
   const toggleMute = () => {
@@ -116,35 +127,37 @@ export default function App() {
       >
         <Background showMandalaColor={showMandalaColor} selectedAtom={selectedAtom} mandalaData={MANDALA_DATA} />
 
-        <Float
-          speed={4}
-          rotationIntensity={0.2}
-          floatIntensity={1}
-          floatingRange={[-0.125, 0.125]}
-        >
-          <group>
-            <Text
-              position={[0, 0.7, 0]}
-              fontSize={1.5}
-              color="white"
-              anchorX="center"
-              anchorY="middle"
-              fontWeight={700}
-            >
-              RIG VEDA
-            </Text>
-            <Text
-              position={[0, -0.5, 0]}
-              fontSize={0.4}
-              color="white"
-              anchorX="center"
-              anchorY="middle"
-              fontWeight={300}
-            >
-              Navigate ancient wisdom through 3D space
-            </Text>
-          </group>
-        </Float>
+        {!isExploring && (
+          <Float
+            speed={4}
+            rotationIntensity={0.2}
+            floatIntensity={1}
+            floatingRange={[-0.125, 0.125]}
+          >
+            <group>
+              <Text
+                position={[0, 0.7, 0]}
+                fontSize={1.5}
+                color="white"
+                anchorX="center"
+                anchorY="middle"
+                fontWeight={700}
+              >
+                RIG VEDA
+              </Text>
+              <Text
+                position={[0, -0.5, 0]}
+                fontSize={0.4}
+                color="white"
+                anchorX="center"
+                anchorY="middle"
+                fontWeight={300}
+              >
+                Navigate ancient wisdom through 3D space
+              </Text>
+            </group>
+          </Float>
+        )}
 
         {ATOM_POSITIONS.map((position, index) => (
           <Float
@@ -172,11 +185,22 @@ export default function App() {
           setShowMandalaColor={setShowMandalaColor}
         />
 
-        <RotatingStars
-          showMandalaColor={showMandalaColor}
-          selectedAtom={selectedAtom}
+        {!isExploring && (
+          <RotatingStars
+            showMandalaColor={showMandalaColor}
+            selectedAtom={selectedAtom}
+            mandalaData={MANDALA_DATA}
+          />
+        )}
+
+        <HymnCardsContainer
           mandalaData={MANDALA_DATA}
+          rigVedaData={rigVedaData}
+          selectedAtom={selectedAtom}
+          isExploring={isExploring}
+          atomPositions={ATOM_POSITIONS}
         />
+
         <EffectComposer>
           <Bloom mipmapBlur luminanceThreshold={0.8} radius={0.9} intensity={1.5} />
         </EffectComposer>

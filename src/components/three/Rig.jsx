@@ -2,14 +2,20 @@ import { useEffect } from "react";
 import { useThree } from "@react-three/fiber";
 import { CameraControls } from "@react-three/drei";
 
-export default function Rig({ selectedAtom, atomPositions, setShowOverlay, isExploring, setShowMandalaColor }) {
+export default function Rig({
+  selectedAtom,
+  atomPositions,
+  setShowOverlay,
+  isExploring,
+  setShowMandalaColor,
+}) {
   const { controls } = useThree();
 
   useEffect(() => {
     if (isExploring && selectedAtom !== null && controls) {
       const targetPos = atomPositions[selectedAtom];
 
-      // Directly zoom very close into the number
+      // Directly zoom very close into the center of the atom number
       controls.setLookAt(
         targetPos[0],
         targetPos[1],
@@ -62,7 +68,14 @@ export default function Rig({ selectedAtom, atomPositions, setShowOverlay, isExp
       // Zoom out to default view
       controls.setLookAt(0, 0, 9, 0, 0, 0, true);
     }
-  }, [selectedAtom, controls, atomPositions, setShowOverlay, isExploring, setShowMandalaColor]);
+  }, [
+    selectedAtom,
+    controls,
+    atomPositions,
+    setShowOverlay,
+    isExploring,
+    setShowMandalaColor,
+  ]);
 
   return (
     <CameraControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} />

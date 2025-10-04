@@ -1,0 +1,17 @@
+{
+  "created_at": "20251004_164732",
+  "total_verses": 4948,
+  "embedding_model": "text-embedding-3-small",
+  "embedding_dimension": 1536,
+  "description": "OpenAI embeddings for Rig Veda texts optimized for React.js",
+  "files": {
+    "embeddings_js": "embeddings.js",
+    "verses_js": "verses_index.js",
+    "embeddings_json": "embeddings.json",
+    "verses_json": "verses_index.json"
+  },
+  "usage": {
+    "react_import": "import { EMBEDDINGS_MATRIX, VERSES_INDEX } from './data/text/embeddings.js'",
+    "search_function": "Use cosineSimilarity to compare query embedding with EMBEDDINGS_MATRIX"
+  }
+}
