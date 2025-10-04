@@ -44,23 +44,20 @@ export default function HymnCardsContainer({
     atomPos[1] + 1,
     atomPos[2] - SPHERE_RADIUS
   ];
-  const THEATER_ROTATION = [0, 0, 0];
 
   return (
     <>
-      {/* Theater screen for expanded hymn - positioned on sphere circumference */}
+      {/* Card view for hymn - positioned on sphere circumference */}
       {selectedHymnIndex !== null && hymns[selectedHymnIndex] && (
-        <group position={THEATER_POSITION} rotation={THEATER_ROTATION}>
-          <HymnCard
-            hymn={hymns[selectedHymnIndex]}
-            color={mandalaData[selectedAtom].color}
-            position={[0, 0, 0]}
-            index={-1}
-            rotation={[0, 0, 0]}
-            isExpanded={true}
-            onExpand={() => {}}
-          />
-        </group>
+        <HymnCard
+          hymn={hymns[selectedHymnIndex]}
+          color={mandalaData[selectedAtom].color}
+          position={THEATER_POSITION}
+          index={-1}
+          rotation={[0, 0, 0]}
+          isExpanded={true}
+          onExpand={() => {}}
+        />
       )}
     </>
   );

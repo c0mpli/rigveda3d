@@ -7,7 +7,7 @@ import { loadRigVedaData, getAllHymnsFromMandala } from "./utils/DataLoader";
 import AudioControls from "./components/ui/AudioControls";
 import BackButton from "./components/ui/BackButton";
 import MandalaOverlay from "./components/ui/MandalaOverlay";
-import HymnsSidebar3D from "./components/three/HymnsSidebar3D";
+import HymnsSidebar2D from "./components/ui/HymnsSidebar2D";
 import RotatingStars from "./components/three/RotatingStars";
 import Background from "./components/three/Background";
 import Rig from "./components/three/Rig";
@@ -136,6 +136,14 @@ export default function App() {
         }}
       />
 
+      <HymnsSidebar2D
+        hymns={currentHymns}
+        selectedHymnIndex={selectedHymnIndex}
+        onHymnSelect={setSelectedHymnIndex}
+        color={selectedAtom !== null ? MANDALA_DATA[selectedAtom].color : "#ffffff"}
+        isVisible={isExploring}
+      />
+
       <AudioControls
         isMuted={isMuted}
         volume={volume}
@@ -226,14 +234,6 @@ export default function App() {
           isExploring={isExploring}
           atomPositions={ATOM_POSITIONS}
           selectedHymnIndex={selectedHymnIndex}
-        />
-
-        <HymnsSidebar3D
-          hymns={currentHymns}
-          selectedHymnIndex={selectedHymnIndex}
-          onHymnSelect={setSelectedHymnIndex}
-          color={selectedAtom !== null ? MANDALA_DATA[selectedAtom].color : "#ffffff"}
-          isVisible={isExploring}
         />
 
         <EffectComposer>
