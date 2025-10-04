@@ -2,6 +2,7 @@ import { useRef, useState, useMemo, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import * as THREE from "three";
+import { useSpring } from "@react-spring/three";
 import {
   CARD_VERTEX_SHADER,
   CARD_FRAGMENT_SHADER,
@@ -9,7 +10,7 @@ import {
 import { hexToThreeColor } from "../../utils/ColorUtils";
 import "./ScrollableHymnCard.css";
 
-const CARD_SIZE = [15, 15];
+const CARD_SIZE = [15, 15, 0.3]; // Width, Height, Depth - thin for card-like appearance
 
 export default function ScrollableHymnCard({
   hymn,
@@ -28,6 +29,14 @@ export default function ScrollableHymnCard({
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [wordHighlightEnabled, setWordHighlightEnabled] = useState(true);
   const [selectedWord, setSelectedWord] = useState(null);
+  const [rotationTarget, setRotationTarget] = useState(0);
+  const previousHymnNumber = useRef(hymn.hymnNumber);
+
+  // Spring animation for cube rotation
+  const { rotation } = useSpring({
+    rotation: rotationTarget,
+    config: { mass: 1, tension: 180, friction: 26 },
+  });
 
   useFrame((state) => {
     if (materialRef.current) {
@@ -35,8 +44,30 @@ export default function ScrollableHymnCard({
     }
   });
 
-  // Reset audio and scroll when hymn changes
+  // Reset audio and scroll when hymn changes + trigger rotation
   useEffect(() => {
+    const currentHymnNumber = hymn.hymnNumber;
+    const prevHymnNumber = previousHymnNumber.current;
+
+    // Calculate rotation based on hymn difference
+    const difference = currentHymnNumber - prevHymnNumber;
+
+    // Determine direction: positive difference = clockwise, negative = counter-clockwise
+    const direction = difference > 0 ? 1 : -1;
+
+    // Single elegant flip - 180 degrees
+    const rotationAmount = Math.PI * direction;
+
+    // Trigger flip animation - always snap to 180 degree increments (front/back alignment)
+    setRotationTarget((prev) => {
+      const newRotation = prev + rotationAmount;
+      // Round to nearest 180 degrees to ensure face alignment
+      return Math.round(newRotation / Math.PI) * Math.PI;
+    });
+
+    // Update previous hymn number
+    previousHymnNumber.current = currentHymnNumber;
+
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current = null;
@@ -58,6 +89,113 @@ export default function ScrollableHymnCard({
       onWordSelect(word);
     }
   };
+
+  // Helper function to render hymn content
+  const renderHymnContent = () => (
+    <div
+      className="scrollable-hymn-container"
+      onClick={(e) => e.stopPropagation()}
+      style={{
+        width: "4666px",
+        height: "5333px",
+        pointerEvents: "auto",
+      }}
+    >
+      {/* Header */}
+      <div className="hymn-header">
+        <div className="hymn-title-section">
+          <h2 className="hymn-number" style={{ color }}>
+            Hymn {hymn.number}
+          </h2>
+          {hymn.title && <h3 className="hymn-title">{hymn.title}</h3>}
+          <div className="hymn-meta">
+            {hymn.verseCount > 0 && (
+              <span className="verse-count">{hymn.verseCount} verses</span>
+            )}
+          </div>
+        </div>
+        <div className="hymn-controls">
+          <button
+            className="toggle-highlight-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              setWordHighlightEnabled(!wordHighlightEnabled);
+            }}
+            style={{ borderColor: color, color }}
+            title={
+              wordHighlightEnabled
+                ? "Disable Word Highlight"
+                : "Enable Word Highlight"
+            }
+          >
+            {wordHighlightEnabled ? "✨" : "○"}
+          </button>
+          <button
+            className="play-audio-btn"
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePlayAudio();
+            }}
+            style={{ borderColor: color, color }}
+            title={isPlaying ? "Pause Audio" : "Play Audio"}
+          >
+            {isPlaying ? "⏸" : "🔊"}
+          </button>
+        </div>
+      </div>
+
+      {/* Scrollable verses content */}
+      <div className="hymn-verses-scroll" ref={scrollContainerRef}>
+        {hymn.verses && hymn.verses.length > 0 ? (
+          hymn.verses.map((verse, index) => (
+            <div
+              key={index}
+              id={`verse-${index}`}
+              className={`verse-item ${
+                currentVerseIndex === index ? "active" : ""
+              }`}
+            >
+              <div className="verse-number" style={{ color }}>
+                Verse {index + 1}
+              </div>
+
+              {verse.sanskrit && (
+                <div
+                  className="verse-sanskrit"
+                  style={{ color: hexToThreeColor(color, 1.3) }}
+                >
+                  {renderHighlightedText(
+                    verse.sanskrit,
+                    currentVerseIndex === index,
+                    true
+                  )}
+                </div>
+              )}
+
+              {verse.transliteration && (
+                <div
+                  className="verse-sanskrit"
+                  style={{ color: hexToThreeColor(color, 1.3) }}
+                >
+                  {renderHighlightedText(
+                    verse.transliteration,
+                    currentVerseIndex === index,
+                    true
+                  )}
+                </div>
+              )}
+
+              {verse.translation && (
+                <div className="verse-translation">{verse.translation}</div>
+              )}
+            </div>
+          ))
+        ) : (
+          <div className="no-verses">No verses available</div>
+        )}
+      </div>
+    </div>
+  );
 
   const shaderMaterial = useMemo(
     () => ({
@@ -148,16 +286,29 @@ export default function ScrollableHymnCard({
             setCurrentVerseIndex(newVerseIndex);
             setCurrentWordIndex(0); // Reset word index when verse changes
 
-            // Auto-scroll to current verse
-            const verseElement = document.getElementById(
-              `verse-${newVerseIndex}`
-            );
-            if (verseElement && scrollContainerRef.current) {
-              verseElement.scrollIntoView({
-                behavior: "smooth",
-                block: "center",
-              });
-            }
+            // Auto-scroll to current verse within the scroll container
+            setTimeout(() => {
+              const verseElement = document.getElementById(
+                `verse-${newVerseIndex}`
+              );
+              if (verseElement) {
+                const container = verseElement.closest(".hymn-verses-scroll");
+                if (container) {
+                  const verseTop = verseElement.offsetTop;
+                  const containerHeight = container.clientHeight;
+                  const verseHeight = verseElement.clientHeight;
+
+                  // Scroll to center the verse in the container
+                  const scrollPosition =
+                    verseTop - containerHeight / 2 + verseHeight / 2;
+
+                  container.scrollTo({
+                    top: scrollPosition,
+                    behavior: "smooth",
+                  });
+                }
+              }
+            }, 100);
           }
 
           // Calculate word-level timing within the current verse
@@ -193,10 +344,15 @@ export default function ScrollableHymnCard({
   };
 
   return (
-    <group ref={cardRef} position={position} {...props}>
-      {/* Card background with shader */}
+    <animated.group
+      ref={cardRef}
+      position={position}
+      rotation-y={rotation}
+      {...props}
+    >
+      {/* Card background cube with shader */}
       <mesh castShadow>
-        <planeGeometry args={CARD_SIZE} />
+        <boxGeometry args={CARD_SIZE} />
         <shaderMaterial
           ref={materialRef}
           attach="material"
@@ -204,10 +360,11 @@ export default function ScrollableHymnCard({
         />
       </mesh>
 
-      {/* HTML content */}
+      {/* Front face */}
       <Html
         transform
-        position={[0, 0, 0.1]}
+        position={[0, 0, CARD_SIZE[2] / 2 + 0.01]}
+        rotation={[0, 0, 0]}
         scale={0.85}
         occlude
         zIndexRange={[100, 0]}
@@ -217,110 +374,25 @@ export default function ScrollableHymnCard({
           pointerEvents: "auto",
         }}
       >
-        <div
-          className="scrollable-hymn-container"
-          onClick={(e) => e.stopPropagation()}
-          style={{
-            width: "4666px",
-            height: "5333px",
-            pointerEvents: "auto",
-          }}
-        >
-          {/* Header */}
-          <div className="hymn-header">
-            <div className="hymn-title-section">
-              <h2 className="hymn-number" style={{ color }}>
-                Hymn {hymn.number}
-              </h2>
-              {hymn.title && <h3 className="hymn-title">{hymn.title}</h3>}
-              <div className="hymn-meta">
-                {hymn.verseCount > 0 && (
-                  <span className="verse-count">{hymn.verseCount} verses</span>
-                )}
-              </div>
-            </div>
-            <div className="hymn-controls">
-              <button
-                className="toggle-highlight-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setWordHighlightEnabled(!wordHighlightEnabled);
-                }}
-                style={{ borderColor: color, color }}
-                title={
-                  wordHighlightEnabled
-                    ? "Disable Word Highlight"
-                    : "Enable Word Highlight"
-                }
-              >
-                {wordHighlightEnabled ? "✨" : "○"}
-              </button>
-              <button
-                className="play-audio-btn"
-                onClick={(e) => {
-                  e.stopPropagation();
-                  handlePlayAudio();
-                }}
-                style={{ borderColor: color, color }}
-                title={isPlaying ? "Pause Audio" : "Play Audio"}
-              >
-                {isPlaying ? "⏸" : "🔊"}
-              </button>
-            </div>
-          </div>
-
-          {/* Scrollable verses content */}
-          <div className="hymn-verses-scroll" ref={scrollContainerRef}>
-            {hymn.verses && hymn.verses.length > 0 ? (
-              hymn.verses.map((verse, index) => (
-                <div
-                  key={index}
-                  id={`verse-${index}`}
-                  className={`verse-item ${
-                    currentVerseIndex === index ? "active" : ""
-                  }`}
-                >
-                  <div className="verse-number" style={{ color }}>
-                    Verse {index + 1}
-                  </div>
-
-                  {verse.sanskrit && (
-                    <div
-                      className="verse-sanskrit"
-                      style={{ color: hexToThreeColor(color, 1.3) }}
-                    >
-                      {renderHighlightedText(
-                        verse.sanskrit,
-                        currentVerseIndex === index,
-                        true
-                      )}
-                    </div>
-                  )}
-
-                  {verse.transliteration && (
-                    <div
-                      className="verse-sanskrit"
-                      style={{ color: hexToThreeColor(color, 1.3) }}
-                    >
-                      {renderHighlightedText(
-                        verse.transliteration,
-                        currentVerseIndex === index,
-                        true
-                      )}
-                    </div>
-                  )}
-
-                  {verse.translation && (
-                    <div className="verse-translation">{verse.translation}</div>
-                  )}
-                </div>
-              ))
-            ) : (
-              <div className="no-verses">No verses available</div>
-            )}
-          </div>
-        </div>
+        {renderHymnContent()}
       </Html>
-    </group>
+
+      {/* Back face (flipped) */}
+      <Html
+        transform
+        position={[0, 0, -CARD_SIZE[2] / 2 - 0.01]}
+        rotation={[0, Math.PI, 0]}
+        scale={0.85}
+        occlude
+        zIndexRange={[100, 0]}
+        style={{
+          width: "500px",
+          height: "600px",
+          pointerEvents: "auto",
+        }}
+      >
+        {renderHymnContent()}
+      </Html>
+    </animated.group>
   );
 }
