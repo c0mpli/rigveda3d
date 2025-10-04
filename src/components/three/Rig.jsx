@@ -15,7 +15,7 @@ export default function Rig({
     if (isExploring && selectedAtom !== null && controls) {
       const targetPos = atomPositions[selectedAtom];
 
-      // Directly zoom very close into the center of the atom number
+      // First, zoom into the atom to ensure we're looking at it
       controls.setLookAt(
         targetPos[0],
         targetPos[1],
@@ -26,12 +26,28 @@ export default function Rig({
         true
       );
 
+      // Then after zoom, position camera at sphere center looking forward (zoomed out a bit)
+      const reposition = setTimeout(() => {
+        controls.setLookAt(
+          targetPos[0],
+          targetPos[1],
+          targetPos[2] + 2,
+          targetPos[0],
+          targetPos[1],
+          targetPos[2] - 1,
+          true
+        );
+      }, 600);
+
       // Change color after zoom completes
-      const timer = setTimeout(() => {
+      const colorTimer = setTimeout(() => {
         setShowMandalaColor(true);
       }, 600);
 
-      return () => clearTimeout(timer);
+      return () => {
+        clearTimeout(reposition);
+        clearTimeout(colorTimer);
+      };
     } else if (selectedAtom !== null && controls && !isExploring) {
       const targetPos = atomPositions[selectedAtom];
       // First zoom in centered on atom
@@ -78,6 +94,12 @@ export default function Rig({
   ]);
 
   return (
-    <CameraControls makeDefault minPolarAngle={0} maxPolarAngle={Math.PI / 2} />
+    <CameraControls
+      makeDefault
+      minPolarAngle={isExploring ? 0 : 0}
+      maxPolarAngle={isExploring ? Math.PI : Math.PI / 2}
+      minDistance={isExploring ? 0.1 : 1}
+      maxDistance={isExploring ? 0.1 : 50}
+    />
   );
 }

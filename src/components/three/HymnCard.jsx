@@ -6,7 +6,7 @@ import { CARD_VERTEX_SHADER, CARD_FRAGMENT_SHADER } from "../../utils/CardShader
 import { hexToThreeColor } from "../../utils/ColorUtils";
 
 const COLLAPSED_SIZE = [1.2, 1.5];
-const EXPANDED_SIZE = [3, 4];
+const EXPANDED_SIZE = [6, 7];
 
 export default function HymnCard({ hymn, color, position, index, isExpanded, onExpand, ...props }) {
   const cardRef = useRef();

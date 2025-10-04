@@ -3,10 +3,11 @@ import { Canvas } from "@react-three/fiber";
 import { Float, Text } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { MANDALA_DATA } from "./data/MandalaData";
-import { loadRigVedaData } from "./utils/DataLoader";
+import { loadRigVedaData, getAllHymnsFromMandala } from "./utils/DataLoader";
 import AudioControls from "./components/ui/AudioControls";
 import BackButton from "./components/ui/BackButton";
 import MandalaOverlay from "./components/ui/MandalaOverlay";
+import HymnsSidebar3D from "./components/three/HymnsSidebar3D";
 import RotatingStars from "./components/three/RotatingStars";
 import Background from "./components/three/Background";
 import Rig from "./components/three/Rig";
@@ -23,6 +24,9 @@ export default function App() {
   const [isExploring, setIsExploring] = useState(false);
   const [showMandalaColor, setShowMandalaColor] = useState(false);
   const [rigVedaData, setRigVedaData] = useState(null);
+  const [hideAtoms, setHideAtoms] = useState(false);
+  const [selectedHymnIndex, setSelectedHymnIndex] = useState(0);
+  const [currentHymns, setCurrentHymns] = useState([]);
 
   useEffect(() => {
     bgMusicRef.current = new Audio("/sounds/spacebg.mp3");
@@ -56,6 +60,28 @@ export default function App() {
     };
     loadData();
   }, []);
+
+  useEffect(() => {
+    if (isExploring) {
+      const timer = setTimeout(() => {
+        setHideAtoms(true);
+      }, 600); // Hide atoms after zoom animation completes
+      return () => clearTimeout(timer);
+    } else {
+      setHideAtoms(false);
+    }
+  }, [isExploring]);
+
+  useEffect(() => {
+    if (rigVedaData && selectedAtom !== null) {
+      const mandalaNumber = selectedAtom + 1;
+      const hymns = getAllHymnsFromMandala(rigVedaData, mandalaNumber);
+      setCurrentHymns(hymns);
+      setSelectedHymnIndex(0);
+    } else {
+      setCurrentHymns([]);
+    }
+  }, [rigVedaData, selectedAtom]);
 
   const toggleMute = () => {
     if (bgMusicRef.current) {
@@ -159,7 +185,7 @@ export default function App() {
           </Float>
         )}
 
-        {ATOM_POSITIONS.map((position, index) => (
+        {!hideAtoms && ATOM_POSITIONS.map((position, index) => (
           <Float
             key={index}
             speed={4 + index * 0.2}
@@ -199,6 +225,15 @@ export default function App() {
           selectedAtom={selectedAtom}
           isExploring={isExploring}
           atomPositions={ATOM_POSITIONS}
+          selectedHymnIndex={selectedHymnIndex}
+        />
+
+        <HymnsSidebar3D
+          hymns={currentHymns}
+          selectedHymnIndex={selectedHymnIndex}
+          onHymnSelect={setSelectedHymnIndex}
+          color={selectedAtom !== null ? MANDALA_DATA[selectedAtom].color : "#ffffff"}
+          isVisible={isExploring}
         />
 
         <EffectComposer>
