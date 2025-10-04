@@ -1,0 +1,197 @@
+.scrollable-hymn-container {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: white;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0px;
+  pointer-events: auto;
+}
+
+.hymn-header {
+  padding: 15px 18px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0px;
+}
+
+.hymn-title-section {
+  flex: 1;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.hymn-number {
+  margin: 0 0 6px 0;
+  font-size: 22px;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.hymn-title {
+  margin: 0 0 6px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.hymn-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.play-audio-btn {
+  width: 45px;
+  height: 45px;
+  border: 2px solid;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.play-audio-btn:hover {
+  background: rgba(0, 0, 0, 0.7);
+  transform: scale(1.1);
+}
+
+.hymn-verses-scroll {
+  flex: 1;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding: 15px 18px;
+  scroll-behavior: smooth;
+  min-height: 0;
+  height: 100%;
+  box-sizing: border-box;
+  pointer-events: auto;
+  overscroll-behavior: contain;
+  /* position: sticky; */
+  top: 0px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.verse-item {
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  max-width: 100%;
+  box-sizing: border-box;
+  /* position: sticky; */
+  top: 0px;
+  transition: all 0.3s ease;
+}
+
+.verse-item:last-child {
+  border-bottom: none;
+  margin-bottom: 20px;
+}
+
+.verse-item.active {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 16px;
+  border-radius: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  transform: scale(1.02);
+}
+
+.verse-number {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.9;
+}
+
+.verse-sanskrit {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+  font-weight: 500;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+.verse-transliteration {
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.75);
+  font-style: italic;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+.verse-translation {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+}
+
+.no-verses {
+  text-align: center;
+  padding: 40px 20px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+}
+
+/* Custom scrollbar */
+.hymn-verses-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.hymn-verses-scroll::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+}
+
+.hymn-verses-scroll::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.hymn-verses-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}

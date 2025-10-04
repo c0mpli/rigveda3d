@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import { Canvas } from "@react-three/fiber";
-import { Float, Text } from "@react-three/drei";
+import { Float, Text, ScrollControls } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { MANDALA_DATA } from "./data/MandalaData";
 import { loadRigVedaData, getAllHymnsFromMandala } from "./utils/DataLoader";
@@ -197,6 +197,7 @@ export default function App() {
         camera={{ position: [0, 0, 9] }}
         eventSource={document.getElementById("root")}
         eventPrefix="client"
+        shadows
       >
         <Background
           showMandalaColor={showMandalaColor}

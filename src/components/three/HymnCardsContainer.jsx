@@ -1,5 +1,6 @@
 import { useMemo, useState, useEffect } from "react";
-import HymnCard from "./HymnCard";
+import { ScrollControls } from "@react-three/drei";
+import ScrollableHymnCard from "./ScrollableHymnCard";
 import { getAllHymnsFromMandala } from "../../utils/DataLoader";
 
 export default function HymnCardsContainer({
@@ -8,7 +9,7 @@ export default function HymnCardsContainer({
   selectedAtom,
   isExploring,
   atomPositions,
-  selectedHymnIndex
+  selectedHymnIndex,
 }) {
   const [showCards, setShowCards] = useState(false);
 
@@ -32,31 +33,36 @@ export default function HymnCardsContainer({
     }
   }, [isExploring]);
 
-  if (!isExploring || selectedAtom === null || hymns.length === 0 || !showCards) return null;
+  if (!isExploring || selectedAtom === null || hymns.length === 0 || !showCards)
+    return null;
 
   const atomPos = atomPositions[selectedAtom];
-
   const SPHERE_RADIUS = 10;
-
-  // Position for the large theater screen (center-front of sphere)
   const THEATER_POSITION = [
     atomPos[0],
     atomPos[1] + 1,
-    atomPos[2] - SPHERE_RADIUS
+    atomPos[2] - SPHERE_RADIUS,
   ];
 
   return (
     <>
+      {/* Floor plane to receive shadows */}
+      <mesh
+        rotation={[-Math.PI / 2, 0, 0]}
+        position={[atomPos[0], atomPos[1] - 5, atomPos[2] - SPHERE_RADIUS]}
+        receiveShadow
+      >
+        <planeGeometry args={[20, 20]} />
+        <shadowMaterial transparent opacity={0.4} />
+      </mesh>
+
       {/* Card view for hymn - positioned on sphere circumference */}
       {selectedHymnIndex !== null && hymns[selectedHymnIndex] && (
-        <HymnCard
+        <ScrollableHymnCard
+          mandala={selectedAtom + 1}
           hymn={hymns[selectedHymnIndex]}
           color={mandalaData[selectedAtom].color}
           position={THEATER_POSITION}
-          index={-1}
-          rotation={[0, 0, 0]}
-          isExpanded={true}
-          onExpand={() => {}}
         />
       )}
     </>

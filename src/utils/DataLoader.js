@@ -62,6 +62,7 @@ export const getAllHymnsFromMandala = (mandalaData, mandalaNumber) => {
       transliteration: verse.transliteration || '',
       translation: verse.translation || 'No translation available',
       verseCount: hymn.verses ? hymn.verses.length : 0,
+      verses: hymn.verses || [], // Include all verses
     };
   });
 };

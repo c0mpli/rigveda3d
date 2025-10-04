@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./HymnsSidebar2D.css";
 
 export default function HymnsSidebar2D({
@@ -9,6 +9,33 @@ export default function HymnsSidebar2D({
   isVisible
 }) {
   const [isOpen, setIsOpen] = useState(true);
+  const gridRef = useRef(null);
+
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+
+    // Prevent wheel events from propagating to canvas
+    const handleWheel = (e) => {
+      // Stop propagation to prevent canvas from zooming
+      e.stopPropagation();
+
+      // Let the browser handle native scrolling
+      const { scrollTop, scrollHeight, clientHeight } = grid;
+      const isAtTop = scrollTop === 0;
+      const isAtBottom = scrollTop + clientHeight >= scrollHeight;
+
+      // Only prevent default at scroll boundaries
+      if ((e.deltaY < 0 && isAtTop) || (e.deltaY > 0 && isAtBottom)) {
+        e.preventDefault();
+      }
+    };
+
+    grid.addEventListener('wheel', handleWheel, { passive: false });
+    return () => {
+      grid.removeEventListener('wheel', handleWheel);
+    };
+  }, []);
 
   if (!isVisible) return null;
 
@@ -38,7 +65,7 @@ export default function HymnsSidebar2D({
           </button>
         </div>
 
-        <div className="hymns-grid-2d">
+        <div className="hymns-grid-2d" ref={gridRef}>
           {hymns.map((hymn, index) => (
             <div
               key={index}
