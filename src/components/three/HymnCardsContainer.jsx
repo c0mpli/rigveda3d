@@ -10,6 +10,7 @@ export default function HymnCardsContainer({
   isExploring,
   atomPositions,
   selectedHymnIndex,
+  onWordSelect,
 }) {
   const [showCards, setShowCards] = useState(false);
 
@@ -37,11 +38,11 @@ export default function HymnCardsContainer({
     return null;
 
   const atomPos = atomPositions[selectedAtom];
-  const SPHERE_RADIUS = 10;
+  const SPHERE_RADIUS = 9;
   const THEATER_POSITION = [
-    atomPos[0],
-    atomPos[1] + 1,
-    atomPos[2] - SPHERE_RADIUS,
+    atomPos[0] + 2, // Move right
+    atomPos[1], // Move down
+    atomPos[2] - SPHERE_RADIUS - 0.5, // In front of sphere surface
   ];
 
   return (
@@ -49,10 +50,10 @@ export default function HymnCardsContainer({
       {/* Floor plane to receive shadows */}
       <mesh
         rotation={[-Math.PI / 2, 0, 0]}
-        position={[atomPos[0], atomPos[1] - 5, atomPos[2] - SPHERE_RADIUS]}
+        position={[atomPos[0] + 2, atomPos[1] - 8, atomPos[2] - SPHERE_RADIUS - 0.5]}
         receiveShadow
       >
-        <planeGeometry args={[20, 20]} />
+        <planeGeometry args={[35, 35]} />
         <shadowMaterial transparent opacity={0.4} />
       </mesh>
 
@@ -63,6 +64,7 @@ export default function HymnCardsContainer({
           hymn={hymns[selectedHymnIndex]}
           color={mandalaData[selectedAtom].color}
           position={THEATER_POSITION}
+          onWordSelect={onWordSelect}
         />
       )}
     </>

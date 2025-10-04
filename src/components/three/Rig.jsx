@@ -100,6 +100,18 @@ export default function Rig({
       maxPolarAngle={isExploring ? Math.PI : Math.PI / 2}
       minDistance={isExploring ? 0.1 : 1}
       maxDistance={isExploring ? 0.1 : 50}
+      enabled={!isExploring}
+      mouseButtons={{
+        left: isExploring ? 0 : 1,
+        middle: isExploring ? 0 : 2,
+        right: isExploring ? 0 : 2,
+        wheel: isExploring ? 0 : 8,
+      }}
+      touches={{
+        one: isExploring ? 0 : 32,
+        two: isExploring ? 0 : 512,
+        three: isExploring ? 0 : 0,
+      }}
     />
   );
 }

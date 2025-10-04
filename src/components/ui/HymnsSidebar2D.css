@@ -1,9 +1,9 @@
 .hymns-sidebar-2d {
   position: fixed;
   left: 20px;
-  top: 80px;
+  top: 20px;
   width: 400px;
-  max-height: calc(100vh - 100px);
+  max-height: calc(100vh - 40px);
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.15);

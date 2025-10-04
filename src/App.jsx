@@ -10,6 +10,7 @@ import SearchModal from "./components/ui/SearchModal";
 import Dictionary from "./components/ui/Dictionary";
 import MandalaOverlay from "./components/ui/MandalaOverlay";
 import HymnsSidebar2D from "./components/ui/HymnsSidebar2D";
+import WordMeaningSidebar from "./components/ui/WordMeaningSidebar";
 import RotatingStars from "./components/three/RotatingStars";
 import Background from "./components/three/Background";
 import Rig from "./components/three/Rig";
@@ -32,6 +33,8 @@ export default function App() {
   const [currentHymns, setCurrentHymns] = useState([]);
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [showDictionary, setShowDictionary] = useState(false);
+  const [selectedWord, setSelectedWord] = useState(null);
+  const [showWordSidebar, setShowWordSidebar] = useState(false);
 
   // Search functionality
   const {
@@ -130,6 +133,11 @@ export default function App() {
     return [Math.cos(angle) * radiusX, Math.sin(angle) * radiusY, 0];
   });
 
+  const handleWordSelect = (word) => {
+    setSelectedWord(word);
+    setShowWordSidebar(true);
+  };
+
   return (
     <>
       {selectedAtom !== null && (
@@ -191,6 +199,15 @@ export default function App() {
           selectedAtom !== null ? MANDALA_DATA[selectedAtom].color : "#ffffff"
         }
         isVisible={isExploring}
+      />
+
+      <WordMeaningSidebar
+        word={selectedWord}
+        isVisible={showWordSidebar}
+        onClose={() => setShowWordSidebar(false)}
+        color={
+          selectedAtom !== null ? MANDALA_DATA[selectedAtom].color : "#ffffff"
+        }
       />
 
       <Canvas
@@ -279,6 +296,7 @@ export default function App() {
           isExploring={isExploring}
           atomPositions={ATOM_POSITIONS}
           selectedHymnIndex={selectedHymnIndex}
+          onWordSelect={handleWordSelect}
         />
 
         <EffectComposer>

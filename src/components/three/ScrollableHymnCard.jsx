@@ -9,13 +9,14 @@ import {
 import { hexToThreeColor } from "../../utils/ColorUtils";
 import "./ScrollableHymnCard.css";
 
-const CARD_SIZE = [10, 12];
+const CARD_SIZE = [15, 15];
 
 export default function ScrollableHymnCard({
   hymn,
   mandala,
   color,
   position,
+  onWordSelect,
   ...props
 }) {
   const cardRef = useRef();
@@ -50,13 +51,12 @@ export default function ScrollableHymnCard({
     }
   }, [hymn.hymnNumber, mandala]);
 
-  // Handle word click - open in new tab
+  // Handle word click - notify parent
   const handleWordClick = (word) => {
-    const url = `https://www.learnsanskrit.cc/translate?search=${encodeURIComponent(
-      word
-    )}`;
-    window.open(url, "_blank", "noopener,noreferrer");
     setSelectedWord({ word });
+    if (onWordSelect) {
+      onWordSelect(word);
+    }
   };
 
   const shaderMaterial = useMemo(
@@ -98,7 +98,10 @@ export default function ScrollableHymnCard({
           className={`clickable-word ${
             isHighlighted ? "highlighted-word" : ""
           } ${isSelected ? "selected-word" : ""}`}
-          onClick={() => handleWordClick(word)}
+          onClick={(e) => {
+            e.stopPropagation();
+            handleWordClick(word);
+          }}
         >
           {word}
           {index < words.length - 1 ? " " : ""}
@@ -205,7 +208,7 @@ export default function ScrollableHymnCard({
       <Html
         transform
         position={[0, 0, 0.1]}
-        scale={0.65}
+        scale={0.85}
         occlude
         zIndexRange={[100, 0]}
         style={{
@@ -216,6 +219,7 @@ export default function ScrollableHymnCard({
       >
         <div
           className="scrollable-hymn-container"
+          onClick={(e) => e.stopPropagation()}
           style={{
             width: "4666px",
             height: "5333px",
@@ -238,7 +242,10 @@ export default function ScrollableHymnCard({
             <div className="hymn-controls">
               <button
                 className="toggle-highlight-btn"
-                onClick={() => setWordHighlightEnabled(!wordHighlightEnabled)}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setWordHighlightEnabled(!wordHighlightEnabled);
+                }}
                 style={{ borderColor: color, color }}
                 title={
                   wordHighlightEnabled
@@ -250,7 +257,10 @@ export default function ScrollableHymnCard({
               </button>
               <button
                 className="play-audio-btn"
-                onClick={handlePlayAudio}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handlePlayAudio();
+                }}
                 style={{ borderColor: color, color }}
                 title={isPlaying ? "Pause Audio" : "Play Audio"}
               >
