@@ -68,7 +68,14 @@
   color: rgba(255, 255, 255, 0.6);
 }
 
-.play-audio-btn {
+.hymn-controls {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.play-audio-btn,
+.toggle-highlight-btn {
   width: 45px;
   height: 45px;
   border: 2px solid;
@@ -83,9 +90,14 @@
   flex-shrink: 0;
 }
 
-.play-audio-btn:hover {
+.play-audio-btn:hover,
+.toggle-highlight-btn:hover {
   background: rgba(0, 0, 0, 0.7);
   transform: scale(1.1);
+}
+
+.toggle-highlight-btn {
+  font-size: 18px;
 }
 
 .hymn-verses-scroll {
@@ -148,6 +160,28 @@
   max-width: 100%;
 }
 
+.clickable-word {
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.clickable-word:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.highlighted-word {
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+}
+
+.selected-word {
+  background: rgba(255, 255, 255, 0.25);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+}
+
 .verse-transliteration {
   font-size: 14px;
   line-height: 1.6;
@@ -194,4 +228,105 @@
 
 .hymn-verses-scroll::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
+}
+
+/* Word meaning panel */
+.word-meaning-panel {
+  position: absolute;
+  right: -280px;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(12px);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  flex-direction: column;
+  animation: slideInRight 0.3s ease;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.word-meaning-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.word-meaning-header h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.close-meaning-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.close-meaning-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.word-meaning-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
+
+.loading-meaning,
+.error-meaning,
+.no-meaning {
+  text-align: center;
+  padding: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 14px;
+}
+
+.meanings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.meaning-item {
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.meaning-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.meaning-grammar {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
 }
