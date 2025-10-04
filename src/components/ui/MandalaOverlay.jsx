@@ -6,11 +6,23 @@ const OVERLAY_STYLE = {
   height: "100vh",
   background: "rgba(0, 0, 0, 0.85)",
   backdropFilter: "blur(20px)",
-  padding: "40px 30px",
   zIndex: 999,
   color: "white",
-  overflowY: "auto",
   fontFamily: '"Inter", sans-serif',
+  display: "flex",
+  flexDirection: "column",
+};
+
+const CONTENT_STYLE = {
+  flex: 1,
+  overflowY: "auto",
+  padding: "40px 30px 20px",
+};
+
+const BUTTON_CONTAINER_STYLE = {
+  padding: "20px 30px",
+  borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+  background: "rgba(0, 0, 0, 0.5)",
 };
 
 const HEADER_CONTAINER_STYLE = {
@@ -66,15 +78,18 @@ const SECTION_TEXT_STYLE = {
 };
 
 const DEITY_LIST_STYLE = {
-  lineHeight: "1.8",
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gap: "8px",
   color: "rgba(255, 255, 255, 0.8)",
   fontSize: "0.9rem",
-  paddingLeft: "20px",
   listStyle: "none",
+  paddingLeft: "0",
 };
 
 const DEITY_ITEM_STYLE = {
-  marginBottom: "8px",
+  display: "flex",
+  alignItems: "center",
 };
 
 const BULLET_STYLE = {
@@ -105,95 +120,98 @@ export default function MandalaOverlay({ mandalaData, selectedAtom, showOverlay,
         transition: "transform 0.5s ease",
       }}
     >
-      <div style={HEADER_CONTAINER_STYLE}>
-        <span style={EMOJI_STYLE}>{mandala.emoji}</span>
-        <div>
-          <h2
+      <div style={CONTENT_STYLE}>
+        <div style={HEADER_CONTAINER_STYLE}>
+          <span style={EMOJI_STYLE}>{mandala.emoji}</span>
+          <div>
+            <h2
+              style={{
+                ...TITLE_STYLE,
+                color: mandala.color,
+              }}
+            >
+              Mandala {selectedAtom + 1}
+            </h2>
+            <p style={SUBTITLE_STYLE}>{mandala.title}</p>
+          </div>
+        </div>
+
+        <div style={INFO_CONTAINER_STYLE}>
+          <div>
+            <strong style={{ color: mandala.color }}>{mandala.hymns}</strong> hymns
+          </div>
+          <div style={DIVIDER_STYLE}>
+            <strong>Family:</strong> {mandala.family}
+          </div>
+        </div>
+
+        <div style={SECTION_STYLE}>
+          <h3
             style={{
-              ...TITLE_STYLE,
+              ...SECTION_TITLE_STYLE,
               color: mandala.color,
             }}
           >
-            Mandala {selectedAtom + 1}
-          </h2>
-          <p style={SUBTITLE_STYLE}>{mandala.title}</p>
+            Overview
+          </h3>
+          <p style={SECTION_TEXT_STYLE}>{mandala.description}</p>
         </div>
-      </div>
 
-      <div style={INFO_CONTAINER_STYLE}>
+        <div style={SECTION_STYLE}>
+          <h3
+            style={{
+              ...SECTION_TITLE_STYLE,
+              color: mandala.color,
+            }}
+          >
+            Key Deities
+          </h3>
+          <ul style={DEITY_LIST_STYLE}>
+            {mandala.deities.map((deity, idx) => (
+              <li key={idx} style={DEITY_ITEM_STYLE}>
+                <span style={{ ...BULLET_STYLE, color: mandala.color }}>•</span>
+                {deity}
+              </li>
+            ))}
+          </ul>
+        </div>
+
         <div>
-          <strong style={{ color: mandala.color }}>{mandala.hymns}</strong> hymns
+          <h3
+            style={{
+              ...SECTION_TITLE_STYLE,
+              color: mandala.color,
+            }}
+          >
+            Significance
+          </h3>
+          <p style={SECTION_TEXT_STYLE}>{mandala.significance}</p>
         </div>
-        <div style={DIVIDER_STYLE}>
-          <strong>Family:</strong> {mandala.family}
-        </div>
       </div>
 
-      <div style={SECTION_STYLE}>
-        <h3
+      <div style={BUTTON_CONTAINER_STYLE}>
+        <button
+          onClick={onExplore}
           style={{
-            ...SECTION_TITLE_STYLE,
-            color: mandala.color,
+            width: "100%",
+            padding: "16px 24px",
+            background: `linear-gradient(135deg, ${mandala.color}, ${mandala.color}dd)`,
+            border: `2px solid ${mandala.color}`,
+            borderRadius: "12px",
+            color: "white",
+            fontSize: "1rem",
+            fontWeight: 600,
+            cursor: "pointer",
+            transition: "all 0.3s ease",
+            textTransform: "uppercase",
+            letterSpacing: "1px",
           }}
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
         >
-          Overview
-        </h3>
-        <p style={SECTION_TEXT_STYLE}>{mandala.description}</p>
+          ✨ Click to Explore
+        </button>
       </div>
-
-      <div style={SECTION_STYLE}>
-        <h3
-          style={{
-            ...SECTION_TITLE_STYLE,
-            color: mandala.color,
-          }}
-        >
-          Key Deities
-        </h3>
-        <ul style={DEITY_LIST_STYLE}>
-          {mandala.deities.map((deity, idx) => (
-            <li key={idx} style={DEITY_ITEM_STYLE}>
-              <span style={{ ...BULLET_STYLE, color: mandala.color }}>•</span>
-              {deity}
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      <div>
-        <h3
-          style={{
-            ...SECTION_TITLE_STYLE,
-            color: mandala.color,
-          }}
-        >
-          Significance
-        </h3>
-        <p style={SECTION_TEXT_STYLE}>{mandala.significance}</p>
-      </div>
-
-      <button
-        onClick={onExplore}
-        style={{
-          marginTop: "30px",
-          width: "100%",
-          padding: "16px 24px",
-          background: `linear-gradient(135deg, ${mandala.color}, ${mandala.color}dd)`,
-          border: `2px solid ${mandala.color}`,
-          borderRadius: "12px",
-          color: "white",
-          fontSize: "1rem",
-          fontWeight: 600,
-          cursor: "pointer",
-          transition: "all 0.3s ease",
-          textTransform: "uppercase",
-          letterSpacing: "1px",
-        }}
-        onMouseEnter={handleMouseEnter}
-        onMouseLeave={handleMouseLeave}
-      >
-        ✨ Click to Explore
-      </button>
     </div>
   );
 }

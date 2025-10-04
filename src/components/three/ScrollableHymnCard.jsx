@@ -2,7 +2,7 @@ import { useRef, useState, useMemo, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import * as THREE from "three";
-import { useSpring } from "@react-spring/three";
+import { useSpring, animated } from "@react-spring/three";
 import {
   CARD_VERTEX_SHADER,
   CARD_FRAGMENT_SHADER,

@@ -70,7 +70,7 @@ export default function App() {
         bgMusicRef.current.pause();
       }
     };
-  }, [volume]);
+  }, []);
 
   useEffect(() => {
     const loadData = async () => {

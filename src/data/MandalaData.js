@@ -29,6 +29,11 @@ export const MANDALA_DATA = [
     deities: ["Agni (Fire God)", "Indra (Thunder God)", "Mitra-Varuna (Cosmic Order)", "Soma (Sacred Plant)"],
     significance:
       "This mandala represents the heartbeat of Vedic ceremonies, exploring Ṛta—the fundamental principle of natural order that regulates the cosmos, ethics, and ritual performance. Ṛta manifests at three levels: cosmic (governing nature's course), socio-ethical (imparting justice), and religio-spiritual (mirroring sacrificial rituals). The Gritsamada family's hymns are celebrated for their profound understanding of how ritual action maintains universal harmony.",
+    sampleHymns: [
+      { number: "2.1", deity: "Agni", theme: "Sacred Ṛta", verse: "Thou, Agni, art the lord of Ṛta, the cosmic order that upholds both heaven and earth." },
+      { number: "2.28", deity: "Varuṇa", theme: "Universal Law", verse: "Through Varuṇa's ordinances, the moon walks in brightness and the stars, which appear by night, vanish in daylight." },
+      { number: "2.35", deity: "Apāṃ Napāt", theme: "Son of Waters", verse: "O child of waters, you who are full of wisdom, we invoke you for the sacrifice." },
+    ],
   },
   {
     number: 3,
@@ -60,6 +65,11 @@ export const MANDALA_DATA = [
     deities: ["Indra (Supreme Warrior)", "Agni (Battle Fire)", "Ṛbhus (Divine Craftsmen)", "Ashvins (Divine Physicians)"],
     significance:
       "Beyond physical warfare, these hymns celebrate Indra as the personification of the spiritual warrior who has attained ultimate victory over inner demons. The famous slaying of Vṛtra (the dragon of chaos and drought) symbolizes the triumph of cosmic order over primordial chaos. Vāmadeva's compositions work on dual levels—as historical accounts of ancient Indo-Aryan battles and as profound metaphors for the soul's struggle toward enlightenment.",
+    sampleHymns: [
+      { number: "4.26", deity: "Indra", theme: "Divine Intoxication", verse: "Have I been drinking soma? The draughts have lifted me up like swift horses, the hymns have lifted me up." },
+      { number: "4.42", deity: "Indra", theme: "Battle Glory", verse: "When Indra, overcoming all the warriors, slew Vṛtra, he became the lord of all living things." },
+      { number: "4.57", deity: "Ṛbhus", theme: "Divine Craftsmen", verse: "You, O Ṛbhus, fashioned the thunderbolt for Indra and created wondrous works through your skill." },
+    ],
   },
   {
     number: 5,
@@ -73,6 +83,11 @@ export const MANDALA_DATA = [
     deities: ["Uṣas (Dawn Goddess)", "Agni (Morning Fire)", "Indra (Sky King)", "Maruts (Storm Gods)", "Ashvins (Divine Twins)"],
     significance:
       "Uṣas represents the eternal cycle of renewal, hope, and cosmic rhythm. As the daughter of heaven who appears each morning in radiant garments, she symbolizes divine grace that awakens consciousness and dispels ignorance. The Atri family, one of the most ancient Vedic lineages, brings profound philosophical contemplation to their hymns—exploring not just the physical dawn but the awakening of spiritual awareness and enlightenment.",
+    sampleHymns: [
+      { number: "5.1", deity: "Agni", theme: "Morning Flame", verse: "Agni, born anew with dawn, lead us to prosperity with your light." },
+      { number: "5.80", deity: "Uṣas", theme: "Radiant Dawn", verse: "Uṣas has yoked her shining steeds, bringing treasure to the worshiper." },
+      { number: "5.85", deity: "Maruts", theme: "Storm Warriors", verse: "When will you bring your gifts, O Maruts? When will you show your favor, radiant ones?" },
+    ],
   },
   {
     number: 6,
@@ -86,6 +101,11 @@ export const MANDALA_DATA = [
     deities: ["Indra (Chief Deity)", "Agni (Sacred Flame)", "Maruts (Wind Warriors)", "Pūṣan (Divine Pathfinder)", "Sarasvatī (River Goddess)"],
     significance:
       "All features of classical Sanskrit poetry can be traced to the Rigveda, and Mandala 6 exemplifies this literary mastery. The Bharadvāja family's compositions demonstrate how sacred knowledge and aesthetic perfection unite—proof that spiritual truth and poetic beauty are inseparable in Vedic tradition. These hymns represent the pinnacle of Vedic poetic craft and form the foundation of Indian literature and spiritual culture.",
+    sampleHymns: [
+      { number: "6.16", deity: "Agni", theme: "Eternal Priest", verse: "O Agni, you who are the priest of every sacrifice, be present here." },
+      { number: "6.47", deity: "Indra", theme: "Heroic Might", verse: "Indra, drink soma to your heart's content and let your vigor grow." },
+      { number: "6.61", deity: "Sarasvatī", theme: "Sacred River", verse: "She who fills the realm of earth, the goddess Sarasvatī, flows onward, bestowing strength." },
+    ],
   },
   {
     number: 7,
@@ -99,6 +119,11 @@ export const MANDALA_DATA = [
     deities: ["Varuṇa (Cosmic Waters)", "Mitra-Varuṇa (Divine Monarchs)", "Indra (Rain Bringer)", "Sarasvatī (Sacred River)", "Āpaḥ (The Waters)"],
     significance:
       "Mitra-Varuṇa are described as youthful monarchs clad in glistening garments, residing in a golden palace with a thousand pillars and gates, lords of rivers, rain, and heavenly order. When Sage Vasiṣṭha faced water scarcity during a yajña, Varuṇa created a river for him—illustrating the deep bond between this seer and the water deities. The famous river hymn (7.49) preserves invaluable geographical knowledge of ancient India while celebrating water as the source of life, purity, and cosmic law.",
+    sampleHymns: [
+      { number: "7.49", deity: "Waters", theme: "Sacred Rivers", verse: "The waters flow, the mothers, the purifiers, they are goddesses who never sleep." },
+      { number: "7.86", deity: "Varuṇa", theme: "Forgiveness", verse: "What has been my chief transgression, Varuṇa, that you would destroy your worshiper?" },
+      { number: "7.88", deity: "Varuṇa", theme: "Divine Mercy", verse: "Loose us from the upper bond, the middle, and the lowest. Then shall we be sinless before you, O Varuṇa." },
+    ],
   },
   {
     number: 8,
@@ -112,6 +137,11 @@ export const MANDALA_DATA = [
     deities: ["Indra (Soma Drinker)", "Soma (Sacred Elixir)", "Agni (Ritual Fire)", "Aśvins (Divine Healers)", "Maruts (Storm Spirits)"],
     significance:
       "The Kāṇva seers reveal soma not merely as a ritual beverage but as a gateway to transcendent states of consciousness. The effects of soma—spiritual elevation, ego dissolution, and divine communion—place these hymns at the intersection of mysticism, shamanism, and Vedic ritual. This mandala bears striking similarity to the Avesta, hinting at shared Indo-Iranian spiritual practices predating the split of these ancient cultures.",
+    sampleHymns: [
+      { number: "8.48", deity: "Soma", theme: "Purification", verse: "Flow onward, Soma, for Indra, for the gods, flow for the sacrifice." },
+      { number: "8.79", deity: "Aśvins", theme: "Divine Healers", verse: "Come to us, Aśvins, with your medicines, come with your healing powers." },
+      { number: "8.100", deity: "Indra", theme: "Sacred Drink", verse: "We have drunk soma and become immortal; we have attained the light the gods discovered." },
+    ],
   },
   {
     number: 9,
@@ -121,10 +151,15 @@ export const MANDALA_DATA = [
     hymns: 114,
     family: "Multiple seers (organized by metre, not authorship)",
     description:
-      "UNIQUE: The only mandala in the entire Rigveda dedicated to a single deity. All 114 hymns address Soma Pavamāna—'the Purifying, the Flowing One.' This mandala focuses exclusively on the sacred moment when pressed soma juice is poured across the sheep's fleece for purification.",
+      "The Soma Mandala. UNIQUE: The only mandala in the entire Rigveda dedicated to a single deity. All 114 hymns address Soma Pavamāna—'the Purifying, the Flowing One.' This mandala focuses exclusively on the sacred moment when pressed soma juice is poured across the sheep's fleece for purification.",
     deities: ["Soma Pavamāna (Purified Soma) - exclusively"],
     significance:
       "Pavamāna means 'that which flows' and 'that which purifies'—capturing soma's dual nature as liquid and sanctifying force. This is the only major grouping in the Rigveda devoted to a single ritual procedure. Unlike other mandalas organized by authorship, this one is structured by metrical patterns, where the hypnotic, flowing quality of verses mirrors the filtering of soma through the ritual strainer—pure devotional focus on the moment when the sacred becomes supremely sacred.",
+    sampleHymns: [
+      { number: "9.1", deity: "Soma Pavamāna", theme: "The Flow Begins", verse: "The stalk of soma, rich in sweets, flows onward through the sieve of wool." },
+      { number: "9.66", deity: "Soma Pavamāna", theme: "Golden Stream", verse: "Flow for us, soma, flow in a golden stream, purifying, rich in strength." },
+      { number: "9.113", deity: "Soma Pavamāna", theme: "Immortality", verse: "Where there is eternal light, in the world where the sun is placed, in that immortal imperishable world, place me, O purified soma." },
+    ],
   },
   {
     number: 10,
@@ -144,47 +179,4 @@ export const MANDALA_DATA = [
       { number: "10.85", deity: "Marriage", theme: "Wedding Hymn", verse: "May the divine waters purify us for the marriage ceremony. May Agni, foremost of immortals, make the bride auspicious." },
     ],
   },
-];
-
-// Add sample hymns to remaining mandalas
-MANDALA_DATA[1].sampleHymns = [
-  { number: "2.1", deity: "Agni", theme: "Sacred Ṛta", verse: "Thou, Agni, art the lord of Ṛta, the cosmic order that upholds both heaven and earth." },
-  { number: "2.28", deity: "Varuṇa", theme: "Universal Law", verse: "Through Varuṇa's ordinances, the moon walks in brightness and the stars, which appear by night, vanish in daylight." },
-  { number: "2.35", deity: "Apāṃ Napāt", theme: "Son of Waters", verse: "O child of waters, you who are full of wisdom, we invoke you for the sacrifice." },
-];
-
-MANDALA_DATA[3].sampleHymns = [
-  { number: "4.26", deity: "Indra", theme: "Divine Intoxication", verse: "Have I been drinking soma? The draughts have lifted me up like swift horses, the hymns have lifted me up." },
-  { number: "4.42", deity: "Indra", theme: "Battle Glory", verse: "When Indra, overcoming all the warriors, slew Vṛtra, he became the lord of all living things." },
-  { number: "4.57", deity: "Ṛbhus", theme: "Divine Craftsmen", verse: "You, O Ṛbhus, fashioned the thunderbolt for Indra and created wondrous works through your skill." },
-];
-
-MANDALA_DATA[4].sampleHymns = [
-  { number: "5.1", deity: "Agni", theme: "Morning Flame", verse: "Agni, born anew with dawn, lead us to prosperity with your light." },
-  { number: "5.80", deity: "Uṣas", theme: "Radiant Dawn", verse: "Uṣas has yoked her shining steeds, bringing treasure to the worshiper." },
-  { number: "5.85", deity: "Maruts", theme: "Storm Warriors", verse: "When will you bring your gifts, O Maruts? When will you show your favor, radiant ones?" },
-];
-
-MANDALA_DATA[5].sampleHymns = [
-  { number: "6.16", deity: "Agni", theme: "Eternal Priest", verse: "O Agni, you who are the priest of every sacrifice, be present here." },
-  { number: "6.47", deity: "Indra", theme: "Heroic Might", verse: "Indra, drink soma to your heart's content and let your vigor grow." },
-  { number: "6.61", deity: "Sarasvatī", theme: "Sacred River", verse: "She who fills the realm of earth, the goddess Sarasvatī, flows onward, bestowing strength." },
-];
-
-MANDALA_DATA[6].sampleHymns = [
-  { number: "7.49", deity: "Waters", theme: "Sacred Rivers", verse: "The waters flow, the mothers, the purifiers, they are goddesses who never sleep." },
-  { number: "7.86", deity: "Varuṇa", theme: "Forgiveness", verse: "What has been my chief transgression, Varuṇa, that you would destroy your worshiper?" },
-  { number: "7.88", deity: "Varuṇa", theme: "Divine Mercy", verse: "Loose us from the upper bond, the middle, and the lowest. Then shall we be sinless before you, O Varuṇa." },
-];
-
-MANDALA_DATA[7].sampleHymns = [
-  { number: "8.48", deity: "Soma", theme: "Purification", verse: "Flow onward, Soma, for Indra, for the gods, flow for the sacrifice." },
-  { number: "8.79", deity: "Aśvins", theme: "Divine Healers", verse: "Come to us, Aśvins, with your medicines, come with your healing powers." },
-  { number: "8.100", deity: "Indra", theme: "Sacred Drink", verse: "We have drunk soma and become immortal; we have attained the light the gods discovered." },
-];
-
-MANDALA_DATA[8].sampleHymns = [
-  { number: "9.1", deity: "Soma Pavamāna", theme: "The Flow Begins", verse: "The stalk of soma, rich in sweets, flows onward through the sieve of wool." },
-  { number: "9.66", deity: "Soma Pavamāna", theme: "Golden Stream", verse: "Flow for us, soma, flow in a golden stream, purifying, rich in strength." },
-  { number: "9.113", deity: "Soma Pavamāna", theme: "Immortality", verse: "Where there is eternal light, in the world where the sun is placed, in that immortal imperishable world, place me, O purified soma." },
 ];
