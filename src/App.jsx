@@ -21,10 +21,10 @@ const mandalaData = [
     hymns: 191,
     family: "Multiple seers, primarily Madhucchandas",
     description:
-      "The Gateway to Vedic Wisdom. With 191 hymns, this is the largest and most diverse mandala. It opens with Agni, the fire deity—whose name is literally the first word of the entire Rigveda. Start your journey here through hymns that introduce you to the cosmic dance of gods and nature, spanning themes of creation, ritual practices, and prayers for prosperity and divine protection.",
+      "The Gateway to Vedic Wisdom. With 191 hymns, this is the largest and most diverse mandala. It opens with Agni, the fire deity—whose name is literally the first word of the entire Rigveda. These hymns introduce you to the cosmic dance of gods and nature, spanning themes of creation, ritual practices, and prayers for divine protection.",
     deities: ["Agni (Fire God)", "Indra (King of Gods)", "Varuna (Cosmic Waters)", "Vishnu"],
     significance:
-      "As the opening book, Mandala 1 sets the foundation for all Vedic wisdom. The very first hymn to Agni establishes fire as the cosmic mediator between humanity and the divine. This mandala serves as your comprehensive introduction to Vedic cosmology, containing the seeds of all major philosophical and ritual themes explored throughout the Rigveda.",
+      "As the opening book, Mandala 1 sets the foundation for all Vedic wisdom. The very first hymn to Agni establishes fire as the cosmic mediator between humanity and the divine. This mandala serves as your comprehensive introduction to Vedic cosmology, containing the seeds of all major philosophical and ritual themes that are explored and developed throughout the remaining books of the Rigveda.",
   },
   {
     number: 2,
@@ -47,10 +47,10 @@ const mandalaData = [
     hymns: 62,
     family: "Viśvāmitra Gāthina",
     description:
-      "★ Contains the most famous verse in Vedic literature—the Gayatri Mantra (3.62.10). Viśvāmitra, the legendary warrior-turned-sage, composed these 62 hymns that blend martial valor with profound spiritual illumination. Only 24 rishis since antiquity have understood the complete meaning and power of the Gayatri Mantra—Viśvāmitra was the very first.",
+      "Contains the most famous verse in Vedic literature—the Gayatri Mantra (3.62.10). Viśvāmitra, the legendary warrior-turned-sage, composed these 62 hymns that blend martial valor with profound spiritual illumination. Only 24 rishis since antiquity have understood the complete meaning and power of this sacred mantra.",
     deities: ["Savitṛ (Solar Deity)", "Indra (Warrior God)", "Agni (Sacred Fire)", "Viśvedevas (All Gods)"],
     significance:
-      "The Gayatri Mantra (oṃ bhūr bhuvaḥ svaḥ tat savitur...) is the most recited Vedic verse in history, central to Hindu spiritual practice for over 3,000 years. This sukta is dedicated to Savitṛ, representing the source and inspiration of the universe through solar divinity. Imparting this mantra to young Hindu men during the Upanayana ceremony marks their spiritual initiation into Vedic study. Viśvāmitra's transformation from warrior king to enlightened seer embodies the mandala's central theme: the conquest of the self surpasses all worldly victories.",
+      "The Gayatri Mantra is the most recited Vedic verse in history, central to Hindu spiritual practice for over 3,000 years. Dedicated to Savitṛ, it represents the source and inspiration of the universe through solar divinity. Imparting this mantra during the Upanayana ceremony marks spiritual initiation into Vedic study. Viśvāmitra's transformation from warrior king to enlightened seer embodies the mandala's central theme: the conquest of the self surpasses all worldly victories.",
   },
   {
     number: 4,
@@ -73,10 +73,10 @@ const mandalaData = [
     hymns: 87,
     family: "Atri Bhauma and descendants",
     description:
-      "Hymns of the Dawn. The Atri family's 87 verses paint the sky with exquisite poetry to Uṣas, goddess of dawn—the most exalted female deity in the Rigveda. Uṣas receives 40 hymns across the entire Rigveda, celebrated for 'consistently revealing herself with the daily coming of light to the world, driving away oppressive darkness, chasing evil demons, rousing all life, and sending everyone off to do their duties.' Here, philosophical depth meets the luminous beauty of morning light.",
+      "Hymns of the Dawn. The Atri family's 87 verses paint the sky with exquisite poetry to Uṣas, goddess of dawn—the most exalted female deity in the Rigveda. She is celebrated for revealing herself with the daily coming of light to the world, driving away darkness and rousing all life to action.",
     deities: ["Uṣas (Dawn Goddess)", "Agni (Morning Fire)", "Indra (Sky King)", "Maruts (Storm Gods)", "Ashvins (Divine Twins)"],
     significance:
-      "Uṣas represents the eternal cycle of renewal, hope, and cosmic rhythm. As the daughter of heaven who appears each morning in radiant garments, she symbolizes divine grace that awakens consciousness and dispels the darkness of ignorance. The Atri family, one of the most ancient Vedic lineages, brings profound philosophical contemplation to their hymns—exploring not just the physical dawn but the awakening of spiritual awareness. This mandala bridges the natural and metaphysical worlds through luminous poetry.",
+      "Uṣas represents the eternal cycle of renewal, hope, and cosmic rhythm. As the daughter of heaven who appears each morning in radiant garments, she symbolizes divine grace that awakens consciousness and dispels ignorance. The Atri family, one of the most ancient Vedic lineages, brings profound philosophical contemplation to their hymns—exploring not just the physical dawn but the awakening of spiritual awareness and enlightenment.",
   },
   {
     number: 6,
@@ -86,10 +86,10 @@ const mandalaData = [
     hymns: 75,
     family: "Bharadvāja Bārhaspatya",
     description:
-      "The Poet's Collection. The Bharadvājas are accorded pride of place amongst the family of seers—'the first among equals' alongside Viśvāmitras and Vasiṣṭhas. Bharadvāja Bārhaspatya, one of the most respected seers, composed 59 of these 75 hymns, which are celebrated for their literary excellence and refined composition. According to some scholars, this is the oldest book of the Rigveda. This is where supreme artistry meets divinity.",
+      "The Poet's Collection. The Bharadvājas are accorded pride of place amongst the family of seers—'the first among equals' alongside Viśvāmitras and Vasiṣṭhas. Bharadvāja Bārhaspatya composed 59 of these 75 hymns, celebrated for their literary excellence and refined composition. This is where supreme artistry meets divinity.",
     deities: ["Indra (Chief Deity)", "Agni (Sacred Flame)", "Maruts (Wind Warriors)", "Pūṣan (Divine Pathfinder)", "Sarasvatī (River Goddess)"],
     significance:
-      "All features of classical Sanskrit poetry can be traced to the Rigveda, and Mandala 6 exemplifies this literary mastery. The Bharadvāja family's compositions demonstrate how sacred knowledge and aesthetic perfection unite—proof that spiritual truth and poetic beauty are inseparable in Vedic tradition. These hymns should be studied by anyone seeking to understand the foundations of Indian literature and spiritual culture, as they represent the pinnacle of Vedic poetic craft.",
+      "All features of classical Sanskrit poetry can be traced to the Rigveda, and Mandala 6 exemplifies this literary mastery. The Bharadvāja family's compositions demonstrate how sacred knowledge and aesthetic perfection unite—proof that spiritual truth and poetic beauty are inseparable in Vedic tradition. These hymns represent the pinnacle of Vedic poetic craft and form the foundation of Indian literature and spiritual culture.",
   },
   {
     number: 7,
@@ -112,10 +112,10 @@ const mandalaData = [
     hymns: 103,
     family: "Kāṇva and multiple seers",
     description:
-      "Mysteries of Soma. The Kāṇva family's 103 hymns explore the mystical soma drink—entering the esoteric realm where ritual meets altered consciousness and spiritual elevation. These verses describe soma as an entheogenic substance associated with the dissolution of ego, key to enlightenment in mystical traditions. Notably, this mandala bears the most striking similarity to the Avesta, suggesting deep connections to ancient Persian mystical practices.",
+      "Mysteries of Soma. The Kāṇva family's 103 hymns explore the mystical soma drink—entering the esoteric realm where ritual meets altered consciousness and spiritual elevation. These verses describe soma as associated with the dissolution of ego, key to enlightenment in mystical traditions.",
     deities: ["Indra (Soma Drinker)", "Soma (Sacred Elixir)", "Agni (Ritual Fire)", "Aśvins (Divine Healers)", "Maruts (Storm Spirits)"],
     significance:
-      "Hymns 8.49-8.59, known as the Vālakhilya, are considered apocryphal—a recent addition representing post-Rigvedic developments in soma mysticism. The Kāṇva seers reveal soma not merely as a ritual beverage but as a gateway to transcendent states of consciousness. The effects of soma—spiritual elevation, ego dissolution, and divine communion—place these hymns at the intersection of mysticism, shamanism, and Vedic ritual. The Persian connections hint at shared Indo-Iranian spiritual practices predating the split of these ancient cultures.",
+      "The Kāṇva seers reveal soma not merely as a ritual beverage but as a gateway to transcendent states of consciousness. The effects of soma—spiritual elevation, ego dissolution, and divine communion—place these hymns at the intersection of mysticism, shamanism, and Vedic ritual. This mandala bears striking similarity to the Avesta, hinting at shared Indo-Iranian spiritual practices predating the split of these ancient cultures.",
   },
   {
     number: 9,
@@ -125,10 +125,10 @@ const mandalaData = [
     hymns: 114,
     family: "Multiple seers (organized by metre, not authorship)",
     description:
-      "💚 UNIQUE: The only mandala in the entire Rigveda dedicated to a single deity. All 114 hymns address Soma Pavamāna—'the Purifying, the Flowing One.' This mandala focuses exclusively on one sacred moment: when the pressed soma juice is poured across the sheep's fleece that purifies it. Unlike all other mandalas organized by authorship, Mandala 9 is structured by metrical patterns, emphasizing the rhythm and flow of purification itself.",
+      "UNIQUE: The only mandala in the entire Rigveda dedicated to a single deity. All 114 hymns address Soma Pavamāna—'the Purifying, the Flowing One.' This mandala focuses exclusively on the sacred moment when pressed soma juice is poured across the sheep's fleece for purification.",
     deities: ["Soma Pavamāna (Purified Soma) - exclusively"],
     significance:
-      "Pavamāna means 'that which flows' and 'that which purifies'—capturing soma's dual nature as both liquid and sanctifying force. This is the only major grouping in the Rigveda devoted to a single ritual procedure, treating the deified soma at the precise moment of purification. The mandala's unique organization by metre rather than author suggests that the hypnotic, flowing quality of the verses mirrors the filtering of soma through the ritual strainer. This is pure devotional focus—114 hymns contemplating the moment when the sacred becomes the supremely sacred.",
+      "Pavamāna means 'that which flows' and 'that which purifies'—capturing soma's dual nature as liquid and sanctifying force. This is the only major grouping in the Rigveda devoted to a single ritual procedure. Unlike other mandalas organized by authorship, this one is structured by metrical patterns, where the hypnotic, flowing quality of verses mirrors the filtering of soma through the ritual strainer—pure devotional focus on the moment when the sacred becomes supremely sacred.",
   },
 ];
 
@@ -539,17 +539,44 @@ export default function App() {
           setShowMandalaColor={setShowMandalaColor}
         />
 
-        <Stars
-          saturation={showMandalaColor && selectedAtom !== null ? 0.3 : 0}
-          count={400}
-          speed={0.5}
-          color={showMandalaColor && selectedAtom !== null ? mandalaData[selectedAtom].color : "white"}
+        <RotatingStars
+          showMandalaColor={showMandalaColor}
+          selectedAtom={selectedAtom}
+          mandalaData={mandalaData}
         />
         <EffectComposer>
           <Bloom mipmapBlur luminanceThreshold={0.8} radius={0.9} intensity={1.5} />
         </EffectComposer>
       </Canvas>
     </>
+  );
+}
+
+function RotatingStars({ showMandalaColor, selectedAtom, mandalaData }) {
+  const groupRef = useRef();
+
+  useFrame(() => {
+    if (groupRef.current) {
+      // Rotate on all three axes for true 3D spherical rotation
+      groupRef.current.rotation.x += 0.0001;
+      groupRef.current.rotation.y += 0.00015;
+      groupRef.current.rotation.z += 0.00008;
+    }
+  });
+
+  return (
+    <group ref={groupRef}>
+      <Stars
+        radius={150}
+        depth={150}
+        saturation={showMandalaColor && selectedAtom !== null ? 0.3 : 0}
+        count={1000}
+        speed={0.5}
+        factor={5}
+        fade
+        color={showMandalaColor && selectedAtom !== null ? mandalaData[selectedAtom].color : "white"}
+      />
+    </group>
   );
 }
 
