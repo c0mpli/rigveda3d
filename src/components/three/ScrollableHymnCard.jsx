@@ -53,8 +53,8 @@ export default function ScrollableHymnCard({
     // Calculate rotation based on hymn difference
     const difference = currentHymnNumber - prevHymnNumber;
 
-    // Determine direction: positive difference = clockwise, negative = counter-clockwise
-    const direction = difference > 0 ? 1 : -1;
+    // Determine direction: positive difference = counter-clockwise, negative = clockwise (reversed)
+    const direction = difference > 0 ? -1 : 1;
 
     // Single elegant flip - 180 degrees
     const rotationAmount = Math.PI * direction;

@@ -6,10 +6,16 @@ export default function HymnsSidebar2D({
   selectedHymnIndex,
   onHymnSelect,
   color,
-  isVisible
+  isVisible,
 }) {
   const [isOpen, setIsOpen] = useState(true);
   const gridRef = useRef(null);
+  const pageFlipSoundRef = useRef(null);
+
+  useEffect(() => {
+    pageFlipSoundRef.current = new Audio("/sounds/whoosh.mp3");
+    pageFlipSoundRef.current.volume = 1;
+  }, []);
 
   useEffect(() => {
     const grid = gridRef.current;
@@ -31,9 +37,9 @@ export default function HymnsSidebar2D({
       }
     };
 
-    grid.addEventListener('wheel', handleWheel, { passive: false });
+    grid.addEventListener("wheel", handleWheel, { passive: false });
     return () => {
-      grid.removeEventListener('wheel', handleWheel);
+      grid.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
@@ -69,20 +75,30 @@ export default function HymnsSidebar2D({
           {hymns.map((hymn, index) => (
             <div
               key={index}
-              className={`hymn-item-2d ${selectedHymnIndex === index ? "selected" : ""}`}
-              onClick={() => onHymnSelect(index)}
+              className={`hymn-item-2d ${
+                selectedHymnIndex === index ? "selected" : ""
+              }`}
+              onClick={() => {
+                if (pageFlipSoundRef.current) {
+                  pageFlipSoundRef.current.currentTime = 0;
+                  pageFlipSoundRef.current.play().catch(() => {});
+                }
+                onHymnSelect(index);
+              }}
               style={{
-                borderColor: selectedHymnIndex === index ? color : "rgba(255, 255, 255, 0.2)",
-                backgroundColor: selectedHymnIndex === index ? `${color}22` : "transparent"
+                borderColor:
+                  selectedHymnIndex === index
+                    ? color
+                    : "rgba(255, 255, 255, 0.2)",
+                backgroundColor:
+                  selectedHymnIndex === index ? `${color}22` : "transparent",
               }}
             >
               <div className="hymn-number-2d" style={{ color }}>
                 {hymn.hymnNumber}
               </div>
               {hymn.verseCount > 0 && (
-                <div className="hymn-verses-2d">
-                  {hymn.verseCount}v
-                </div>
+                <div className="hymn-verses-2d">{hymn.verseCount}v</div>
               )}
             </div>
           ))}
