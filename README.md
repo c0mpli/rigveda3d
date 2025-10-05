@@ -26,6 +26,7 @@ bun install  # or npm install
 2. **Optional: Add embeddings for offline semantic search**
 
 The embeddings.json file (193 MB) is not included in the repo. The app will work without it using text-based search. For semantic search:
+
 - Contact the repository owner for the embeddings file, or
 - Use the OpenAI API key (step 3) for live semantic search
 
@@ -49,12 +50,14 @@ http://localhost:5173
 
 ## Roadmap
 
-- [ ] Bookmarking and favorites system
-- [ ] User annotations and notes
-- [ ] Mobile app version
+- ✓ Mobile app version
 - [ ] Multi-language interface support
-- [ ] Advanced visualization modes
 - [ ] Social sharing capabilities
+- [ ] Statistics about Rig Veda
+- [ ] Interactive dictionary to learn Sanskrit words from the Veda
+- [ ] Quiz mode for Vedic vocabulary
+- [ ] Dictionary-based quiz system
+- [ ] Backstory and context for each hymn
 
 ## Sources
 
