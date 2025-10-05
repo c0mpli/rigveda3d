@@ -65,17 +65,18 @@ export const NarrationProvider = ({ children }) => {
     if (narrationRef.current) {
       narrationRef.current.pause();
       narrationRef.current.currentTime = 0;
-      setIsPlaying(false);
-      currentTrackRef.current = null;
+      narrationRef.current = null;
     }
+    setIsPlaying(false);
+    currentTrackRef.current = null;
   };
 
   const toggleLanguage = () => {
-    const newLanguage = language === "hi" ? "en" : "hi";
-    setLanguage(newLanguage);
-
     // Stop current narration when switching language
     stopNarration();
+
+    const newLanguage = language === "hi" ? "en" : "hi";
+    setLanguage(newLanguage);
   };
 
   // Cleanup on unmount
