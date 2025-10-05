@@ -171,12 +171,11 @@ export const applyFilters = (versesIndex, filters) => {
 
     // Filter by deity (case-insensitive partial match)
     if (filters.deity && filters.deity !== "all") {
+      const deityLower = filters.deity.toLowerCase();
       const deityMatch =
-        verse.translation.toLowerCase().includes(filters.deity.toLowerCase()) ||
-        verse.transliteration
-          .toLowerCase()
-          .includes(filters.deity.toLowerCase()) ||
-        verse.sanskrit.includes(filters.deity);
+        (verse.translation && verse.translation.toLowerCase().includes(deityLower)) ||
+        (verse.transliteration && verse.transliteration.toLowerCase().includes(deityLower)) ||
+        (verse.sanskrit && verse.sanskrit.includes(filters.deity));
       if (!deityMatch) return false;
     }
 
@@ -243,9 +242,9 @@ export const textSearch = (query, versesIndex, topK = 10, filters = {}) => {
   const results = filteredVerses
     .filter(
       (verse) =>
-        verse.translation.toLowerCase().includes(lowerQuery) ||
-        verse.transliteration.toLowerCase().includes(lowerQuery) ||
-        verse.sanskrit.includes(query)
+        (verse.translation && verse.translation.toLowerCase().includes(lowerQuery)) ||
+        (verse.transliteration && verse.transliteration.toLowerCase().includes(lowerQuery)) ||
+        (verse.sanskrit && verse.sanskrit.includes(query))
     )
     .map((verse) => ({ ...verse, similarity: 0.5 })); // Dummy similarity score
 

@@ -557,9 +557,28 @@
   color: rgba(255, 255, 255, 0.7);
 }
 
-.search-placeholder {
+.search-placeholder,
+.search-prompt {
   text-align: center;
   padding: 40px 20px;
+}
+
+.search-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.search-prompt svg {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.search-prompt p {
+  font-size: 1.1rem;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .placeholder-icon {

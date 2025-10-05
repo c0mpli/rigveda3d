@@ -1,6 +1,6 @@
 export const loadRigVedaData = async () => {
   try {
-    const response = await fetch('/data/text/rig_veda_texts.json');
+    const response = await fetch('/data/text/complete_rigveda_all_mandalas.json');
     const data = await response.json();
     return data;
   } catch (error) {
@@ -11,94 +11,124 @@ export const loadRigVedaData = async () => {
 
 // Get random hymns from a mandala
 export const getRandomHymnsFromMandala = (mandalaData, mandalaNumber, count = 3) => {
-  if (!mandalaData || !mandalaData.mandalas) return [];
+  if (!mandalaData) return [];
 
-  const mandala = mandalaData.mandalas.find(m => m.number === mandalaNumber);
-  if (!mandala || !mandala.hymns) return [];
+  const mandalaKey = `Mandala ${mandalaNumber}`;
+  const mandala = mandalaData[mandalaKey];
+  if (!mandala) return [];
 
-  // Get random hymn indices
-  const hymnCount = mandala.hymns.length;
+  // Get all sukta keys
+  const suktaKeys = Object.keys(mandala);
+  const suktaCount = suktaKeys.length;
   const selectedIndices = new Set();
 
-  while (selectedIndices.size < Math.min(count, hymnCount)) {
-    selectedIndices.add(Math.floor(Math.random() * hymnCount));
+  while (selectedIndices.size < Math.min(count, suktaCount)) {
+    selectedIndices.add(Math.floor(Math.random() * suktaCount));
   }
 
   // Get the selected hymns and format them
   return Array.from(selectedIndices).map(index => {
-    const hymn = mandala.hymns[index];
-    // Get first verse or a random verse
-    const verse = hymn.verses && hymn.verses.length > 0
-      ? hymn.verses[0]
-      : { sanskrit: '', transliteration: '', translation: 'No translation available' };
+    const suktaKey = suktaKeys[index];
+    const suktaNum = parseInt(suktaKey.split(' ')[1]);
+    const riks = mandala[suktaKey];
+
+    // Get first rik
+    const rik = riks && riks.length > 0
+      ? riks[0]
+      : null;
+
+    if (!rik) return null;
 
     return {
-      number: `${mandalaNumber}.${hymn.number}`,
-      title: hymn.title || `Hymn ${hymn.number}`,
-      sanskrit: verse.sanskrit || '',
-      transliteration: verse.transliteration || '',
-      translation: verse.translation || 'No translation available',
+      number: `${mandalaNumber}.${suktaNum}`,
+      title: `Rig Veda Mandala ${mandalaNumber} Sukta ${suktaNum}`,
+      sanskrit: rik.samhita?.devanagari?.text || '',
+      transliteration: rik.padapatha?.transliteration?.text || '',
+      translation: rik.translation || 'No translation available',
     };
-  });
+  }).filter(Boolean);
 };
 
 // Get all hymns from a mandala
 export const getAllHymnsFromMandala = (mandalaData, mandalaNumber, filters = {}) => {
-  if (!mandalaData || !mandalaData.mandalas) return [];
+  if (!mandalaData) return [];
 
-  const mandala = mandalaData.mandalas.find(m => m.number === mandalaNumber);
-  if (!mandala || !mandala.hymns) return [];
+  const mandalaKey = `Mandala ${mandalaNumber}`;
+  const mandala = mandalaData[mandalaKey];
+  if (!mandala) return [];
 
-  let hymns = mandala.hymns;
+  let suktaKeys = Object.keys(mandala).sort((a, b) => {
+    const numA = parseInt(a.split(' ')[1]);
+    const numB = parseInt(b.split(' ')[1]);
+    return numA - numB;
+  });
 
   // Apply hymn range filter
   if (filters.hymnFrom || filters.hymnTo) {
     const hymnFrom = filters.hymnFrom ? parseInt(filters.hymnFrom) : 0;
     const hymnTo = filters.hymnTo ? parseInt(filters.hymnTo) : Infinity;
-    hymns = hymns.filter(hymn => hymn.number >= hymnFrom && hymn.number <= hymnTo);
+    suktaKeys = suktaKeys.filter(key => {
+      const suktaNum = parseInt(key.split(' ')[1]);
+      return suktaNum >= hymnFrom && suktaNum <= hymnTo;
+    });
   }
 
-  return hymns.map(hymn => {
-    const verse = hymn.verses && hymn.verses.length > 0
-      ? hymn.verses[0]
-      : { sanskrit: '', transliteration: '', translation: 'No translation available' };
+  return suktaKeys.map(suktaKey => {
+    const suktaNum = parseInt(suktaKey.split(' ')[1]);
+    const riks = mandala[suktaKey];
+
+    const firstRik = riks && riks.length > 0
+      ? riks[0]
+      : null;
+
+    if (!firstRik) return null;
+
+    // Transform riks to verses format for backward compatibility
+    const verses = riks.map(rik => ({
+      number: rik.rik_number,
+      sanskrit: rik.samhita?.devanagari?.text || '',
+      transliteration: rik.padapatha?.transliteration?.text || '',
+      translation: rik.translation || '',
+    }));
 
     return {
-      number: `${mandalaNumber}.${hymn.number}`,
-      hymnNumber: hymn.number,
-      title: hymn.title || `Hymn ${hymn.number}`,
-      sanskrit: verse.sanskrit || '',
-      transliteration: verse.transliteration || '',
-      translation: verse.translation || 'No translation available',
-      verseCount: hymn.verses ? hymn.verses.length : 0,
-      verses: hymn.verses || [], // Include all verses
+      number: `${mandalaNumber}.${suktaNum}`,
+      hymnNumber: suktaNum,
+      title: `Rig Veda Mandala ${mandalaNumber} Sukta ${suktaNum}`,
+      sanskrit: firstRik.samhita?.devanagari?.text || '',
+      transliteration: firstRik.padapatha?.transliteration?.text || '',
+      translation: firstRik.translation || 'No translation available',
+      verseCount: riks.length,
+      verses: verses,
     };
-  });
+  }).filter(Boolean);
 };
 
 // Get specific hymns by their numbers
 export const getSpecificHymns = (mandalaData, hymnReferences) => {
-  if (!mandalaData || !mandalaData.mandalas) return [];
+  if (!mandalaData) return [];
 
   return hymnReferences.map(ref => {
-    const [mandalaNum, hymnNum] = ref.split('.').map(Number);
-    const mandala = mandalaData.mandalas.find(m => m.number === mandalaNum);
+    const [mandalaNum, suktaNum] = ref.split('.').map(Number);
+    const mandalaKey = `Mandala ${mandalaNum}`;
+    const suktaKey = `Sukta ${suktaNum}`;
 
+    const mandala = mandalaData[mandalaKey];
     if (!mandala) return null;
 
-    const hymn = mandala.hymns.find(h => h.number === hymnNum);
-    if (!hymn || !hymn.verses || hymn.verses.length === 0) return null;
+    const riks = mandala[suktaKey];
+    if (!riks || riks.length === 0) return null;
 
-    const verse = hymn.verses[0];
+    const firstRik = riks[0];
 
     return {
       number: ref,
-      hymnNumber: hymn.number,
-      title: hymn.title || `Hymn ${hymnNum}`,
-      sanskrit: verse.sanskrit || '',
-      transliteration: verse.transliteration || '',
-      translation: verse.translation || 'No translation available',
-      verseCount: hymn.verses ? hymn.verses.length : 0,
+      hymnNumber: suktaNum,
+      title: `Rig Veda Mandala ${mandalaNum} Sukta ${suktaNum}`,
+      sanskrit: firstRik.samhita?.devanagari?.text || '',
+      transliteration: firstRik.padapatha?.transliteration?.text || '',
+      translation: firstRik.translation || 'No translation available',
+      verseCount: riks.length,
     };
   }).filter(Boolean);
 };

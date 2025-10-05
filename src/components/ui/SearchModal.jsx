@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import "./SearchModal.css";
 
 const SearchModal = ({
@@ -19,6 +19,7 @@ const SearchModal = ({
     deity: "all",
   });
   const [showFilters, setShowFilters] = useState(false);
+  const debounceTimerRef = useRef(null);
 
   useEffect(() => {
     if (isOpen) {
@@ -30,8 +31,35 @@ const SearchModal = ({
     }
   }, [isOpen]);
 
+  // Debounced search function
+  const debouncedSearch = useCallback((searchQuery, searchFilters) => {
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+
+    debounceTimerRef.current = setTimeout(() => {
+      if (searchQuery.trim()) {
+        onSearch(searchQuery.trim(), Infinity, searchFilters);
+      }
+    }, 500); // 500ms debounce delay
+  }, [onSearch]);
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (debounceTimerRef.current) {
+        clearTimeout(debounceTimerRef.current);
+      }
+    };
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Clear debounce timer and search immediately on submit
+    if (debounceTimerRef.current) {
+      clearTimeout(debounceTimerRef.current);
+    }
+
     if (query.trim()) {
       const activeFilters = {};
       if (filters.mandala !== "all") activeFilters.mandala = filters.mandala;
@@ -43,11 +71,38 @@ const SearchModal = ({
     }
   };
 
+  const handleQueryChange = (e) => {
+    const newQuery = e.target.value;
+    setQuery(newQuery);
+
+    // Prepare active filters
+    const activeFilters = {};
+    if (filters.mandala !== "all") activeFilters.mandala = filters.mandala;
+    if (filters.hymnFrom) activeFilters.hymnFrom = filters.hymnFrom;
+    if (filters.hymnTo) activeFilters.hymnTo = filters.hymnTo;
+    if (filters.deity !== "all") activeFilters.deity = filters.deity;
+
+    // Trigger debounced search
+    debouncedSearch(newQuery, activeFilters);
+  };
+
   const handleFilterChange = (key, value) => {
-    setFilters((prev) => ({
-      ...prev,
+    const newFilters = {
+      ...filters,
       [key]: value,
-    }));
+    };
+    setFilters(newFilters);
+
+    // Re-trigger search with new filters if there's a query
+    if (query.trim()) {
+      const activeFilters = {};
+      if (newFilters.mandala !== "all") activeFilters.mandala = newFilters.mandala;
+      if (newFilters.hymnFrom) activeFilters.hymnFrom = newFilters.hymnFrom;
+      if (newFilters.hymnTo) activeFilters.hymnTo = newFilters.hymnTo;
+      if (newFilters.deity !== "all") activeFilters.deity = newFilters.deity;
+
+      debouncedSearch(query, activeFilters);
+    }
   };
 
   const handleClearFilters = () => {
@@ -110,7 +165,7 @@ const SearchModal = ({
             <input
               type="text"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
+              onChange={handleQueryChange}
               placeholder="Enter your search query (e.g., 'fire', 'wisdom', 'Indra')..."
               className="search-input"
               disabled={loading}
@@ -311,6 +366,16 @@ const SearchModal = ({
             <div className="no-results">
               <p>No results found for "{query}"</p>
               <p>Try different keywords or check your spelling</p>
+            </div>
+          )}
+
+          {!results && !loading && query && (
+            <div className="search-prompt">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" opacity="0.3">
+                <circle cx="10.5" cy="10.5" r="7.5" stroke="currentColor" strokeWidth="1.5" />
+                <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+              </svg>
+              <p>Press Enter to search</p>
             </div>
           )}
 

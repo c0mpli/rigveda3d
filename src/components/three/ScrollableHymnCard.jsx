@@ -98,20 +98,29 @@ export default function ScrollableHymnCard({
     setCurrentWordIndex(0);
 
     // Reset scroll to top or scroll to target verse
+    // Force immediate scroll to top first
     if (scrollContainerRef.current) {
-      if (targetVerseNumber) {
-        // Scroll to the specific verse after a short delay to ensure DOM is ready
-        setTimeout(() => {
-          const verseElement = document.getElementById(
-            `verse-${targetVerseNumber - 1}`
-          );
-          if (verseElement) {
-            verseElement.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }, 100);
-      } else {
-        scrollContainerRef.current.scrollTop = 0;
-      }
+      scrollContainerRef.current.scrollTop = 0;
+    }
+
+    // Then handle target verse scroll if needed
+    if (targetVerseNumber && scrollContainerRef.current) {
+      setTimeout(() => {
+        const verseElement = document.getElementById(
+          `verse-${hymn.hymnNumber}-${targetVerseNumber - 1}`
+        );
+        if (verseElement && scrollContainerRef.current) {
+          // Calculate position relative to scroll container
+          const container = scrollContainerRef.current;
+          const verseOffset = verseElement.offsetTop;
+
+          // Scroll within the container instead of the viewport
+          container.scrollTo({
+            top: verseOffset - 20, // 20px offset from top for better visibility
+            behavior: "smooth"
+          });
+        }
+      }, 300);
     }
   }, [hymn.hymnNumber, mandala, targetVerseNumber]);
 
@@ -120,6 +129,113 @@ export default function ScrollableHymnCard({
     setSelectedWord({ word });
     if (onWordSelect) {
       onWordSelect(word);
+    }
+  };
+
+  // Handle verse click - jump to that verse in audio
+  const handleVerseClick = (e, verseIndex) => {
+    e.stopPropagation(); // Prevent event bubbling
+
+    // Create audio if it doesn't exist
+    if (!audioRef.current) {
+      const audioPath = `/data/audio/${mandala}/${hymn.hymnNumber}.mp3`;
+      audioRef.current = new Audio(audioPath);
+      audioRef.current.volume = 0.8;
+
+      audioRef.current.onended = () => {
+        setIsPlaying(false);
+        setCurrentVerseIndex(0);
+        setCurrentWordIndex(0);
+      };
+
+      audioRef.current.onerror = () => {
+        console.warn(`Audio file not found: ${audioPath}`);
+        setIsPlaying(false);
+      };
+
+      // Set up time update listener
+      audioRef.current.addEventListener("timeupdate", () => {
+        if (!hymn.verses || hymn.verses.length === 0) return;
+
+        const audio = audioRef.current;
+        if (!audio) return;
+
+        const duration = audio.duration;
+        const currentTime = audio.currentTime;
+
+        if (duration && !isNaN(duration) && duration > 0) {
+          const verseCount = hymn.verses.length;
+          const verseDuration = duration / verseCount;
+          const newVerseIndex = Math.min(
+            Math.floor(currentTime / verseDuration),
+            verseCount - 1
+          );
+
+          if (newVerseIndex !== currentVerseIndex) {
+            setCurrentVerseIndex(newVerseIndex);
+            setCurrentWordIndex(0);
+
+            setTimeout(() => {
+              const verseElement = document.getElementById(
+                `verse-${hymn.hymnNumber}-${newVerseIndex}`
+              );
+              if (verseElement) {
+                const container = verseElement.closest(".hymn-verses-scroll");
+                if (container) {
+                  const verseTop = verseElement.offsetTop;
+                  const containerHeight = container.clientHeight;
+                  const verseHeight = verseElement.clientHeight;
+                  const scrollPosition =
+                    verseTop - containerHeight / 2 + verseHeight / 2;
+
+                  container.scrollTo({
+                    top: scrollPosition,
+                    behavior: "smooth",
+                  });
+                }
+              }
+            }, 100);
+          }
+
+          const currentVerse = hymn.verses[newVerseIndex];
+          if (currentVerse && currentVerse.sanskrit) {
+            const words = currentVerse.sanskrit.split(/\s+/);
+            const actualWords = words.filter(word => !/^[|ǀ॥]+$/.test(word));
+            const wordCount = actualWords.length;
+            const wordDuration = verseDuration / wordCount;
+            const timeInVerse = currentTime - newVerseIndex * verseDuration;
+            const newWordIndex = Math.min(
+              Math.floor(timeInVerse / wordDuration),
+              wordCount - 1
+            );
+
+            if (newWordIndex !== currentWordIndex) {
+              setCurrentWordIndex(newWordIndex);
+            }
+          }
+        }
+      });
+    }
+
+    // Wait for metadata to load, then seek to verse
+    const seekToVerse = () => {
+      const duration = audioRef.current.duration;
+      if (duration && !isNaN(duration) && duration > 0) {
+        const verseCount = hymn.verses.length;
+        const verseDuration = duration / verseCount;
+        const targetTime = verseIndex * verseDuration;
+        audioRef.current.currentTime = targetTime;
+        setCurrentVerseIndex(verseIndex);
+        setCurrentWordIndex(0);
+      }
+    };
+
+    if (audioRef.current.readyState >= 1) {
+      // Metadata already loaded
+      seekToVerse();
+    } else {
+      // Wait for metadata
+      audioRef.current.addEventListener('loadedmetadata', seekToVerse, { once: true });
     }
   };
 
@@ -182,14 +298,16 @@ export default function ScrollableHymnCard({
         {hymn.verses && hymn.verses.length > 0 ? (
           hymn.verses.map((verse, index) => (
             <div
-              key={index}
-              id={`verse-${index}`}
+              key={`${hymn.hymnNumber}-${index}`}
+              id={`verse-${hymn.hymnNumber}-${index}`}
               className={`verse-item ${
                 currentVerseIndex === index ? "active" : ""
               }`}
+              onClick={(e) => handleVerseClick(e, index)}
+              style={{ cursor: 'pointer' }}
             >
               <div className="verse-number" style={{ color }}>
-                Verse {index + 1}
+                Verse {mandala}.{hymn.hymnNumber}.{index + 1}
               </div>
 
               {verse.sanskrit && (
@@ -210,11 +328,7 @@ export default function ScrollableHymnCard({
                   className="verse-sanskrit"
                   style={{ color: hexToThreeColor(color, 1.3) }}
                 >
-                  {renderHighlightedText(
-                    verse.transliteration,
-                    currentVerseIndex === index,
-                    true
-                  )}
+                  {verse.transliteration}
                 </div>
               )}
 
@@ -254,24 +368,41 @@ export default function ScrollableHymnCard({
     if (!text) return text;
 
     const words = text.split(/\s+/);
+
+    // Filter out separator characters like |, ǀ, ॥ from word count for highlighting
+    const isSeparator = (word) => /^[|ǀ॥]+$/.test(word);
+
+    // Track actual word index (excluding separators)
+    let wordCount = 0;
+
     return words.map((word, index) => {
+      const isSep = isSeparator(word);
+      const currentWordForHighlight = isSep ? -1 : wordCount;
+
       const isHighlighted =
         isCurrentVerse &&
         isPlaying &&
         enableHighlight &&
         wordHighlightEnabled &&
-        index === currentWordIndex;
-      const isSelected = selectedWord && selectedWord.word === word;
+        currentWordForHighlight === currentWordIndex &&
+        !isSep;
+
+      const isSelected = selectedWord && selectedWord.word === word && !isSep;
+
+      // Increment word count only for non-separators
+      if (!isSep) wordCount++;
 
       return (
         <span
           key={index}
-          className={`clickable-word ${
+          className={`${isSep ? '' : 'clickable-word'} ${
             isHighlighted ? "highlighted-word" : ""
           } ${isSelected ? "selected-word" : ""}`}
           onClick={(e) => {
-            e.stopPropagation();
-            handleWordClick(word);
+            if (!isSep) {
+              e.stopPropagation();
+              handleWordClick(word);
+            }
           }}
         >
           {word}
@@ -303,10 +434,12 @@ export default function ScrollableHymnCard({
         if (!hymn.verses || hymn.verses.length === 0) return;
 
         const audio = audioRef.current;
+        if (!audio) return;
+
         const duration = audio.duration;
         const currentTime = audio.currentTime;
 
-        if (duration && !isNaN(duration)) {
+        if (duration && !isNaN(duration) && duration > 0) {
           // Estimate verse timing based on equal distribution
           const verseCount = hymn.verses.length;
           const verseDuration = duration / verseCount;
@@ -322,7 +455,7 @@ export default function ScrollableHymnCard({
             // Auto-scroll to current verse within the scroll container
             setTimeout(() => {
               const verseElement = document.getElementById(
-                `verse-${newVerseIndex}`
+                `verse-${hymn.hymnNumber}-${newVerseIndex}`
               );
               if (verseElement) {
                 const container = verseElement.closest(".hymn-verses-scroll");
@@ -348,7 +481,9 @@ export default function ScrollableHymnCard({
           const currentVerse = hymn.verses[newVerseIndex];
           if (currentVerse && currentVerse.sanskrit) {
             const words = currentVerse.sanskrit.split(/\s+/);
-            const wordCount = words.length;
+            // Filter out separator characters for word count
+            const actualWords = words.filter(word => !/^[|ǀ॥]+$/.test(word));
+            const wordCount = actualWords.length;
             const wordDuration = verseDuration / wordCount;
             const timeInVerse = currentTime - newVerseIndex * verseDuration;
             const newWordIndex = Math.min(
@@ -375,11 +510,6 @@ export default function ScrollableHymnCard({
       setIsPlaying(true);
     }
   };
-
-  const scaledCardSize = useMemo(
-    () => CARD_SIZE.map((size) => size * responsiveScale),
-    [responsiveScale]
-  );
 
   const htmlScale = useMemo(() => responsiveScale, [responsiveScale]);
 

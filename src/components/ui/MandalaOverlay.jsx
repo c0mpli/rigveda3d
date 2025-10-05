@@ -99,16 +99,16 @@ const BULLET_STYLE = {
   marginRight: "8px",
 };
 
-export default function MandalaOverlay({ mandalaData, selectedAtom, showOverlay, onExplore }) {
+export default function MandalaOverlay({ mandalaData, selectedAtom, showOverlay, onExplore, skipNarration = false }) {
   const { playNarration } = useNarration();
 
-  // Play mandala-specific narration when overlay is shown
+  // Play mandala-specific narration when overlay is shown (unless skipped)
   useEffect(() => {
-    if (showOverlay && selectedAtom !== null) {
+    if (showOverlay && selectedAtom !== null && !skipNarration) {
       const mandalaNumber = selectedAtom + 1;
       playNarration(mandalaNumber.toString());
     }
-  }, [showOverlay, selectedAtom, playNarration]);
+  }, [showOverlay, selectedAtom, playNarration, skipNarration]);
 
   if (selectedAtom === null) return null;
 

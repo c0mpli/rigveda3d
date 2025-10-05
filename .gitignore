@@ -16,6 +16,9 @@ dist-ssr
 .env
 scripts
 
+# Large data files
+public/data/text/embeddings.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

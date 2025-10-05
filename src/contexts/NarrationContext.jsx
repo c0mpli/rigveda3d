@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useRef, useEffect } from "react";
+import { createContext, useContext, useState, useRef, useEffect, useCallback } from "react";
 
 const NarrationContext = createContext();
 
@@ -17,7 +17,7 @@ export const NarrationProvider = ({ children }) => {
   const narrationRef = useRef(null);
   const currentTrackRef = useRef(null);
 
-  const playNarration = (track) => {
+  const playNarration = useCallback((track) => {
     // Don't play if narration is disabled
     if (!isEnabled) {
       console.log("Narration is disabled");
@@ -29,7 +29,7 @@ export const NarrationProvider = ({ children }) => {
     console.log("Playing narration:", audioPath);
 
     // Don't restart if same track is already playing
-    if (currentTrackRef.current === audioPath && isPlaying) {
+    if (currentTrackRef.current === audioPath && narrationRef.current && !narrationRef.current.paused) {
       console.log("Same track already playing");
       return;
     }
@@ -42,6 +42,7 @@ export const NarrationProvider = ({ children }) => {
 
     // Create new audio instance
     narrationRef.current = new Audio(audioPath);
+    narrationRef.current.loop = false; // Disable looping
     currentTrackRef.current = audioPath;
 
     narrationRef.current.onended = () => {
@@ -59,9 +60,9 @@ export const NarrationProvider = ({ children }) => {
         console.error("Error playing narration:", error);
         setIsPlaying(false);
       });
-  };
+  }, [language, isEnabled]);
 
-  const stopNarration = () => {
+  const stopNarration = useCallback(() => {
     if (narrationRef.current) {
       narrationRef.current.pause();
       narrationRef.current.currentTime = 0;
@@ -69,7 +70,7 @@ export const NarrationProvider = ({ children }) => {
     }
     setIsPlaying(false);
     currentTrackRef.current = null;
-  };
+  }, []);
 
   const toggleLanguage = () => {
     // Stop current narration when switching language

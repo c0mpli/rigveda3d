@@ -41,6 +41,7 @@ export default function App() {
   const [showWordSidebar, setShowWordSidebar] = useState(false);
   const [activeFilters, setActiveFilters] = useState({});
   const [targetVerseNumber, setTargetVerseNumber] = useState(null);
+  const [skipOverlayAndNarration, setSkipOverlayAndNarration] = useState(false);
 
   const { language, playNarration, stopNarration, toggleLanguage } = useNarration();
 
@@ -172,54 +173,73 @@ export default function App() {
     // Close the search modal
     setShowSearchModal(false);
 
-    // Reset exploration state if already exploring
-    if (isExploring) {
-      setIsExploring(false);
-      setSelectedAtom(null);
-      setShowOverlay(false);
-    }
-
-    // Get the mandala index (mandala number - 1)
     const mandalaIndex = verse.mandala - 1;
 
-    // Small delay to ensure state is reset
-    setTimeout(() => {
-      // Set the selected atom to trigger the zoom animation
-      setSelectedAtom(mandalaIndex);
+    // Check if we're already in the same mandala and exploring
+    if (isExploring && selectedAtom === mandalaIndex) {
+      // Same mandala - just change the hymn and verse
+      if (rigVedaData) {
+        const hymns = getAllHymnsFromMandala(
+          rigVedaData,
+          verse.mandala,
+          activeFilters
+        );
 
-      // Show the overlay first
+        const hymnIndex = hymns.findIndex((h) => h.hymnNumber === verse.hymn);
+
+        setCurrentHymns(hymns);
+        setSelectedHymnIndex(hymnIndex >= 0 ? hymnIndex : 0);
+        setTargetVerseNumber(verse.verse);
+      }
+    } else {
+      // Different mandala - need to navigate
+
+      // First, reset exploration state if already exploring
+      if (isExploring) {
+        setIsExploring(false);
+        setSelectedAtom(null);
+        setShowOverlay(false);
+        stopNarration();
+      }
+
+      // Set flag to skip overlay and narration
+      setSkipOverlayAndNarration(true);
+
+      // Small delay to ensure state is reset
       setTimeout(() => {
-        setShowOverlay(true);
+        // Set the selected atom to trigger the zoom animation
+        setSelectedAtom(mandalaIndex);
 
-        // Then hide overlay and start exploring
+        // Skip overlay, go directly to exploring
         setTimeout(() => {
-          setShowOverlay(false);
+          setIsExploring(true);
+          setShowMandalaColor(true);
+
+          // Load the hymns for this mandala
+          if (rigVedaData) {
+            const hymns = getAllHymnsFromMandala(
+              rigVedaData,
+              verse.mandala,
+              activeFilters
+            );
+
+            // Find the index of the specific hymn
+            const hymnIndex = hymns.findIndex(
+              (h) => h.hymnNumber === verse.hymn
+            );
+
+            setCurrentHymns(hymns);
+            setSelectedHymnIndex(hymnIndex >= 0 ? hymnIndex : 0);
+            setTargetVerseNumber(verse.verse);
+          }
+
+          // Reset the skip flag after navigation
           setTimeout(() => {
-            setIsExploring(true);
-            setShowMandalaColor(true);
-
-            // Load the hymns for this mandala
-            if (rigVedaData) {
-              const hymns = getAllHymnsFromMandala(
-                rigVedaData,
-                verse.mandala,
-                activeFilters
-              );
-
-              // Find the index of the specific hymn
-              const hymnIndex = hymns.findIndex(
-                (h) => h.hymnNumber === verse.hymn
-              );
-
-              setCurrentHymns(hymns);
-              setSelectedHymnIndex(hymnIndex >= 0 ? hymnIndex : 0);
-              // Set the target verse number for scrolling
-              setTargetVerseNumber(verse.verse);
-            }
-          }, 600);
-        }, 500);
-      }, 100);
-    }, isExploring ? 100 : 0);
+            setSkipOverlayAndNarration(false);
+          }, 100);
+        }, 600);
+      }, isExploring ? 100 : 0);
+    }
   };
 
   return (
@@ -255,7 +275,7 @@ export default function App() {
       <SearchModal
         isOpen={showSearchModal}
         onClose={() => setShowSearchModal(false)}
-        onSearch={(query, topK) => search(query, topK, activeFilters)}
+        onSearch={(query, topK, filters) => search(query, topK, filters || {})}
         onBrowse={(limit) => browseFiltered(activeFilters, limit)}
         onResultClick={handleSearchResultClick}
         results={searchResults}
@@ -280,7 +300,8 @@ export default function App() {
       <MandalaOverlay
         mandalaData={MANDALA_DATA}
         selectedAtom={selectedAtom}
-        showOverlay={showOverlay}
+        showOverlay={showOverlay && !skipOverlayAndNarration}
+        skipNarration={skipOverlayAndNarration}
         onExplore={() => {
           setShowOverlay(false);
           stopNarration();

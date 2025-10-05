@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./Navbar.css";
 import { useNarration } from "../../contexts/NarrationContext";
 
@@ -17,7 +17,18 @@ const Navbar = ({
 }) => {
   const [isCollapsed, setIsCollapsed] = useState(false);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
-  const { language, toggleLanguage, isEnabled, toggleNarration } = useNarration();
+  const { language, toggleLanguage, isEnabled, toggleNarration } =
+    useNarration();
+  const hoverSoundRef = useRef(null);
+
+  const playHoverSound = () => {
+    if (!hoverSoundRef.current) {
+      hoverSoundRef.current = new Audio("/sounds/hover.mp3");
+      hoverSoundRef.current.volume = 1;
+    }
+    hoverSoundRef.current.currentTime = 0;
+    hoverSoundRef.current.play().catch(() => {});
+  };
 
   return (
     <nav className={`navbar ${isCollapsed ? "collapsed" : ""}`}>
@@ -37,7 +48,10 @@ const Navbar = ({
             {/* Volume Control */}
             <div
               className="navbar-item volume-control"
-              onMouseEnter={() => setShowVolumeSlider(true)}
+              onMouseEnter={() => {
+                setShowVolumeSlider(true);
+                playHoverSound();
+              }}
               onMouseLeave={() => setShowVolumeSlider(false)}
             >
               <button
@@ -97,7 +111,7 @@ const Navbar = ({
             </div>
 
             {/* Search */}
-            <div className="navbar-item">
+            <div className="navbar-item" onMouseEnter={playHoverSound}>
               <button
                 className="navbar-button"
                 onClick={onSearchClick}
@@ -155,7 +169,7 @@ const Navbar = ({
             </div> */}
 
             {/* Stats */}
-            <div className="navbar-item">
+            <div className="navbar-item" onMouseEnter={playHoverSound}>
               <button
                 className="navbar-button"
                 aria-label="View stats"
@@ -174,7 +188,7 @@ const Navbar = ({
             </div>
 
             {/* Dictionary */}
-            <div className="navbar-item">
+            <div className="navbar-item" onMouseEnter={playHoverSound}>
               <button
                 className="navbar-button"
                 onClick={onDictionaryClick}
@@ -206,11 +220,13 @@ const Navbar = ({
             </div>
 
             {/* Narration Toggle */}
-            <div className="navbar-item">
+            <div className="navbar-item" onMouseEnter={playHoverSound}>
               <button
                 className="navbar-button"
                 onClick={toggleNarration}
-                aria-label={isEnabled ? "Disable narration" : "Enable narration"}
+                aria-label={
+                  isEnabled ? "Disable narration" : "Enable narration"
+                }
               >
                 {isEnabled ? (
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
@@ -252,7 +268,7 @@ const Navbar = ({
             </div>
 
             {/* Narration Language Toggle */}
-            <div className="navbar-item">
+            <div className="navbar-item" onMouseEnter={playHoverSound}>
               <button
                 className="navbar-button"
                 onClick={toggleLanguage}
@@ -265,11 +281,7 @@ const Navbar = ({
                     strokeWidth="2"
                     fill="none"
                   />
-                  <path
-                    d="M2 12H22"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                  />
+                  <path d="M2 12H22" stroke="currentColor" strokeWidth="2" />
                   <path
                     d="M12 2C14.5 4.5 16 8 16 12C16 16 14.5 19.5 12 22C9.5 19.5 8 16 8 12C8 8 9.5 4.5 12 2Z"
                     stroke="currentColor"

@@ -1,6 +1,6 @@
 {
-  "created_at": "20251004_164732",
-  "total_verses": 4948,
+  "created_at": "20251005_173942",
+  "total_verses": 10546,
   "embedding_model": "text-embedding-3-small",
   "embedding_dimension": 1536,
   "description": "OpenAI embeddings for Rig Veda texts optimized for React.js",
