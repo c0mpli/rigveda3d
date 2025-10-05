@@ -54,7 +54,6 @@ http://localhost:5173
 - [ ] User annotations and notes
 - [✓] Mobile app version
 - [ ] Multi-language interface support
-- [ ] Advanced visualization modes
 - [ ] Social sharing capabilities
 - [ ] Statistics about Rig Veda
 - [ ] Interactive dictionary to learn Sanskrit words from the Veda
