@@ -1,5 +1,5 @@
 import { useRef, useState, useMemo, useEffect } from "react";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import * as THREE from "three";
 import { useSpring, animated } from "@react-spring/three";
@@ -32,6 +32,26 @@ export default function ScrollableHymnCard({
   const [selectedWord, setSelectedWord] = useState(null);
   const [rotationTarget, setRotationTarget] = useState(0);
   const previousHymnNumber = useRef(hymn.hymnNumber);
+
+  const { size } = useThree();
+  const [responsiveScale, setResponsiveScale] = useState(1);
+
+  // Calculate responsive scaling based on viewport
+  useEffect(() => {
+    const width = size.width;
+    const height = size.height;
+
+    // Base scale for desktop (1920x1080)
+    const baseWidth = 1920;
+    const baseHeight = 1080;
+
+    // Calculate scale factor based on smaller dimension to prevent overflow
+    const scaleX = width / baseWidth;
+    const scaleY = height / baseHeight;
+    const scale = Math.min(scaleX, scaleY, 1.2); // Cap at 1.2x max
+
+    setResponsiveScale(Math.max(scale, 0.5)); // Minimum 0.5x
+  }, [size]);
 
   // Spring animation for cube rotation
   const { rotation } = useSpring({
@@ -356,11 +376,19 @@ export default function ScrollableHymnCard({
     }
   };
 
+  const scaledCardSize = useMemo(
+    () => CARD_SIZE.map((size) => size * responsiveScale),
+    [responsiveScale]
+  );
+
+  const htmlScale = useMemo(() => responsiveScale, [responsiveScale]);
+
   return (
     <animated.group
       ref={cardRef}
       position={position}
       rotation-y={rotation}
+      scale={responsiveScale}
       {...props}
     >
       {/* Card background cube with shader */}
@@ -378,7 +406,7 @@ export default function ScrollableHymnCard({
         transform
         position={[0, 0, CARD_SIZE[2] / 2 + 0.01]}
         rotation={[0, 0, 0]}
-        scale={0.85}
+        scale={htmlScale}
         occlude
         zIndexRange={[100, 0]}
         style={{
@@ -395,7 +423,7 @@ export default function ScrollableHymnCard({
         transform
         position={[0, 0, -CARD_SIZE[2] / 2 - 0.01]}
         rotation={[0, Math.PI, 0]}
-        scale={0.85}
+        scale={htmlScale}
         occlude
         zIndexRange={[100, 0]}
         style={{
