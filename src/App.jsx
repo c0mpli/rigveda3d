@@ -13,6 +13,7 @@ import Dictionary from "./components/ui/Dictionary";
 import MandalaOverlay from "./components/ui/MandalaOverlay";
 import HymnsSidebar2D from "./components/ui/HymnsSidebar2D";
 import WordMeaningSidebar from "./components/ui/WordMeaningSidebar";
+import IntroScreen from "./components/ui/IntroScreen";
 import RotatingStars from "./components/three/RotatingStars";
 import Background from "./components/three/Background";
 import Rig from "./components/three/Rig";
@@ -25,6 +26,7 @@ export default function App() {
   const bgMusicRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(0.8);
+  const [showIntro, setShowIntro] = useState(true);
 
   const [selectedAtom, setSelectedAtom] = useState(null);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -241,6 +243,10 @@ export default function App() {
       }, isExploring ? 100 : 0);
     }
   };
+
+  if (showIntro) {
+    return <IntroScreen onStart={() => setShowIntro(false)} />;
+  }
 
   return (
     <>
