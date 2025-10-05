@@ -50,8 +50,11 @@ http://localhost:5173
 
 ## Roadmap
 
+- [ ] Bookmarking and favorites system
+- [ ] User annotations and notes
 - ✓ Mobile app version
 - [ ] Multi-language interface support
+- [ ] Advanced visualization modes
 - [ ] Social sharing capabilities
 - [ ] Statistics about Rig Veda
 - [ ] Interactive dictionary to learn Sanskrit words from the Veda
@@ -62,6 +65,7 @@ http://localhost:5173
 ## Sources
 
 **Text Data**: [Rigveda Dataset on Kaggle](https://www.kaggle.com/datasets/varunrajuvangar/rigved-all-sukta-verses-and-meaning-dataset)
+**Audio Data**: [Rigveda Audios](https://github.com/aasi-archive/rv-audio)
 
 ## License
 
