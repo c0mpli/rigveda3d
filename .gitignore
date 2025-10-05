@@ -17,7 +17,7 @@ dist-ssr
 scripts
 
 # Large data files
-public/data/text/embeddings.json
+**/embeddings.json
 
 # Editor directories and files
 .vscode/*
