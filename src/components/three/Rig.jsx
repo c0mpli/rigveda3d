@@ -8,6 +8,7 @@ export default function Rig({
   setShowOverlay,
   isExploring,
   setShowMandalaColor,
+  defaultCameraZ = 9,
 }) {
   const { controls } = useThree();
 
@@ -82,7 +83,7 @@ export default function Rig({
       setShowOverlay(false);
       setShowMandalaColor(false);
       // Zoom out to default view
-      controls.setLookAt(0, 0, 9, 0, 0, 0, true);
+      controls.setLookAt(0, 0, defaultCameraZ, 0, 0, 0, true);
     }
   }, [
     selectedAtom,
@@ -91,6 +92,7 @@ export default function Rig({
     setShowOverlay,
     isExploring,
     setShowMandalaColor,
+    defaultCameraZ,
   ]);
 
   return (

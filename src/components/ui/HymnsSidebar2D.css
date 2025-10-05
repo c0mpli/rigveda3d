@@ -148,3 +148,100 @@
 .hymns-grid-2d::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 255, 255, 0.3);
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .hymns-sidebar-2d {
+    left: 10px;
+    top: 10px;
+    width: calc(100vw - 20px);
+    max-width: 350px;
+    max-height: calc(100vh - 20px);
+  }
+
+  .sidebar-header-2d {
+    padding: 12px 16px;
+  }
+
+  .sidebar-header-2d h2 {
+    font-size: 16px;
+  }
+
+  .hymns-grid-2d {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .hymn-item-2d {
+    padding: 12px 10px;
+    min-height: 70px;
+  }
+
+  .hymn-number-2d {
+    font-size: 18px;
+  }
+
+  .hymn-verses-2d {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+
+  .sidebar-toggle-btn-2d {
+    left: 10px;
+    top: 70px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hymns-sidebar-2d {
+    left: 5px;
+    top: 5px;
+    width: calc(100vw - 10px);
+    max-width: none;
+    max-height: calc(100vh - 10px);
+  }
+
+  .sidebar-header-2d {
+    padding: 10px 12px;
+  }
+
+  .sidebar-header-2d h2 {
+    font-size: 14px;
+  }
+
+  .hymns-grid-2d {
+    padding: 10px;
+    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hymn-item-2d {
+    padding: 10px 8px;
+    min-height: 60px;
+  }
+
+  .hymn-number-2d {
+    font-size: 16px;
+  }
+
+  .hymn-verses-2d {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  .sidebar-toggle-btn-2d {
+    left: 5px;
+    top: 60px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .close-btn-2d {
+    font-size: 18px;
+    padding: 4px 8px;
+  }
+}

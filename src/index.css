@@ -8,6 +8,15 @@ body,
   background: #000000;
   font-family: "Inter", sans-serif;
   overflow: hidden;
+  /* Improve text rendering on mobile */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent text size adjustment on orientation change */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  /* Improve touch scrolling on iOS */
+  -webkit-overflow-scrolling: touch;
 }
 
 /* Make canvas fullscreen */
@@ -114,17 +123,73 @@ body,
   box-shadow: 0 5px 20px rgba(139, 92, 246, 0.3);
 }
 
+/* Mobile Responsive Styles */
 @media (max-width: 768px) {
+  .intro-modal {
+    max-width: 90%;
+    padding: 2rem 1.5rem;
+  }
+
   .intro-title {
     font-size: 2.5rem;
   }
 
   .intro-subtitle {
     font-size: 1rem;
+    margin-bottom: 2rem;
   }
 
   .intro-button {
     padding: 0.875rem 2rem;
     font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .intro-modal {
+    max-width: 95%;
+    padding: 1.5rem 1rem;
+  }
+
+  .intro-title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .intro-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .intro-button {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    /* Larger touch target for mobile */
+    min-height: 48px;
+  }
+}
+
+/* Touch-friendly improvements for all interactive elements */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets on mobile devices */
+  button,
+  input[type="button"],
+  input[type="submit"],
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Remove hover effects on touch devices */
+  button:hover,
+  a:hover {
+    transform: none;
+  }
+
+  /* Add active state feedback for touch */
+  button:active,
+  a:active {
+    opacity: 0.8;
+    transform: scale(0.98);
   }
 }

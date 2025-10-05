@@ -1,54 +1,69 @@
 import { useNarration } from "../../contexts/NarrationContext";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { useEffect } from "react";
 
-const OVERLAY_STYLE = {
-  position: "fixed",
-  top: 0,
-  right: 0,
-  width: "450px",
-  height: "100vh",
-  background: "rgba(0, 0, 0, 0.85)",
-  backdropFilter: "blur(20px)",
-  zIndex: 999,
-  color: "white",
-  fontFamily: '"Inter", sans-serif',
-  display: "flex",
-  flexDirection: "column",
+const getOverlayStyle = (isMobile) => {
+  return {
+    position: "fixed",
+    top: 0,
+    right: 0,
+    width: isMobile ? "100vw" : "450px",
+    height: "100vh",
+    background: "rgba(0, 0, 0, 0.85)",
+    backdropFilter: "blur(20px)",
+    zIndex: 999,
+    color: "white",
+    fontFamily: '"Inter", sans-serif',
+    display: "flex",
+    flexDirection: "column",
+  };
 };
 
-const CONTENT_STYLE = {
-  flex: 1,
-  overflowY: "auto",
-  padding: "40px 30px 20px",
+const getContentStyle = (isMobile) => {
+  return {
+    flex: 1,
+    overflowY: "auto",
+    padding: isMobile ? "20px 16px 10px" : "40px 30px 20px",
+  };
 };
 
-const BUTTON_CONTAINER_STYLE = {
-  padding: "20px 30px",
-  borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-  background: "rgba(0, 0, 0, 0.5)",
+const getButtonContainerStyle = (isMobile) => {
+  return {
+    padding: isMobile ? "16px" : "20px 30px",
+    borderTop: "1px solid rgba(255, 255, 255, 0.1)",
+    background: "rgba(0, 0, 0, 0.5)",
+  };
 };
 
-const HEADER_CONTAINER_STYLE = {
-  display: "flex",
-  alignItems: "center",
-  gap: "15px",
-  marginBottom: "15px",
+const getHeaderContainerStyle = (isMobile) => {
+  return {
+    display: "flex",
+    alignItems: "center",
+    gap: isMobile ? "10px" : "15px",
+    marginBottom: "15px",
+  };
 };
 
-const EMOJI_STYLE = {
-  fontSize: "3rem",
+const getEmojiStyle = (isMobile) => {
+  return {
+    fontSize: isMobile ? "2rem" : "3rem",
+  };
 };
 
-const TITLE_STYLE = {
-  fontSize: "1.8rem",
-  marginBottom: "5px",
-  fontWeight: 700,
+const getTitleStyle = (isMobile) => {
+  return {
+    fontSize: isMobile ? "1.3rem" : "1.8rem",
+    marginBottom: "5px",
+    fontWeight: 700,
+  };
 };
 
-const SUBTITLE_STYLE = {
-  fontSize: "1.1rem",
-  color: "rgba(255, 255, 255, 0.9)",
-  fontWeight: 500,
+const getSubtitleStyle = (isMobile) => {
+  return {
+    fontSize: isMobile ? "0.95rem" : "1.1rem",
+    color: "rgba(255, 255, 255, 0.9)",
+    fontWeight: 500,
+  };
 };
 
 const INFO_CONTAINER_STYLE = {
@@ -101,6 +116,8 @@ const BULLET_STYLE = {
 
 export default function MandalaOverlay({ mandalaData, selectedAtom, showOverlay, onExplore, skipNarration = false }) {
   const { playNarration } = useNarration();
+  const { width } = useWindowDimensions();
+  const isMobile = width <= 768;
 
   // Play mandala-specific narration when overlay is shown (unless skipped)
   useEffect(() => {
@@ -127,25 +144,25 @@ export default function MandalaOverlay({ mandalaData, selectedAtom, showOverlay,
   return (
     <div
       style={{
-        ...OVERLAY_STYLE,
+        ...getOverlayStyle(isMobile),
         borderLeft: `2px solid ${mandala.color}40`,
         transform: showOverlay ? "translateX(0)" : "translateX(100%)",
         transition: "transform 0.5s ease",
       }}
     >
-      <div style={CONTENT_STYLE}>
-        <div style={HEADER_CONTAINER_STYLE}>
-          <span style={EMOJI_STYLE}>{mandala.emoji}</span>
+      <div style={getContentStyle(isMobile)}>
+        <div style={getHeaderContainerStyle(isMobile)}>
+          <span style={getEmojiStyle(isMobile)}>{mandala.emoji}</span>
           <div>
             <h2
               style={{
-                ...TITLE_STYLE,
+                ...getTitleStyle(isMobile),
                 color: mandala.color,
               }}
             >
               Mandala {selectedAtom + 1}
             </h2>
-            <p style={SUBTITLE_STYLE}>{mandala.title}</p>
+            <p style={getSubtitleStyle(isMobile)}>{mandala.title}</p>
           </div>
         </div>
 
@@ -202,7 +219,7 @@ export default function MandalaOverlay({ mandalaData, selectedAtom, showOverlay,
         </div>
       </div>
 
-      <div style={BUTTON_CONTAINER_STYLE}>
+      <div style={getButtonContainerStyle(isMobile)}>
         <button
           onClick={onExplore}
           style={{

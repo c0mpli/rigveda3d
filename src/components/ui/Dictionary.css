@@ -273,13 +273,20 @@
   .dictionary-modal {
     width: 95%;
     max-height: 95vh;
+    border-radius: 16px;
   }
 
-  .dictionary-header,
+  .dictionary-header {
+    padding: 20px;
+  }
+
+  .dictionary-header h2 {
+    font-size: 1.3rem;
+  }
+
   .dictionary-search,
   .dictionary-content {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 15px 20px;
   }
 
   .entry-header {
@@ -294,5 +301,59 @@
 
   .entry-sanskrit {
     font-size: 1.1rem;
+  }
+
+  .entry-meaning {
+    font-size: 1rem;
+  }
+
+  .dictionary-entry {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dictionary-modal {
+    width: 100%;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+
+  .dictionary-header {
+    padding: 16px;
+  }
+
+  .dictionary-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .dictionary-search,
+  .dictionary-content {
+    padding: 12px 16px;
+  }
+
+  .dictionary-search-input {
+    padding: 12px 14px;
+    font-size: 0.95rem;
+  }
+
+  .entry-term {
+    font-size: 1.1rem;
+  }
+
+  .entry-sanskrit {
+    font-size: 1rem;
+  }
+
+  .entry-meaning {
+    font-size: 0.95rem;
+  }
+
+  .dictionary-entry {
+    padding: 14px;
+  }
+
+  .dictionary-features {
+    max-width: 100%;
   }
 }

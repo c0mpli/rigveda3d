@@ -299,3 +299,130 @@
   border: none;
   background: white;
 }
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .hymn-header {
+    padding: 18px 20px;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hymn-title-section {
+    margin-bottom: 12px;
+  }
+
+  .hymn-number {
+    font-size: 28px;
+  }
+
+  .hymn-title {
+    font-size: 18px;
+  }
+
+  .hymn-meta {
+    font-size: 16px;
+    gap: 12px;
+  }
+
+  .hymn-controls {
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .play-audio-btn,
+  .toggle-highlight-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 22px;
+  }
+
+  .hymn-verses-scroll {
+    padding: 18px 20px;
+  }
+
+  .verse-item {
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+  }
+
+  .verse-number {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .verse-sanskrit {
+    font-size: 22px;
+    line-height: 1.8;
+    margin-bottom: 12px;
+  }
+
+  .verse-transliteration {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .verse-translation {
+    font-size: 20px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollable-hymn-container {
+    border-radius: 8px;
+  }
+
+  .hymn-header {
+    padding: 16px 18px;
+  }
+
+  .hymn-number {
+    font-size: 24px;
+  }
+
+  .hymn-title {
+    font-size: 16px;
+  }
+
+  .hymn-meta {
+    font-size: 14px;
+  }
+
+  .play-audio-btn,
+  .toggle-highlight-btn {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .hymn-verses-scroll {
+    padding: 16px 18px;
+  }
+
+  .verse-item {
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+  }
+
+  .verse-number {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .verse-sanskrit {
+    font-size: 20px;
+    line-height: 1.8;
+    margin-bottom: 10px;
+  }
+
+  .verse-transliteration {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .verse-translation {
+    font-size: 18px;
+    line-height: 1.7;
+  }
+}

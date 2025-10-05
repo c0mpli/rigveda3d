@@ -1,7 +1,7 @@
 import { useMemo, useState, useEffect } from "react";
-import { ScrollControls } from "@react-three/drei";
 import ScrollableHymnCard from "./ScrollableHymnCard";
 import { getAllHymnsFromMandala } from "../../utils/DataLoader";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 export default function HymnCardsContainer({
   mandalaData,
@@ -14,6 +14,7 @@ export default function HymnCardsContainer({
   onWordSelect,
 }) {
   const [showCards, setShowCards] = useState(false);
+  const { isMobile } = useWindowDimensions();
 
   // Load ALL hymns for the selected mandala
   const hymns = useMemo(() => {
@@ -41,9 +42,9 @@ export default function HymnCardsContainer({
   const atomPos = atomPositions[selectedAtom];
   const SPHERE_RADIUS = 9;
   const THEATER_POSITION = [
-    atomPos[0] + 2, // Move right
-    atomPos[1], // Move down
-    atomPos[2] - SPHERE_RADIUS - 0.5, // In front of sphere surface
+    atomPos[0] + (isMobile ? 0 : 2), // Center on mobile, offset right on desktop
+    atomPos[1], // Vertical position
+    atomPos[2] - SPHERE_RADIUS + (isMobile ? 7 : -0.5), // Bring closer on mobile
   ];
 
   return (
@@ -51,7 +52,11 @@ export default function HymnCardsContainer({
       {/* Floor plane to receive shadows */}
       <mesh
         rotation={[-Math.PI / 2, 0, 0]}
-        position={[atomPos[0] + 2, atomPos[1] - 8, atomPos[2] - SPHERE_RADIUS - 0.5]}
+        position={[
+          atomPos[0] + 2,
+          atomPos[1] - 8,
+          atomPos[2] - SPHERE_RADIUS - 0.5,
+        ]}
         receiveShadow
       >
         <planeGeometry args={[35, 35]} />

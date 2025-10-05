@@ -84,6 +84,12 @@ export default function HymnsSidebar2D({
                   pageFlipSoundRef.current.play().catch(() => {});
                 }
                 onHymnSelect(index);
+
+                // Close sidebar on mobile after selecting a hymn
+                const isMobile = window.innerWidth <= 768;
+                if (isMobile) {
+                  setIsOpen(false);
+                }
               }}
               style={{
                 borderColor:

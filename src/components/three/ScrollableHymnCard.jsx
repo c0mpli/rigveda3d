@@ -8,9 +8,8 @@ import {
   CARD_FRAGMENT_SHADER,
 } from "../../utils/CardShader";
 import { hexToThreeColor } from "../../utils/ColorUtils";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 import "./ScrollableHymnCard.css";
-
-const CARD_SIZE = [15, 15, 0.3]; // Width, Height, Depth - thin for card-like appearance
 
 export default function ScrollableHymnCard({
   hymn,
@@ -34,7 +33,24 @@ export default function ScrollableHymnCard({
   const previousHymnNumber = useRef(hymn.hymnNumber);
 
   const { size } = useThree();
+  const { isMobile } = useWindowDimensions();
   const [responsiveScale, setResponsiveScale] = useState(1);
+
+  // Calculate card dimensions based on mobile/desktop
+  const cardSize = useMemo(() => {
+    if (isMobile) {
+      return [10, 20, 0.3]; // Narrower and taller for mobile
+    }
+    return [15, 15, 0.3]; // Square for desktop
+  }, [isMobile]);
+
+  // Calculate HTML content dimensions
+  const htmlDimensions = useMemo(() => {
+    if (isMobile) {
+      return { width: "550px", height: "1100px" };
+    }
+    return { width: "500px", height: "600px" };
+  }, [isMobile]);
 
   // Calculate responsive scaling based on viewport
   useEffect(() => {
@@ -48,9 +64,15 @@ export default function ScrollableHymnCard({
     // Calculate scale factor based on smaller dimension to prevent overflow
     const scaleX = width / baseWidth;
     const scaleY = height / baseHeight;
-    const scale = Math.min(scaleX, scaleY, 1.2); // Cap at 1.2x max
+    let scale = Math.min(scaleX, scaleY, 1.2); // Cap at 1.2x max
 
-    setResponsiveScale(Math.max(scale, 0.5)); // Minimum 0.5x
+    // Extra scaling reduction for mobile devices
+    const isMobile = width <= 768;
+    if (isMobile) {
+      // scale = scale * 0.5; // Reduce by 50% on mobile
+    }
+
+    setResponsiveScale(Math.max(scale, 0.25)); // Minimum 0.25x for very small screens
   }, [size]);
 
   // Spring animation for cube rotation
@@ -117,7 +139,7 @@ export default function ScrollableHymnCard({
           // Scroll within the container instead of the viewport
           container.scrollTo({
             top: verseOffset - 20, // 20px offset from top for better visibility
-            behavior: "smooth"
+            behavior: "smooth",
           });
         }
       }, 300);
@@ -200,7 +222,7 @@ export default function ScrollableHymnCard({
           const currentVerse = hymn.verses[newVerseIndex];
           if (currentVerse && currentVerse.sanskrit) {
             const words = currentVerse.sanskrit.split(/\s+/);
-            const actualWords = words.filter(word => !/^[|ǀ॥]+$/.test(word));
+            const actualWords = words.filter((word) => !/^[|ǀ॥]+$/.test(word));
             const wordCount = actualWords.length;
             const wordDuration = verseDuration / wordCount;
             const timeInVerse = currentTime - newVerseIndex * verseDuration;
@@ -235,7 +257,9 @@ export default function ScrollableHymnCard({
       seekToVerse();
     } else {
       // Wait for metadata
-      audioRef.current.addEventListener('loadedmetadata', seekToVerse, { once: true });
+      audioRef.current.addEventListener("loadedmetadata", seekToVerse, {
+        once: true,
+      });
     }
   };
 
@@ -304,7 +328,7 @@ export default function ScrollableHymnCard({
                 currentVerseIndex === index ? "active" : ""
               }`}
               onClick={(e) => handleVerseClick(e, index)}
-              style={{ cursor: 'pointer' }}
+              style={{ cursor: "pointer" }}
             >
               <div className="verse-number" style={{ color }}>
                 Verse {mandala}.{hymn.hymnNumber}.{index + 1}
@@ -395,7 +419,7 @@ export default function ScrollableHymnCard({
       return (
         <span
           key={index}
-          className={`${isSep ? '' : 'clickable-word'} ${
+          className={`${isSep ? "" : "clickable-word"} ${
             isHighlighted ? "highlighted-word" : ""
           } ${isSelected ? "selected-word" : ""}`}
           onClick={(e) => {
@@ -482,7 +506,7 @@ export default function ScrollableHymnCard({
           if (currentVerse && currentVerse.sanskrit) {
             const words = currentVerse.sanskrit.split(/\s+/);
             // Filter out separator characters for word count
-            const actualWords = words.filter(word => !/^[|ǀ॥]+$/.test(word));
+            const actualWords = words.filter((word) => !/^[|ǀ॥]+$/.test(word));
             const wordCount = actualWords.length;
             const wordDuration = verseDuration / wordCount;
             const timeInVerse = currentTime - newVerseIndex * verseDuration;
@@ -511,7 +535,12 @@ export default function ScrollableHymnCard({
     }
   };
 
-  const htmlScale = useMemo(() => responsiveScale, [responsiveScale]);
+  const htmlScale = useMemo(() => {
+    if (isMobile) {
+      return responsiveScale * 2.5; // Increase HTML content scale on mobile
+    }
+    return responsiveScale;
+  }, [responsiveScale, isMobile]);
 
   return (
     <animated.group
@@ -523,7 +552,7 @@ export default function ScrollableHymnCard({
     >
       {/* Card background cube with shader */}
       <mesh castShadow>
-        <boxGeometry args={CARD_SIZE} />
+        <boxGeometry args={cardSize} />
         <shaderMaterial
           ref={materialRef}
           attach="material"
@@ -534,14 +563,14 @@ export default function ScrollableHymnCard({
       {/* Front face */}
       <Html
         transform
-        position={[0, 0, CARD_SIZE[2] / 2 + 0.01]}
+        position={[0, 0, cardSize[2] / 2 + 0.01]}
         rotation={[0, 0, 0]}
         scale={htmlScale}
         occlude
         zIndexRange={[100, 0]}
         style={{
-          width: "500px",
-          height: "600px",
+          width: htmlDimensions.width,
+          height: htmlDimensions.height,
           pointerEvents: "auto",
         }}
       >
@@ -551,14 +580,14 @@ export default function ScrollableHymnCard({
       {/* Back face (flipped) */}
       <Html
         transform
-        position={[0, 0, -CARD_SIZE[2] / 2 - 0.01]}
+        position={[0, 0, -cardSize[2] / 2 - 0.01]}
         rotation={[0, Math.PI, 0]}
         scale={htmlScale}
         occlude
         zIndexRange={[100, 0]}
         style={{
-          width: "500px",
-          height: "600px",
+          width: htmlDimensions.width,
+          height: htmlDimensions.height,
           pointerEvents: "auto",
         }}
       >

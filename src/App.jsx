@@ -18,8 +18,10 @@ import RotatingStars from "./components/three/RotatingStars";
 import Background from "./components/three/Background";
 import Rig from "./components/three/Rig";
 import Atom from "./components/three/Atom";
+import CameraController from "./components/three/CameraController";
 import HymnCardsContainer from "./components/three/HymnCardsContainer";
 import useRigVedaSearch from "./hooks/useRigVedaSearch";
+import useWindowDimensions from "./hooks/useWindowDimensions";
 import { useNarration } from "./contexts/NarrationContext";
 
 export default function App() {
@@ -27,6 +29,11 @@ export default function App() {
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(0.8);
   const [showIntro, setShowIntro] = useState(true);
+  const { width } = useWindowDimensions();
+
+  // Determine camera position based on screen size
+  const isMobile = width < 768;
+  const cameraPosition = isMobile ? [0, 0, width / 15] : [0, 0, 9];
 
   const [selectedAtom, setSelectedAtom] = useState(null);
   const [showOverlay, setShowOverlay] = useState(false);
@@ -45,7 +52,8 @@ export default function App() {
   const [targetVerseNumber, setTargetVerseNumber] = useState(null);
   const [skipOverlayAndNarration, setSkipOverlayAndNarration] = useState(false);
 
-  const { language, playNarration, stopNarration, toggleLanguage } = useNarration();
+  const { language, playNarration, stopNarration, toggleLanguage } =
+    useNarration();
 
   // Search functionality
   const {
@@ -105,7 +113,11 @@ export default function App() {
   useEffect(() => {
     if (rigVedaData && selectedAtom !== null) {
       const mandalaNumber = selectedAtom + 1;
-      const hymns = getAllHymnsFromMandala(rigVedaData, mandalaNumber, activeFilters);
+      const hymns = getAllHymnsFromMandala(
+        rigVedaData,
+        mandalaNumber,
+        activeFilters
+      );
       setCurrentHymns(hymns);
       setSelectedHymnIndex(0);
     } else {
@@ -206,39 +218,42 @@ export default function App() {
       setSkipOverlayAndNarration(true);
 
       // Small delay to ensure state is reset
-      setTimeout(() => {
-        // Set the selected atom to trigger the zoom animation
-        setSelectedAtom(mandalaIndex);
+      setTimeout(
+        () => {
+          // Set the selected atom to trigger the zoom animation
+          setSelectedAtom(mandalaIndex);
 
-        // Skip overlay, go directly to exploring
-        setTimeout(() => {
-          setIsExploring(true);
-          setShowMandalaColor(true);
-
-          // Load the hymns for this mandala
-          if (rigVedaData) {
-            const hymns = getAllHymnsFromMandala(
-              rigVedaData,
-              verse.mandala,
-              activeFilters
-            );
-
-            // Find the index of the specific hymn
-            const hymnIndex = hymns.findIndex(
-              (h) => h.hymnNumber === verse.hymn
-            );
-
-            setCurrentHymns(hymns);
-            setSelectedHymnIndex(hymnIndex >= 0 ? hymnIndex : 0);
-            setTargetVerseNumber(verse.verse);
-          }
-
-          // Reset the skip flag after navigation
+          // Skip overlay, go directly to exploring
           setTimeout(() => {
-            setSkipOverlayAndNarration(false);
-          }, 100);
-        }, 600);
-      }, isExploring ? 100 : 0);
+            setIsExploring(true);
+            setShowMandalaColor(true);
+
+            // Load the hymns for this mandala
+            if (rigVedaData) {
+              const hymns = getAllHymnsFromMandala(
+                rigVedaData,
+                verse.mandala,
+                activeFilters
+              );
+
+              // Find the index of the specific hymn
+              const hymnIndex = hymns.findIndex(
+                (h) => h.hymnNumber === verse.hymn
+              );
+
+              setCurrentHymns(hymns);
+              setSelectedHymnIndex(hymnIndex >= 0 ? hymnIndex : 0);
+              setTargetVerseNumber(verse.verse);
+            }
+
+            // Reset the skip flag after navigation
+            setTimeout(() => {
+              setSkipOverlayAndNarration(false);
+            }, 100);
+          }, 600);
+        },
+        isExploring ? 100 : 0
+      );
     }
   };
 
@@ -341,11 +356,13 @@ export default function App() {
       />
 
       <Canvas
-        camera={{ position: [0, 0, 9] }}
+        camera={{ position: cameraPosition }}
         eventSource={document.getElementById("root")}
         eventPrefix="client"
         shadows
       >
+        <CameraController position={cameraPosition} />
+
         <Background
           showMandalaColor={showMandalaColor}
           selectedAtom={selectedAtom}
@@ -414,6 +431,7 @@ export default function App() {
           setShowOverlay={setShowOverlay}
           isExploring={isExploring}
           setShowMandalaColor={setShowMandalaColor}
+          defaultCameraZ={cameraPosition[2]}
         />
 
         {!isExploring && (
