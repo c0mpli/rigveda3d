@@ -68,8 +68,6 @@ export default function App() {
       // If autoplay fails, wait for user interaction
       const playAudio = () => {
         bgMusicRef.current.play().catch(() => {});
-        // Also play intro narration on first user interaction
-        playNarration("intro");
         document.removeEventListener("click", playAudio);
         document.removeEventListener("touchstart", playAudio);
       };
@@ -244,12 +242,15 @@ export default function App() {
     }
   };
 
-  if (showIntro) {
-    return <IntroScreen onStart={() => setShowIntro(false)} />;
-  }
+  const handleStartLearning = () => {
+    setShowIntro(false);
+    playNarration("intro");
+  };
 
   return (
     <>
+      {showIntro && <IntroScreen onStart={handleStartLearning} />}
+
       {selectedAtom !== null && (
         <BackButton
           onClick={() => {
