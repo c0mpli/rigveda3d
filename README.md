@@ -52,7 +52,7 @@ http://localhost:5173
 
 - [ ] Bookmarking and favorites system
 - [ ] User annotations and notes
-- ✓ Mobile app version
+- [✓] Mobile app version
 - [ ] Multi-language interface support
 - [ ] Advanced visualization modes
 - [ ] Social sharing capabilities
