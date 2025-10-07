@@ -75,7 +75,8 @@
 }
 
 .play-audio-btn,
-.toggle-highlight-btn {
+.toggle-highlight-btn,
+.share-hymn-btn {
   width: 45px;
   height: 45px;
   border: 2px solid;
@@ -91,12 +92,17 @@
 }
 
 .play-audio-btn:hover,
-.toggle-highlight-btn:hover {
+.toggle-highlight-btn:hover,
+.share-hymn-btn:hover {
   background: rgba(0, 0, 0, 0.7);
   transform: scale(1.1);
 }
 
 .toggle-highlight-btn {
+  font-size: 18px;
+}
+
+.share-hymn-btn {
   font-size: 18px;
 }
 
@@ -331,7 +337,8 @@
   }
 
   .play-audio-btn,
-  .toggle-highlight-btn {
+  .toggle-highlight-btn,
+  .share-hymn-btn {
     width: 50px;
     height: 50px;
     font-size: 22px;
@@ -390,7 +397,8 @@
   }
 
   .play-audio-btn,
-  .toggle-highlight-btn {
+  .toggle-highlight-btn,
+  .share-hymn-btn {
     width: 45px;
     height: 45px;
     font-size: 20px;

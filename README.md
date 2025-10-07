@@ -11,6 +11,7 @@ An immersive 3D visualization platform for exploring the ancient Rig Veda texts.
 - **Multi-format Text**: View verses in Sanskrit (Devanagari), transliteration, and English translation
 - **Audio Narration**: Listen to narrations in Hindi or English with word-by-word highlighting
 - **Sanskrit Dictionary**: Integrated word lookup for meanings
+- **Deep Linking**: Share specific mandalas, hymns, or verses with direct URLs (e.g., `rigveda3d.vercel.app/hymn/3.62`)
 - **Responsive UI**: Clean interface with collapsible controls and browsable hymns sidebar
 
 ## Installation
@@ -54,7 +55,7 @@ http://localhost:5173
 - [ ] User annotations and notes
 - ✓ Mobile app version
 - [ ] Multi-language interface support
-- [ ] Social sharing capabilities
+- ✓ Social sharing capabilities
 - [ ] Statistics about Rig Veda
 - [ ] Interactive dictionary to learn Sanskrit words from the Veda
 - [ ] Quiz mode for Vedic vocabulary

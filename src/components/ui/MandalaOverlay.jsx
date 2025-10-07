@@ -1,6 +1,8 @@
 import { useNarration } from "../../contexts/NarrationContext";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { useEffect } from "react";
+import CopyLinkButton from "./CopyLinkButton";
+import { getMandalaLink } from "../../utils/deepLinkUtils";
 
 const getOverlayStyle = (isMobile) => {
   return {
@@ -115,7 +117,13 @@ const BULLET_STYLE = {
   marginRight: "8px",
 };
 
-export default function MandalaOverlay({ mandalaData, selectedAtom, showOverlay, onExplore, skipNarration = false }) {
+export default function MandalaOverlay({
+  mandalaData,
+  selectedAtom,
+  showOverlay,
+  onExplore,
+  skipNarration = false,
+}) {
   const { playNarration } = useNarration();
   const { width } = useWindowDimensions();
   const isMobile = width <= 768;
@@ -169,7 +177,8 @@ export default function MandalaOverlay({ mandalaData, selectedAtom, showOverlay,
 
         <div style={INFO_CONTAINER_STYLE}>
           <div>
-            <strong style={{ color: mandala.color }}>{mandala.hymns}</strong> hymns
+            <strong style={{ color: mandala.color }}>{mandala.hymns}</strong>{" "}
+            hymns
           </div>
           <div style={DIVIDER_STYLE}>
             <strong>Family:</strong> {mandala.family}
@@ -221,27 +230,34 @@ export default function MandalaOverlay({ mandalaData, selectedAtom, showOverlay,
       </div>
 
       <div style={getButtonContainerStyle(isMobile)}>
-        <button
-          onClick={onExplore}
-          style={{
-            width: "100%",
-            padding: "16px 24px",
-            background: `linear-gradient(135deg, ${mandala.color}, ${mandala.color}dd)`,
-            border: `2px solid ${mandala.color}`,
-            borderRadius: "12px",
-            color: "white",
-            fontSize: "1rem",
-            fontWeight: 600,
-            cursor: "pointer",
-            transition: "all 0.3s ease",
-            textTransform: "uppercase",
-            letterSpacing: "1px",
-          }}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          ✨ Click to Explore
-        </button>
+        <div style={{ display: "flex", gap: "10px", alignItems: "stretch" }}>
+          <CopyLinkButton
+            url={getMandalaLink(selectedAtom + 1)}
+            label="Copy Link"
+            color={mandala.color}
+          />
+          <button
+            onClick={onExplore}
+            style={{
+              flex: 1,
+              padding: "16px 24px",
+              background: `linear-gradient(135deg, ${mandala.color}, ${mandala.color}dd)`,
+              border: `2px solid ${mandala.color}`,
+              borderRadius: "12px",
+              color: "white",
+              fontSize: "1rem",
+              fontWeight: 600,
+              cursor: "pointer",
+              transition: "all 0.3s ease",
+              textTransform: "uppercase",
+              letterSpacing: "1px",
+            }}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            ✨ Click to Explore
+          </button>
+        </div>
       </div>
     </div>
   );

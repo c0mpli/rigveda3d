@@ -1,4 +1,5 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
+import { useLocation } from "wouter";
 import { Canvas } from "@react-three/fiber";
 import { Float, Text, ScrollControls } from "@react-three/drei";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
@@ -24,12 +25,17 @@ import HymnCardsContainer from "./components/three/HymnCardsContainer";
 import useRigVedaSearch from "./hooks/useRigVedaSearch";
 import useWindowDimensions from "./hooks/useWindowDimensions";
 import { useNarration } from "./contexts/NarrationContext";
+import useDeepLink from "./hooks/useDeepLink";
 
 export default function App() {
   const bgMusicRef = useRef(null);
   const [isMuted, setIsMuted] = useState(false);
   const [volume, setVolume] = useState(0.8);
-  const [showIntro, setShowIntro] = useState(true);
+  const [location] = useLocation();
+
+  // Only show intro if on base URL
+  const [showIntro, setShowIntro] = useState(location === '/');
+  const [pendingDeepLink, setPendingDeepLink] = useState(null);
   const { width } = useWindowDimensions();
 
   // Determine camera position based on screen size
@@ -101,6 +107,16 @@ export default function App() {
     loadData();
   }, []);
 
+  // Process pending deep link when data loads
+  useEffect(() => {
+    if (rigVedaData && pendingDeepLink) {
+      if (pendingDeepLink.type === 'hymn') {
+        handleHymnRoute(pendingDeepLink);
+      }
+      setPendingDeepLink(null);
+    }
+  }, [rigVedaData, pendingDeepLink]);
+
   useEffect(() => {
     if (isExploring) {
       const timer = setTimeout(() => {
@@ -126,6 +142,16 @@ export default function App() {
       setCurrentHymns([]);
     }
   }, [rigVedaData, selectedAtom, activeFilters]);
+
+  // Clear targetVerseNumber after scrolling is complete
+  useEffect(() => {
+    if (targetVerseNumber) {
+      const timer = setTimeout(() => {
+        setTargetVerseNumber(null);
+      }, 3500); // Clear after scroll animation completes (1500ms delay + 2000ms buffer)
+      return () => clearTimeout(timer);
+    }
+  }, [targetVerseNumber]);
 
   const toggleMute = () => {
     if (bgMusicRef.current) {
@@ -263,6 +289,81 @@ export default function App() {
     setShowIntro(false);
     playNarration("intro");
   };
+
+  // Deep link handlers
+  const handleMandalaRoute = (mandalaNumber) => {
+    const mandalaIndex = mandalaNumber - 1;
+
+    // Skip intro if coming from deep link
+    if (showIntro) {
+      setShowIntro(false);
+    }
+
+    // Navigate to the mandala
+    setSelectedAtom(mandalaIndex);
+    setShowOverlay(true);
+  };
+
+  const handleHymnRoute = useCallback(({ mandala, hymn, verse }) => {
+    // If data not loaded yet, save for later
+    if (!rigVedaData) {
+      setPendingDeepLink({ type: 'hymn', mandala, hymn, verse });
+      return;
+    }
+
+    // Skip intro if coming from deep link
+    if (showIntro) {
+      setShowIntro(false);
+    }
+
+    const mandalaIndex = mandala - 1;
+
+    // Set flag to skip overlay and narration for direct hymn links
+    setSkipOverlayAndNarration(true);
+
+    // Navigate to the specific hymn
+    setSelectedAtom(mandalaIndex);
+
+    setTimeout(() => {
+      setIsExploring(true);
+      setShowMandalaColor(true);
+
+      const hymns = getAllHymnsFromMandala(rigVedaData, mandala, activeFilters);
+      const hymnIndex = hymns.findIndex((h) => h.hymnNumber === hymn);
+
+      setCurrentHymns(hymns);
+      setSelectedHymnIndex(hymnIndex >= 0 ? hymnIndex : 0);
+
+      // Set target verse with longer delay to ensure card is fully rendered
+      if (verse) {
+        setTimeout(() => {
+          setTargetVerseNumber(verse);
+        }, 1500);
+      }
+
+      setTimeout(() => {
+        setSkipOverlayAndNarration(false);
+      }, 100);
+    }, 600);
+  }, [rigVedaData, showIntro, activeFilters]);
+
+  const handleDeityRoute = (deityName) => {
+    // Skip intro if coming from deep link
+    if (showIntro) {
+      setShowIntro(false);
+    }
+
+    // Open search modal with deity filter
+    setActiveFilters({ deity: deityName });
+    setShowSearchModal(true);
+  };
+
+  // Set up deep linking
+  useDeepLink({
+    onMandalaRoute: handleMandalaRoute,
+    onHymnRoute: handleHymnRoute,
+    onDeityRoute: handleDeityRoute,
+  });
 
   return (
     <>

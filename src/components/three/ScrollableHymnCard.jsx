@@ -9,6 +9,7 @@ import {
 } from "../../utils/CardShader";
 import { hexToThreeColor } from "../../utils/ColorUtils";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { getHymnLink, copyToClipboard } from "../../utils/deepLinkUtils";
 import "./ScrollableHymnCard.css";
 
 export default function ScrollableHymnCard({
@@ -119,32 +120,55 @@ export default function ScrollableHymnCard({
     setCurrentVerseIndex(0);
     setCurrentWordIndex(0);
 
-    // Reset scroll to top or scroll to target verse
-    // Force immediate scroll to top first
-    if (scrollContainerRef.current) {
+    // Reset scroll to top UNLESS we have a target verse
+    if (scrollContainerRef.current && !targetVerseNumber) {
       scrollContainerRef.current.scrollTop = 0;
     }
-
-    // Then handle target verse scroll if needed
-    if (targetVerseNumber && scrollContainerRef.current) {
-      setTimeout(() => {
-        const verseElement = document.getElementById(
-          `verse-${hymn.hymnNumber}-${targetVerseNumber - 1}`
-        );
-        if (verseElement && scrollContainerRef.current) {
-          // Calculate position relative to scroll container
-          const container = scrollContainerRef.current;
-          const verseOffset = verseElement.offsetTop;
-
-          // Scroll within the container instead of the viewport
-          container.scrollTo({
-            top: verseOffset - 20, // 20px offset from top for better visibility
-            behavior: "smooth",
-          });
-        }
-      }, 300);
-    }
   }, [hymn.hymnNumber, mandala, targetVerseNumber]);
+
+  // Separate effect for target verse - set it as current verse to play audio from there
+  useEffect(() => {
+    if (targetVerseNumber) {
+      // Wait for card to be ready
+      const timer = setTimeout(() => {
+        const verseIndex = targetVerseNumber - 1;
+
+        // Set the target verse as the current verse
+        setCurrentVerseIndex(verseIndex);
+
+        console.log(
+          "Set current verse index to:",
+          verseIndex,
+          "for verse",
+          targetVerseNumber
+        );
+
+        // Try to scroll after setting current verse
+        // setTimeout(() => {
+        //   const verseId = `verse-${hymn.hymnNumber}-${verseIndex}`;
+        //   const verseElement = document.getElementById(verseId);
+        //   const container = scrollContainerRef.current;
+
+        //   if (verseElement && container) {
+        //     const verseTop = verseElement.offsetTop;
+
+        //     // Try direct scroll
+        //     container.scrollTop = verseTop - 100;
+
+        //     console.log(
+        //       "Attempted scroll to verse",
+        //       targetVerseNumber,
+        //       "at offset:",
+        //       verseTop
+        //     );
+        //     console.log("Final scrollTop:", container.scrollTop);
+        //   }
+        // }, 500);
+      }, 5000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [hymn.hymnNumber]);
 
   // Handle word click - notify parent
   const handleWordClick = (word) => {
@@ -288,6 +312,25 @@ export default function ScrollableHymnCard({
           </div>
         </div>
         <div className="hymn-controls">
+          <button
+            className="share-hymn-btn"
+            onClick={async (e) => {
+              e.stopPropagation();
+              const link = getHymnLink(mandala, hymn.hymnNumber);
+              const success = await copyToClipboard(link);
+              if (success) {
+                // Visual feedback
+                e.target.textContent = "✓";
+                setTimeout(() => {
+                  e.target.textContent = "🔗";
+                }, 2000);
+              }
+            }}
+            style={{ borderColor: color, color }}
+            title="Copy Link to Hymn"
+          >
+            🔗
+          </button>
           <button
             className="toggle-highlight-btn"
             onClick={(e) => {

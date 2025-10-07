@@ -1,7 +1,6 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import "./Navbar.css";
 import { useNarration } from "../../contexts/NarrationContext";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 const Navbar = ({
   // Volume controls
@@ -18,9 +17,7 @@ const Navbar = ({
   // Dictionary
   onDictionaryClick,
 }) => {
-  const { width } = useWindowDimensions();
-  const isMobile = width <= 768;
-  const [isCollapsed, setIsCollapsed] = useState(isMobile);
+  const [isCollapsed, setIsCollapsed] = useState(true);
   const [showVolumeSlider, setShowVolumeSlider] = useState(false);
   const { language, toggleLanguage, isEnabled, toggleNarration } =
     useNarration();
@@ -34,11 +31,6 @@ const Navbar = ({
     hoverSoundRef.current.currentTime = 0;
     hoverSoundRef.current.play().catch(() => {});
   };
-
-  // Update collapsed state when switching between mobile and desktop
-  useEffect(() => {
-    setIsCollapsed(isMobile);
-  }, [isMobile]);
 
   return (
     <nav className={`navbar ${isCollapsed ? "collapsed" : ""}`}>
