@@ -48,38 +48,6 @@ bun dev  # or npm run dev
 http://localhost:5173
 ```
 
-## Data Analysis
-
-Run the Python analysis script to generate statistical data for visualizations:
-
-```bash
-python3 scripts/analyze_rigveda.py
-```
-
-This generates JSON files in `public/data/analysis/`:
-- **dictionary.json** - Complete word list with frequencies (~29,626 analyzed unique words)
-- **vocabulary.json** - Vocabulary distribution by mandala/hymn/verse
-- **deities.json** - Deity distribution and analysis (21 major deities identified)
-- **mandala-comparison.json** - Comparative statistics across mandalas
-- **complexity.json** - Structural complexity metrics
-
-### Canonical Statistics
-
-The statistics are based on traditional Vedic scholarship:
-
-- **Total Mandalas**: 10
-- **Total Hymns**: 1,017 (excluding 11 apocryphal Valakhilya hymns)
-- **Total Verses**: 10,580
-- **Total Words**: 153,826
-- **Total Letters**: 432,000 (Akṣaras)
-- **Unique Words**: ~31,000 (scholarly estimate)
-- **Vedic Meters**: 25
-
-**Sources**:
-- Traditional Vedic textual counts from Anukramaṇī indices
-- Word and letter counts from Vedic tradition
-- Structural analysis from the Rigveda Padapatha (word-by-word recitation)
-
 ## Roadmap
 
 - [ ] Bookmarking and favorites system
@@ -95,8 +63,8 @@ The statistics are based on traditional Vedic scholarship:
 
 ## Sources
 
-**Text Data**: [Rigveda Dataset on Kaggle](https://www.kaggle.com/datasets/varunrajuvangar/rigved-all-sukta-verses-and-meaning-dataset)
-**Audio Data**: [Rigveda Audios](https://github.com/aasi-archive/rv-audio)
+- **Text Data**: [Rigveda Dataset on Kaggle](https://www.kaggle.com/datasets/varunrajuvangar/rigved-all-sukta-verses-and-meaning-dataset)
+- **Audio Data**: [Rigveda Audios](https://github.com/aasi-archive/rv-audio)
 
 ## License
 
