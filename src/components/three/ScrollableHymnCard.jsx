@@ -3,6 +3,8 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { Html } from "@react-three/drei";
 import * as THREE from "three";
 import { useSpring, animated } from "@react-spring/three";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faLink, faVolumeHigh, faPause, faStar, faCircle } from "@fortawesome/free-solid-svg-icons";
 import {
   CARD_VERTEX_SHADER,
   CARD_FRAGMENT_SHADER,
@@ -320,16 +322,20 @@ export default function ScrollableHymnCard({
               const success = await copyToClipboard(link);
               if (success) {
                 // Visual feedback
-                e.target.textContent = "✓";
-                setTimeout(() => {
-                  e.target.textContent = "🔗";
-                }, 2000);
+                const btn = e.currentTarget;
+                const icon = btn.querySelector('svg');
+                if (icon) {
+                  icon.setAttribute('data-icon', 'check');
+                  setTimeout(() => {
+                    icon.setAttribute('data-icon', 'link');
+                  }, 2000);
+                }
               }
             }}
             style={{ borderColor: color, color }}
             title="Copy Link to Hymn"
           >
-            🔗
+            <FontAwesomeIcon icon={faLink} />
           </button>
           <button
             className="toggle-highlight-btn"
@@ -344,7 +350,7 @@ export default function ScrollableHymnCard({
                 : "Enable Word Highlight"
             }
           >
-            {wordHighlightEnabled ? "✨" : "○"}
+            <FontAwesomeIcon icon={wordHighlightEnabled ? faStar : faCircle} />
           </button>
           <button
             className="play-audio-btn"
@@ -355,7 +361,7 @@ export default function ScrollableHymnCard({
             style={{ borderColor: color, color }}
             title={isPlaying ? "Pause Audio" : "Play Audio"}
           >
-            {isPlaying ? "⏸" : "🔊"}
+            <FontAwesomeIcon icon={isPlaying ? faPause : faVolumeHigh} />
           </button>
         </div>
       </div>

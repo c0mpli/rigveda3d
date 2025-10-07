@@ -1,4 +1,6 @@
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 const getButtonStyle = (isMobile) => {
   return {
@@ -51,7 +53,7 @@ export default function BackButton({ onClick }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      ←
+      <FontAwesomeIcon icon={faArrowLeft} />
     </button>
   );
 }

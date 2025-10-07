@@ -1,6 +1,8 @@
 import { useNarration } from "../../contexts/NarrationContext";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faWandMagicSparkles } from "@fortawesome/free-solid-svg-icons";
 import CopyLinkButton from "./CopyLinkButton";
 import { getMandalaLink } from "../../utils/deepLinkUtils";
 
@@ -255,7 +257,8 @@ export default function MandalaOverlay({
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
-            ✨ Click to Explore
+            <FontAwesomeIcon icon={faWandMagicSparkles} style={{ marginRight: '8px' }} />
+            Click to Explore
           </button>
         </div>
       </div>

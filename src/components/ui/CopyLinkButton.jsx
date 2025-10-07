@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLink, faCheck } from '@fortawesome/free-solid-svg-icons';
 import { copyToClipboard } from '../../utils/deepLinkUtils';
 
 const BUTTON_BASE_STYLE = {
@@ -57,7 +59,7 @@ export default function CopyLinkButton({ url, label = 'Copy Link', color = '#fff
         }
       }}
     >
-      <span style={ICON_STYLE}>{copied ? '✓' : '🔗'}</span>
+      <FontAwesomeIcon icon={copied ? faCheck : faLink} style={ICON_STYLE} />
       <span>{copied ? 'Copied!' : label}</span>
     </button>
   );
