@@ -1,0 +1,220 @@
+{
+  "summary": [
+    {
+      "mandala": 1,
+      "hymnCount": 191,
+      "verseCount": 2006,
+      "wordCount": 24826,
+      "vocabSize": 10705,
+      "avgVersesPerHymn": 10.5,
+      "avgWordsPerVerse": 12.38
+    },
+    {
+      "mandala": 2,
+      "hymnCount": 43,
+      "verseCount": 429,
+      "wordCount": 7843,
+      "vocabSize": 3723,
+      "avgVersesPerHymn": 9.98,
+      "avgWordsPerVerse": 18.28
+    },
+    {
+      "mandala": 3,
+      "hymnCount": 62,
+      "verseCount": 617,
+      "wordCount": 10213,
+      "vocabSize": 4338,
+      "avgVersesPerHymn": 9.95,
+      "avgWordsPerVerse": 16.55
+    },
+    {
+      "mandala": 4,
+      "hymnCount": 58,
+      "verseCount": 589,
+      "wordCount": 9897,
+      "vocabSize": 4434,
+      "avgVersesPerHymn": 10.16,
+      "avgWordsPerVerse": 16.8
+    },
+    {
+      "mandala": 5,
+      "hymnCount": 87,
+      "verseCount": 727,
+      "wordCount": 11718,
+      "vocabSize": 5047,
+      "avgVersesPerHymn": 8.36,
+      "avgWordsPerVerse": 16.12
+    },
+    {
+      "mandala": 6,
+      "hymnCount": 75,
+      "verseCount": 765,
+      "wordCount": 12856,
+      "vocabSize": 5278,
+      "avgVersesPerHymn": 10.2,
+      "avgWordsPerVerse": 16.81
+    },
+    {
+      "mandala": 7,
+      "hymnCount": 104,
+      "verseCount": 841,
+      "wordCount": 14507,
+      "vocabSize": 5426,
+      "avgVersesPerHymn": 8.09,
+      "avgWordsPerVerse": 17.25
+    },
+    {
+      "mandala": 8,
+      "hymnCount": 92,
+      "verseCount": 1638,
+      "wordCount": 18234,
+      "vocabSize": 7216,
+      "avgVersesPerHymn": 17.8,
+      "avgWordsPerVerse": 11.13
+    },
+    {
+      "mandala": 9,
+      "hymnCount": 114,
+      "verseCount": 1108,
+      "wordCount": 13915,
+      "vocabSize": 4068,
+      "avgVersesPerHymn": 9.72,
+      "avgWordsPerVerse": 12.56
+    },
+    {
+      "mandala": 10,
+      "hymnCount": 191,
+      "verseCount": 1860,
+      "wordCount": 29817,
+      "vocabSize": 10483,
+      "avgVersesPerHymn": 9.74,
+      "avgWordsPerVerse": 16.03
+    }
+  ],
+  "verseCountComparison": [
+    {
+      "mandala": 1,
+      "count": 2006
+    },
+    {
+      "mandala": 2,
+      "count": 429
+    },
+    {
+      "mandala": 3,
+      "count": 617
+    },
+    {
+      "mandala": 4,
+      "count": 589
+    },
+    {
+      "mandala": 5,
+      "count": 727
+    },
+    {
+      "mandala": 6,
+      "count": 765
+    },
+    {
+      "mandala": 7,
+      "count": 841
+    },
+    {
+      "mandala": 8,
+      "count": 1638
+    },
+    {
+      "mandala": 9,
+      "count": 1108
+    },
+    {
+      "mandala": 10,
+      "count": 1860
+    }
+  ],
+  "hymnCountComparison": [
+    {
+      "mandala": 1,
+      "count": 191
+    },
+    {
+      "mandala": 2,
+      "count": 43
+    },
+    {
+      "mandala": 3,
+      "count": 62
+    },
+    {
+      "mandala": 4,
+      "count": 58
+    },
+    {
+      "mandala": 5,
+      "count": 87
+    },
+    {
+      "mandala": 6,
+      "count": 75
+    },
+    {
+      "mandala": 7,
+      "count": 104
+    },
+    {
+      "mandala": 8,
+      "count": 92
+    },
+    {
+      "mandala": 9,
+      "count": 114
+    },
+    {
+      "mandala": 10,
+      "count": 191
+    }
+  ],
+  "vocabSizeComparison": [
+    {
+      "mandala": 1,
+      "count": 10705
+    },
+    {
+      "mandala": 2,
+      "count": 3723
+    },
+    {
+      "mandala": 3,
+      "count": 4338
+    },
+    {
+      "mandala": 4,
+      "count": 4434
+    },
+    {
+      "mandala": 5,
+      "count": 5047
+    },
+    {
+      "mandala": 6,
+      "count": 5278
+    },
+    {
+      "mandala": 7,
+      "count": 5426
+    },
+    {
+      "mandala": 8,
+      "count": 7216
+    },
+    {
+      "mandala": 9,
+      "count": 4068
+    },
+    {
+      "mandala": 10,
+      "count": 10483
+    }
+  ]
+}

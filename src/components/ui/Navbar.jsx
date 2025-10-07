@@ -13,6 +13,8 @@ const Navbar = ({
   onSearchClick,
   // Filter
   onFilterClick,
+  // Stats
+  onStatsClick,
   // Dictionary
   onDictionaryClick,
 }) => {
@@ -180,8 +182,8 @@ const Navbar = ({
             <div className="navbar-item" onMouseEnter={playHoverSound}>
               <button
                 className="navbar-button"
-                aria-label="View stats"
-                disabled
+                onClick={onStatsClick}
+                aria-label="View statistics"
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
                   <path

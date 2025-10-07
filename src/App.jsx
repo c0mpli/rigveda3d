@@ -10,6 +10,7 @@ import SearchModal from "./components/ui/SearchModal";
 import FilterModal from "./components/ui/FilterModal";
 import FilterIndicator from "./components/ui/FilterIndicator";
 import Dictionary from "./components/ui/Dictionary";
+import StatisticsModal from "./components/ui/StatisticsModal";
 import MandalaOverlay from "./components/ui/MandalaOverlay";
 import HymnsSidebar2D from "./components/ui/HymnsSidebar2D";
 import WordMeaningSidebar from "./components/ui/WordMeaningSidebar";
@@ -46,6 +47,7 @@ export default function App() {
   const [showSearchModal, setShowSearchModal] = useState(false);
   const [showFilterModal, setShowFilterModal] = useState(false);
   const [showDictionary, setShowDictionary] = useState(false);
+  const [showStatistics, setShowStatistics] = useState(false);
   const [selectedWord, setSelectedWord] = useState(null);
   const [showWordSidebar, setShowWordSidebar] = useState(false);
   const [activeFilters, setActiveFilters] = useState({});
@@ -288,6 +290,7 @@ export default function App() {
         // Filter
         onFilterClick={() => setShowFilterModal(true)}
         // Stats
+        onStatsClick={() => setShowStatistics(true)}
         totalVerses={versesIndex?.length || 4948}
         filteredCount={searchResults?.length}
         // Dictionary
@@ -317,6 +320,11 @@ export default function App() {
       <Dictionary
         isOpen={showDictionary}
         onClose={() => setShowDictionary(false)}
+      />
+
+      <StatisticsModal
+        isOpen={showStatistics}
+        onClose={() => setShowStatistics(false)}
       />
 
       <MandalaOverlay

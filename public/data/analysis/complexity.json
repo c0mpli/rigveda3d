@@ -1,0 +1,6303 @@
+{
+  "byMandala": [
+    {
+      "mandala": 1,
+      "hymnCount": 191,
+      "verseCount": 2006,
+      "wordCount": 24826,
+      "rishi": "Multiple Rishis",
+      "avgVersesPerHymn": 10.5,
+      "avgWordsPerVerse": 12.38,
+      "analyzedHymns": [
+        {
+          "hymn": 1,
+          "verseCount": 9,
+          "wordCount": 88,
+          "avgWordsPerVerse": 9.78
+        },
+        {
+          "hymn": 2,
+          "verseCount": 9,
+          "wordCount": 96,
+          "avgWordsPerVerse": 10.67
+        },
+        {
+          "hymn": 3,
+          "verseCount": 12,
+          "wordCount": 113,
+          "avgWordsPerVerse": 9.42
+        },
+        {
+          "hymn": 4,
+          "verseCount": 10,
+          "wordCount": 106,
+          "avgWordsPerVerse": 10.6
+        },
+        {
+          "hymn": 5,
+          "verseCount": 10,
+          "wordCount": 108,
+          "avgWordsPerVerse": 10.8
+        },
+        {
+          "hymn": 6,
+          "verseCount": 10,
+          "wordCount": 99,
+          "avgWordsPerVerse": 9.9
+        },
+        {
+          "hymn": 7,
+          "verseCount": 10,
+          "wordCount": 94,
+          "avgWordsPerVerse": 9.4
+        },
+        {
+          "hymn": 8,
+          "verseCount": 10,
+          "wordCount": 101,
+          "avgWordsPerVerse": 10.1
+        },
+        {
+          "hymn": 9,
+          "verseCount": 10,
+          "wordCount": 104,
+          "avgWordsPerVerse": 10.4
+        },
+        {
+          "hymn": 10,
+          "verseCount": 12,
+          "wordCount": 173,
+          "avgWordsPerVerse": 14.42
+        },
+        {
+          "hymn": 11,
+          "verseCount": 8,
+          "wordCount": 104,
+          "avgWordsPerVerse": 13.0
+        },
+        {
+          "hymn": 12,
+          "verseCount": 12,
+          "wordCount": 116,
+          "avgWordsPerVerse": 9.67
+        },
+        {
+          "hymn": 13,
+          "verseCount": 12,
+          "wordCount": 117,
+          "avgWordsPerVerse": 9.75
+        },
+        {
+          "hymn": 14,
+          "verseCount": 12,
+          "wordCount": 120,
+          "avgWordsPerVerse": 10.0
+        },
+        {
+          "hymn": 15,
+          "verseCount": 12,
+          "wordCount": 118,
+          "avgWordsPerVerse": 9.83
+        },
+        {
+          "hymn": 16,
+          "verseCount": 9,
+          "wordCount": 99,
+          "avgWordsPerVerse": 11.0
+        },
+        {
+          "hymn": 17,
+          "verseCount": 9,
+          "wordCount": 84,
+          "avgWordsPerVerse": 9.33
+        },
+        {
+          "hymn": 18,
+          "verseCount": 9,
+          "wordCount": 89,
+          "avgWordsPerVerse": 9.89
+        },
+        {
+          "hymn": 19,
+          "verseCount": 9,
+          "wordCount": 95,
+          "avgWordsPerVerse": 10.56
+        },
+        {
+          "hymn": 20,
+          "verseCount": 8,
+          "wordCount": 71,
+          "avgWordsPerVerse": 8.88
+        },
+        {
+          "hymn": 21,
+          "verseCount": 6,
+          "wordCount": 65,
+          "avgWordsPerVerse": 10.83
+        },
+        {
+          "hymn": 22,
+          "verseCount": 21,
+          "wordCount": 202,
+          "avgWordsPerVerse": 9.62
+        },
+        {
+          "hymn": 23,
+          "verseCount": 24,
+          "wordCount": 257,
+          "avgWordsPerVerse": 10.71
+        },
+        {
+          "hymn": 24,
+          "verseCount": 15,
+          "wordCount": 268,
+          "avgWordsPerVerse": 17.87
+        },
+        {
+          "hymn": 25,
+          "verseCount": 21,
+          "wordCount": 214,
+          "avgWordsPerVerse": 10.19
+        },
+        {
+          "hymn": 26,
+          "verseCount": 10,
+          "wordCount": 106,
+          "avgWordsPerVerse": 10.6
+        },
+        {
+          "hymn": 27,
+          "verseCount": 13,
+          "wordCount": 142,
+          "avgWordsPerVerse": 10.92
+        },
+        {
+          "hymn": 28,
+          "verseCount": 9,
+          "wordCount": 114,
+          "avgWordsPerVerse": 12.67
+        },
+        {
+          "hymn": 29,
+          "verseCount": 7,
+          "wordCount": 113,
+          "avgWordsPerVerse": 16.14
+        },
+        {
+          "hymn": 30,
+          "verseCount": 22,
+          "wordCount": 245,
+          "avgWordsPerVerse": 11.14
+        },
+        {
+          "hymn": 31,
+          "verseCount": 18,
+          "wordCount": 342,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 32,
+          "verseCount": 15,
+          "wordCount": 279,
+          "avgWordsPerVerse": 18.6
+        },
+        {
+          "hymn": 33,
+          "verseCount": 15,
+          "wordCount": 276,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 34,
+          "verseCount": 12,
+          "wordCount": 240,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 35,
+          "verseCount": 11,
+          "wordCount": 193,
+          "avgWordsPerVerse": 17.55
+        },
+        {
+          "hymn": 36,
+          "verseCount": 20,
+          "wordCount": 328,
+          "avgWordsPerVerse": 16.4
+        },
+        {
+          "hymn": 37,
+          "verseCount": 15,
+          "wordCount": 164,
+          "avgWordsPerVerse": 10.93
+        },
+        {
+          "hymn": 38,
+          "verseCount": 15,
+          "wordCount": 154,
+          "avgWordsPerVerse": 10.27
+        },
+        {
+          "hymn": 39,
+          "verseCount": 10,
+          "wordCount": 159,
+          "avgWordsPerVerse": 15.9
+        },
+        {
+          "hymn": 40,
+          "verseCount": 8,
+          "wordCount": 130,
+          "avgWordsPerVerse": 16.25
+        },
+        {
+          "hymn": 41,
+          "verseCount": 8,
+          "wordCount": 87,
+          "avgWordsPerVerse": 10.88
+        },
+        {
+          "hymn": 42,
+          "verseCount": 10,
+          "wordCount": 105,
+          "avgWordsPerVerse": 10.5
+        },
+        {
+          "hymn": 43,
+          "verseCount": 9,
+          "wordCount": 93,
+          "avgWordsPerVerse": 10.33
+        },
+        {
+          "hymn": 44,
+          "verseCount": 14,
+          "wordCount": 193,
+          "avgWordsPerVerse": 13.79
+        },
+        {
+          "hymn": 45,
+          "verseCount": 10,
+          "wordCount": 116,
+          "avgWordsPerVerse": 11.6
+        },
+        {
+          "hymn": 46,
+          "verseCount": 15,
+          "wordCount": 155,
+          "avgWordsPerVerse": 10.33
+        },
+        {
+          "hymn": 47,
+          "verseCount": 10,
+          "wordCount": 157,
+          "avgWordsPerVerse": 15.7
+        },
+        {
+          "hymn": 48,
+          "verseCount": 16,
+          "wordCount": 260,
+          "avgWordsPerVerse": 16.25
+        },
+        {
+          "hymn": 49,
+          "verseCount": 4,
+          "wordCount": 57,
+          "avgWordsPerVerse": 14.25
+        },
+        {
+          "hymn": 50,
+          "verseCount": 13,
+          "wordCount": 140,
+          "avgWordsPerVerse": 10.77
+        },
+        {
+          "hymn": 51,
+          "verseCount": 15,
+          "wordCount": 287,
+          "avgWordsPerVerse": 19.13
+        },
+        {
+          "hymn": 52,
+          "verseCount": 15,
+          "wordCount": 293,
+          "avgWordsPerVerse": 19.53
+        },
+        {
+          "hymn": 53,
+          "verseCount": 11,
+          "wordCount": 204,
+          "avgWordsPerVerse": 18.55
+        },
+        {
+          "hymn": 54,
+          "verseCount": 11,
+          "wordCount": 220,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 55,
+          "verseCount": 8,
+          "wordCount": 153,
+          "avgWordsPerVerse": 19.12
+        },
+        {
+          "hymn": 56,
+          "verseCount": 6,
+          "wordCount": 119,
+          "avgWordsPerVerse": 19.83
+        },
+        {
+          "hymn": 57,
+          "verseCount": 6,
+          "wordCount": 126,
+          "avgWordsPerVerse": 21.0
+        },
+        {
+          "hymn": 58,
+          "verseCount": 9,
+          "wordCount": 162,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 59,
+          "verseCount": 7,
+          "wordCount": 119,
+          "avgWordsPerVerse": 17.0
+        },
+        {
+          "hymn": 60,
+          "verseCount": 5,
+          "wordCount": 83,
+          "avgWordsPerVerse": 16.6
+        },
+        {
+          "hymn": 61,
+          "verseCount": 16,
+          "wordCount": 312,
+          "avgWordsPerVerse": 19.5
+        },
+        {
+          "hymn": 62,
+          "verseCount": 13,
+          "wordCount": 227,
+          "avgWordsPerVerse": 17.46
+        },
+        {
+          "hymn": 63,
+          "verseCount": 9,
+          "wordCount": 183,
+          "avgWordsPerVerse": 20.33
+        },
+        {
+          "hymn": 64,
+          "verseCount": 15,
+          "wordCount": 252,
+          "avgWordsPerVerse": 16.8
+        },
+        {
+          "hymn": 65,
+          "verseCount": 10,
+          "wordCount": 97,
+          "avgWordsPerVerse": 9.7
+        },
+        {
+          "hymn": 66,
+          "verseCount": 10,
+          "wordCount": 98,
+          "avgWordsPerVerse": 9.8
+        },
+        {
+          "hymn": 67,
+          "verseCount": 10,
+          "wordCount": 95,
+          "avgWordsPerVerse": 9.5
+        },
+        {
+          "hymn": 68,
+          "verseCount": 10,
+          "wordCount": 95,
+          "avgWordsPerVerse": 9.5
+        },
+        {
+          "hymn": 69,
+          "verseCount": 10,
+          "wordCount": 98,
+          "avgWordsPerVerse": 9.8
+        },
+        {
+          "hymn": 70,
+          "verseCount": 11,
+          "wordCount": 102,
+          "avgWordsPerVerse": 9.27
+        },
+        {
+          "hymn": 71,
+          "verseCount": 10,
+          "wordCount": 203,
+          "avgWordsPerVerse": 20.3
+        },
+        {
+          "hymn": 72,
+          "verseCount": 10,
+          "wordCount": 186,
+          "avgWordsPerVerse": 18.6
+        },
+        {
+          "hymn": 73,
+          "verseCount": 10,
+          "wordCount": 183,
+          "avgWordsPerVerse": 18.3
+        },
+        {
+          "hymn": 74,
+          "verseCount": 9,
+          "wordCount": 90,
+          "avgWordsPerVerse": 10.0
+        },
+        {
+          "hymn": 75,
+          "verseCount": 5,
+          "wordCount": 49,
+          "avgWordsPerVerse": 9.8
+        },
+        {
+          "hymn": 76,
+          "verseCount": 5,
+          "wordCount": 102,
+          "avgWordsPerVerse": 20.4
+        },
+        {
+          "hymn": 77,
+          "verseCount": 5,
+          "wordCount": 97,
+          "avgWordsPerVerse": 19.4
+        },
+        {
+          "hymn": 78,
+          "verseCount": 5,
+          "wordCount": 54,
+          "avgWordsPerVerse": 10.8
+        },
+        {
+          "hymn": 79,
+          "verseCount": 12,
+          "wordCount": 144,
+          "avgWordsPerVerse": 12.0
+        },
+        {
+          "hymn": 80,
+          "verseCount": 16,
+          "wordCount": 284,
+          "avgWordsPerVerse": 17.75
+        },
+        {
+          "hymn": 81,
+          "verseCount": 9,
+          "wordCount": 160,
+          "avgWordsPerVerse": 17.78
+        },
+        {
+          "hymn": 82,
+          "verseCount": 6,
+          "wordCount": 121,
+          "avgWordsPerVerse": 20.17
+        },
+        {
+          "hymn": 83,
+          "verseCount": 6,
+          "wordCount": 116,
+          "avgWordsPerVerse": 19.33
+        },
+        {
+          "hymn": 84,
+          "verseCount": 20,
+          "wordCount": 291,
+          "avgWordsPerVerse": 14.55
+        },
+        {
+          "hymn": 85,
+          "verseCount": 12,
+          "wordCount": 222,
+          "avgWordsPerVerse": 18.5
+        },
+        {
+          "hymn": 86,
+          "verseCount": 10,
+          "wordCount": 97,
+          "avgWordsPerVerse": 9.7
+        },
+        {
+          "hymn": 87,
+          "verseCount": 6,
+          "wordCount": 111,
+          "avgWordsPerVerse": 18.5
+        },
+        {
+          "hymn": 88,
+          "verseCount": 6,
+          "wordCount": 104,
+          "avgWordsPerVerse": 17.33
+        },
+        {
+          "hymn": 89,
+          "verseCount": 10,
+          "wordCount": 188,
+          "avgWordsPerVerse": 18.8
+        },
+        {
+          "hymn": 90,
+          "verseCount": 9,
+          "wordCount": 98,
+          "avgWordsPerVerse": 10.89
+        },
+        {
+          "hymn": 91,
+          "verseCount": 23,
+          "wordCount": 324,
+          "avgWordsPerVerse": 14.09
+        },
+        {
+          "hymn": 92,
+          "verseCount": 18,
+          "wordCount": 282,
+          "avgWordsPerVerse": 15.67
+        },
+        {
+          "hymn": 93,
+          "verseCount": 12,
+          "wordCount": 177,
+          "avgWordsPerVerse": 14.75
+        },
+        {
+          "hymn": 94,
+          "verseCount": 16,
+          "wordCount": 334,
+          "avgWordsPerVerse": 20.88
+        },
+        {
+          "hymn": 95,
+          "verseCount": 11,
+          "wordCount": 211,
+          "avgWordsPerVerse": 19.18
+        },
+        {
+          "hymn": 96,
+          "verseCount": 9,
+          "wordCount": 160,
+          "avgWordsPerVerse": 17.78
+        },
+        {
+          "hymn": 97,
+          "verseCount": 8,
+          "wordCount": 88,
+          "avgWordsPerVerse": 11.0
+        },
+        {
+          "hymn": 98,
+          "verseCount": 3,
+          "wordCount": 57,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 99,
+          "verseCount": 1,
+          "wordCount": 18,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 100,
+          "verseCount": 19,
+          "wordCount": 344,
+          "avgWordsPerVerse": 18.11
+        },
+        {
+          "hymn": 101,
+          "verseCount": 11,
+          "wordCount": 204,
+          "avgWordsPerVerse": 18.55
+        },
+        {
+          "hymn": 102,
+          "verseCount": 11,
+          "wordCount": 219,
+          "avgWordsPerVerse": 19.91
+        },
+        {
+          "hymn": 103,
+          "verseCount": 8,
+          "wordCount": 153,
+          "avgWordsPerVerse": 19.12
+        },
+        {
+          "hymn": 104,
+          "verseCount": 9,
+          "wordCount": 189,
+          "avgWordsPerVerse": 21.0
+        },
+        {
+          "hymn": 105,
+          "verseCount": 19,
+          "wordCount": 375,
+          "avgWordsPerVerse": 19.74
+        },
+        {
+          "hymn": 106,
+          "verseCount": 7,
+          "wordCount": 139,
+          "avgWordsPerVerse": 19.86
+        },
+        {
+          "hymn": 107,
+          "verseCount": 3,
+          "wordCount": 59,
+          "avgWordsPerVerse": 19.67
+        },
+        {
+          "hymn": 108,
+          "verseCount": 13,
+          "wordCount": 253,
+          "avgWordsPerVerse": 19.46
+        },
+        {
+          "hymn": 109,
+          "verseCount": 8,
+          "wordCount": 157,
+          "avgWordsPerVerse": 19.62
+        },
+        {
+          "hymn": 110,
+          "verseCount": 9,
+          "wordCount": 163,
+          "avgWordsPerVerse": 18.11
+        },
+        {
+          "hymn": 111,
+          "verseCount": 5,
+          "wordCount": 98,
+          "avgWordsPerVerse": 19.6
+        },
+        {
+          "hymn": 112,
+          "verseCount": 25,
+          "wordCount": 532,
+          "avgWordsPerVerse": 21.28
+        },
+        {
+          "hymn": 113,
+          "verseCount": 20,
+          "wordCount": 377,
+          "avgWordsPerVerse": 18.85
+        },
+        {
+          "hymn": 114,
+          "verseCount": 11,
+          "wordCount": 234,
+          "avgWordsPerVerse": 21.27
+        },
+        {
+          "hymn": 115,
+          "verseCount": 6,
+          "wordCount": 112,
+          "avgWordsPerVerse": 18.67
+        },
+        {
+          "hymn": 116,
+          "verseCount": 25,
+          "wordCount": 426,
+          "avgWordsPerVerse": 17.04
+        },
+        {
+          "hymn": 117,
+          "verseCount": 25,
+          "wordCount": 431,
+          "avgWordsPerVerse": 17.24
+        },
+        {
+          "hymn": 118,
+          "verseCount": 11,
+          "wordCount": 187,
+          "avgWordsPerVerse": 17.0
+        },
+        {
+          "hymn": 119,
+          "verseCount": 10,
+          "wordCount": 189,
+          "avgWordsPerVerse": 18.9
+        },
+        {
+          "hymn": 120,
+          "verseCount": 12,
+          "wordCount": 161,
+          "avgWordsPerVerse": 13.42
+        },
+        {
+          "hymn": 121,
+          "verseCount": 15,
+          "wordCount": 289,
+          "avgWordsPerVerse": 19.27
+        },
+        {
+          "hymn": 122,
+          "verseCount": 15,
+          "wordCount": 255,
+          "avgWordsPerVerse": 17.0
+        },
+        {
+          "hymn": 123,
+          "verseCount": 13,
+          "wordCount": 232,
+          "avgWordsPerVerse": 17.85
+        },
+        {
+          "hymn": 124,
+          "verseCount": 13,
+          "wordCount": 235,
+          "avgWordsPerVerse": 18.08
+        },
+        {
+          "hymn": 125,
+          "verseCount": 7,
+          "wordCount": 125,
+          "avgWordsPerVerse": 17.86
+        },
+        {
+          "hymn": 126,
+          "verseCount": 7,
+          "wordCount": 113,
+          "avgWordsPerVerse": 16.14
+        },
+        {
+          "hymn": 127,
+          "verseCount": 11,
+          "wordCount": 296,
+          "avgWordsPerVerse": 26.91
+        },
+        {
+          "hymn": 128,
+          "verseCount": 8,
+          "wordCount": 210,
+          "avgWordsPerVerse": 26.25
+        },
+        {
+          "hymn": 129,
+          "verseCount": 11,
+          "wordCount": 312,
+          "avgWordsPerVerse": 28.36
+        },
+        {
+          "hymn": 130,
+          "verseCount": 10,
+          "wordCount": 247,
+          "avgWordsPerVerse": 24.7
+        },
+        {
+          "hymn": 131,
+          "verseCount": 7,
+          "wordCount": 186,
+          "avgWordsPerVerse": 26.57
+        },
+        {
+          "hymn": 132,
+          "verseCount": 6,
+          "wordCount": 169,
+          "avgWordsPerVerse": 28.17
+        },
+        {
+          "hymn": 133,
+          "verseCount": 7,
+          "wordCount": 119,
+          "avgWordsPerVerse": 17.0
+        },
+        {
+          "hymn": 134,
+          "verseCount": 6,
+          "wordCount": 161,
+          "avgWordsPerVerse": 26.83
+        },
+        {
+          "hymn": 135,
+          "verseCount": 9,
+          "wordCount": 262,
+          "avgWordsPerVerse": 29.11
+        },
+        {
+          "hymn": 136,
+          "verseCount": 7,
+          "wordCount": 175,
+          "avgWordsPerVerse": 25.0
+        },
+        {
+          "hymn": 137,
+          "verseCount": 3,
+          "wordCount": 72,
+          "avgWordsPerVerse": 24.0
+        },
+        {
+          "hymn": 138,
+          "verseCount": 4,
+          "wordCount": 113,
+          "avgWordsPerVerse": 28.25
+        },
+        {
+          "hymn": 139,
+          "verseCount": 11,
+          "wordCount": 299,
+          "avgWordsPerVerse": 27.18
+        },
+        {
+          "hymn": 140,
+          "verseCount": 13,
+          "wordCount": 253,
+          "avgWordsPerVerse": 19.46
+        },
+        {
+          "hymn": 141,
+          "verseCount": 13,
+          "wordCount": 259,
+          "avgWordsPerVerse": 19.92
+        },
+        {
+          "hymn": 142,
+          "verseCount": 13,
+          "wordCount": 165,
+          "avgWordsPerVerse": 12.69
+        },
+        {
+          "hymn": 143,
+          "verseCount": 8,
+          "wordCount": 156,
+          "avgWordsPerVerse": 19.5
+        },
+        {
+          "hymn": 144,
+          "verseCount": 7,
+          "wordCount": 148,
+          "avgWordsPerVerse": 21.14
+        },
+        {
+          "hymn": 145,
+          "verseCount": 5,
+          "wordCount": 101,
+          "avgWordsPerVerse": 20.2
+        },
+        {
+          "hymn": 146,
+          "verseCount": 5,
+          "wordCount": 92,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 147,
+          "verseCount": 5,
+          "wordCount": 92,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 148,
+          "verseCount": 5,
+          "wordCount": 93,
+          "avgWordsPerVerse": 18.6
+        },
+        {
+          "hymn": 149,
+          "verseCount": 5,
+          "wordCount": 71,
+          "avgWordsPerVerse": 14.2
+        },
+        {
+          "hymn": 150,
+          "verseCount": 3,
+          "wordCount": 36,
+          "avgWordsPerVerse": 12.0
+        },
+        {
+          "hymn": 151,
+          "verseCount": 9,
+          "wordCount": 188,
+          "avgWordsPerVerse": 20.89
+        },
+        {
+          "hymn": 152,
+          "verseCount": 7,
+          "wordCount": 120,
+          "avgWordsPerVerse": 17.14
+        },
+        {
+          "hymn": 153,
+          "verseCount": 4,
+          "wordCount": 76,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 154,
+          "verseCount": 6,
+          "wordCount": 110,
+          "avgWordsPerVerse": 18.33
+        },
+        {
+          "hymn": 155,
+          "verseCount": 6,
+          "wordCount": 111,
+          "avgWordsPerVerse": 18.5
+        },
+        {
+          "hymn": 156,
+          "verseCount": 5,
+          "wordCount": 104,
+          "avgWordsPerVerse": 20.8
+        },
+        {
+          "hymn": 157,
+          "verseCount": 6,
+          "wordCount": 120,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 158,
+          "verseCount": 6,
+          "wordCount": 123,
+          "avgWordsPerVerse": 20.5
+        },
+        {
+          "hymn": 159,
+          "verseCount": 5,
+          "wordCount": 96,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 160,
+          "verseCount": 5,
+          "wordCount": 111,
+          "avgWordsPerVerse": 22.2
+        },
+        {
+          "hymn": 161,
+          "verseCount": 14,
+          "wordCount": 289,
+          "avgWordsPerVerse": 20.64
+        },
+        {
+          "hymn": 162,
+          "verseCount": 22,
+          "wordCount": 421,
+          "avgWordsPerVerse": 19.14
+        },
+        {
+          "hymn": 163,
+          "verseCount": 13,
+          "wordCount": 237,
+          "avgWordsPerVerse": 18.23
+        },
+        {
+          "hymn": 164,
+          "verseCount": 50,
+          "wordCount": 971,
+          "avgWordsPerVerse": 19.42
+        },
+        {
+          "hymn": 165,
+          "verseCount": 15,
+          "wordCount": 288,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 166,
+          "verseCount": 15,
+          "wordCount": 270,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 167,
+          "verseCount": 11,
+          "wordCount": 201,
+          "avgWordsPerVerse": 18.27
+        },
+        {
+          "hymn": 168,
+          "verseCount": 10,
+          "wordCount": 183,
+          "avgWordsPerVerse": 18.3
+        },
+        {
+          "hymn": 169,
+          "verseCount": 8,
+          "wordCount": 148,
+          "avgWordsPerVerse": 18.5
+        },
+        {
+          "hymn": 170,
+          "verseCount": 5,
+          "wordCount": 81,
+          "avgWordsPerVerse": 16.2
+        },
+        {
+          "hymn": 171,
+          "verseCount": 6,
+          "wordCount": 107,
+          "avgWordsPerVerse": 17.83
+        },
+        {
+          "hymn": 172,
+          "verseCount": 3,
+          "wordCount": 30,
+          "avgWordsPerVerse": 10.0
+        },
+        {
+          "hymn": 173,
+          "verseCount": 13,
+          "wordCount": 257,
+          "avgWordsPerVerse": 19.77
+        },
+        {
+          "hymn": 174,
+          "verseCount": 10,
+          "wordCount": 188,
+          "avgWordsPerVerse": 18.8
+        },
+        {
+          "hymn": 175,
+          "verseCount": 6,
+          "wordCount": 82,
+          "avgWordsPerVerse": 13.67
+        },
+        {
+          "hymn": 176,
+          "verseCount": 6,
+          "wordCount": 89,
+          "avgWordsPerVerse": 14.83
+        },
+        {
+          "hymn": 177,
+          "verseCount": 5,
+          "wordCount": 101,
+          "avgWordsPerVerse": 20.2
+        },
+        {
+          "hymn": 178,
+          "verseCount": 5,
+          "wordCount": 102,
+          "avgWordsPerVerse": 20.4
+        },
+        {
+          "hymn": 179,
+          "verseCount": 6,
+          "wordCount": 117,
+          "avgWordsPerVerse": 19.5
+        },
+        {
+          "hymn": 180,
+          "verseCount": 10,
+          "wordCount": 199,
+          "avgWordsPerVerse": 19.9
+        },
+        {
+          "hymn": 181,
+          "verseCount": 9,
+          "wordCount": 166,
+          "avgWordsPerVerse": 18.44
+        },
+        {
+          "hymn": 182,
+          "verseCount": 8,
+          "wordCount": 149,
+          "avgWordsPerVerse": 18.62
+        },
+        {
+          "hymn": 183,
+          "verseCount": 6,
+          "wordCount": 120,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 184,
+          "verseCount": 6,
+          "wordCount": 111,
+          "avgWordsPerVerse": 18.5
+        },
+        {
+          "hymn": 185,
+          "verseCount": 11,
+          "wordCount": 249,
+          "avgWordsPerVerse": 22.64
+        },
+        {
+          "hymn": 186,
+          "verseCount": 11,
+          "wordCount": 211,
+          "avgWordsPerVerse": 19.18
+        },
+        {
+          "hymn": 187,
+          "verseCount": 11,
+          "wordCount": 144,
+          "avgWordsPerVerse": 13.09
+        },
+        {
+          "hymn": 188,
+          "verseCount": 11,
+          "wordCount": 113,
+          "avgWordsPerVerse": 10.27
+        },
+        {
+          "hymn": 189,
+          "verseCount": 8,
+          "wordCount": 146,
+          "avgWordsPerVerse": 18.25
+        },
+        {
+          "hymn": 190,
+          "verseCount": 8,
+          "wordCount": 146,
+          "avgWordsPerVerse": 18.25
+        },
+        {
+          "hymn": 191,
+          "verseCount": 16,
+          "wordCount": 243,
+          "avgWordsPerVerse": 15.19
+        }
+      ]
+    },
+    {
+      "mandala": 2,
+      "hymnCount": 43,
+      "verseCount": 429,
+      "wordCount": 7843,
+      "rishi": "Gritsamada",
+      "avgVersesPerHymn": 9.98,
+      "avgWordsPerVerse": 18.28,
+      "analyzedHymns": [
+        {
+          "hymn": 1,
+          "verseCount": 16,
+          "wordCount": 329,
+          "avgWordsPerVerse": 20.56
+        },
+        {
+          "hymn": 2,
+          "verseCount": 13,
+          "wordCount": 255,
+          "avgWordsPerVerse": 19.62
+        },
+        {
+          "hymn": 3,
+          "verseCount": 11,
+          "wordCount": 209,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 4,
+          "verseCount": 9,
+          "wordCount": 167,
+          "avgWordsPerVerse": 18.56
+        },
+        {
+          "hymn": 5,
+          "verseCount": 8,
+          "wordCount": 114,
+          "avgWordsPerVerse": 14.25
+        },
+        {
+          "hymn": 6,
+          "verseCount": 8,
+          "wordCount": 88,
+          "avgWordsPerVerse": 11.0
+        },
+        {
+          "hymn": 7,
+          "verseCount": 6,
+          "wordCount": 58,
+          "avgWordsPerVerse": 9.67
+        },
+        {
+          "hymn": 8,
+          "verseCount": 6,
+          "wordCount": 62,
+          "avgWordsPerVerse": 10.33
+        },
+        {
+          "hymn": 9,
+          "verseCount": 6,
+          "wordCount": 108,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 10,
+          "verseCount": 6,
+          "wordCount": 94,
+          "avgWordsPerVerse": 15.67
+        },
+        {
+          "hymn": 11,
+          "verseCount": 21,
+          "wordCount": 374,
+          "avgWordsPerVerse": 17.81
+        },
+        {
+          "hymn": 12,
+          "verseCount": 15,
+          "wordCount": 300,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 13,
+          "verseCount": 13,
+          "wordCount": 278,
+          "avgWordsPerVerse": 21.38
+        },
+        {
+          "hymn": 14,
+          "verseCount": 12,
+          "wordCount": 229,
+          "avgWordsPerVerse": 19.08
+        },
+        {
+          "hymn": 15,
+          "verseCount": 10,
+          "wordCount": 191,
+          "avgWordsPerVerse": 19.1
+        },
+        {
+          "hymn": 16,
+          "verseCount": 9,
+          "wordCount": 182,
+          "avgWordsPerVerse": 20.22
+        },
+        {
+          "hymn": 17,
+          "verseCount": 9,
+          "wordCount": 180,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 18,
+          "verseCount": 9,
+          "wordCount": 175,
+          "avgWordsPerVerse": 19.44
+        },
+        {
+          "hymn": 19,
+          "verseCount": 9,
+          "wordCount": 162,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 20,
+          "verseCount": 9,
+          "wordCount": 170,
+          "avgWordsPerVerse": 18.89
+        },
+        {
+          "hymn": 21,
+          "verseCount": 6,
+          "wordCount": 93,
+          "avgWordsPerVerse": 15.5
+        },
+        {
+          "hymn": 22,
+          "verseCount": 4,
+          "wordCount": 114,
+          "avgWordsPerVerse": 28.5
+        },
+        {
+          "hymn": 23,
+          "verseCount": 19,
+          "wordCount": 360,
+          "avgWordsPerVerse": 18.95
+        },
+        {
+          "hymn": 24,
+          "verseCount": 16,
+          "wordCount": 334,
+          "avgWordsPerVerse": 20.88
+        },
+        {
+          "hymn": 25,
+          "verseCount": 5,
+          "wordCount": 95,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 26,
+          "verseCount": 4,
+          "wordCount": 82,
+          "avgWordsPerVerse": 20.5
+        },
+        {
+          "hymn": 27,
+          "verseCount": 17,
+          "wordCount": 312,
+          "avgWordsPerVerse": 18.35
+        },
+        {
+          "hymn": 28,
+          "verseCount": 11,
+          "wordCount": 221,
+          "avgWordsPerVerse": 20.09
+        },
+        {
+          "hymn": 29,
+          "verseCount": 7,
+          "wordCount": 136,
+          "avgWordsPerVerse": 19.43
+        },
+        {
+          "hymn": 30,
+          "verseCount": 11,
+          "wordCount": 211,
+          "avgWordsPerVerse": 19.18
+        },
+        {
+          "hymn": 31,
+          "verseCount": 7,
+          "wordCount": 139,
+          "avgWordsPerVerse": 19.86
+        },
+        {
+          "hymn": 32,
+          "verseCount": 8,
+          "wordCount": 137,
+          "avgWordsPerVerse": 17.12
+        },
+        {
+          "hymn": 33,
+          "verseCount": 15,
+          "wordCount": 276,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 34,
+          "verseCount": 15,
+          "wordCount": 273,
+          "avgWordsPerVerse": 18.2
+        },
+        {
+          "hymn": 35,
+          "verseCount": 15,
+          "wordCount": 284,
+          "avgWordsPerVerse": 18.93
+        },
+        {
+          "hymn": 36,
+          "verseCount": 6,
+          "wordCount": 122,
+          "avgWordsPerVerse": 20.33
+        },
+        {
+          "hymn": 37,
+          "verseCount": 6,
+          "wordCount": 124,
+          "avgWordsPerVerse": 20.67
+        },
+        {
+          "hymn": 38,
+          "verseCount": 11,
+          "wordCount": 218,
+          "avgWordsPerVerse": 19.82
+        },
+        {
+          "hymn": 39,
+          "verseCount": 8,
+          "wordCount": 144,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 40,
+          "verseCount": 6,
+          "wordCount": 96,
+          "avgWordsPerVerse": 16.0
+        },
+        {
+          "hymn": 41,
+          "verseCount": 21,
+          "wordCount": 229,
+          "avgWordsPerVerse": 10.9
+        },
+        {
+          "hymn": 42,
+          "verseCount": 3,
+          "wordCount": 56,
+          "avgWordsPerVerse": 18.67
+        },
+        {
+          "hymn": 43,
+          "verseCount": 3,
+          "wordCount": 62,
+          "avgWordsPerVerse": 20.67
+        }
+      ]
+    },
+    {
+      "mandala": 3,
+      "hymnCount": 62,
+      "verseCount": 617,
+      "wordCount": 10213,
+      "rishi": "Vishvamitra",
+      "avgVersesPerHymn": 9.95,
+      "avgWordsPerVerse": 16.55,
+      "analyzedHymns": [
+        {
+          "hymn": 1,
+          "verseCount": 23,
+          "wordCount": 419,
+          "avgWordsPerVerse": 18.22
+        },
+        {
+          "hymn": 2,
+          "verseCount": 15,
+          "wordCount": 274,
+          "avgWordsPerVerse": 18.27
+        },
+        {
+          "hymn": 3,
+          "verseCount": 11,
+          "wordCount": 196,
+          "avgWordsPerVerse": 17.82
+        },
+        {
+          "hymn": 4,
+          "verseCount": 11,
+          "wordCount": 207,
+          "avgWordsPerVerse": 18.82
+        },
+        {
+          "hymn": 5,
+          "verseCount": 11,
+          "wordCount": 201,
+          "avgWordsPerVerse": 18.27
+        },
+        {
+          "hymn": 6,
+          "verseCount": 11,
+          "wordCount": 219,
+          "avgWordsPerVerse": 19.91
+        },
+        {
+          "hymn": 7,
+          "verseCount": 11,
+          "wordCount": 206,
+          "avgWordsPerVerse": 18.73
+        },
+        {
+          "hymn": 8,
+          "verseCount": 11,
+          "wordCount": 174,
+          "avgWordsPerVerse": 15.82
+        },
+        {
+          "hymn": 9,
+          "verseCount": 9,
+          "wordCount": 136,
+          "avgWordsPerVerse": 15.11
+        },
+        {
+          "hymn": 10,
+          "verseCount": 9,
+          "wordCount": 102,
+          "avgWordsPerVerse": 11.33
+        },
+        {
+          "hymn": 11,
+          "verseCount": 9,
+          "wordCount": 81,
+          "avgWordsPerVerse": 9.0
+        },
+        {
+          "hymn": 12,
+          "verseCount": 9,
+          "wordCount": 94,
+          "avgWordsPerVerse": 10.44
+        },
+        {
+          "hymn": 13,
+          "verseCount": 7,
+          "wordCount": 96,
+          "avgWordsPerVerse": 13.71
+        },
+        {
+          "hymn": 14,
+          "verseCount": 7,
+          "wordCount": 133,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 15,
+          "verseCount": 7,
+          "wordCount": 138,
+          "avgWordsPerVerse": 19.71
+        },
+        {
+          "hymn": 16,
+          "verseCount": 6,
+          "wordCount": 91,
+          "avgWordsPerVerse": 15.17
+        },
+        {
+          "hymn": 17,
+          "verseCount": 5,
+          "wordCount": 93,
+          "avgWordsPerVerse": 18.6
+        },
+        {
+          "hymn": 18,
+          "verseCount": 5,
+          "wordCount": 92,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 19,
+          "verseCount": 5,
+          "wordCount": 92,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 20,
+          "verseCount": 5,
+          "wordCount": 92,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 21,
+          "verseCount": 5,
+          "wordCount": 79,
+          "avgWordsPerVerse": 15.8
+        },
+        {
+          "hymn": 22,
+          "verseCount": 5,
+          "wordCount": 88,
+          "avgWordsPerVerse": 17.6
+        },
+        {
+          "hymn": 23,
+          "verseCount": 5,
+          "wordCount": 88,
+          "avgWordsPerVerse": 17.6
+        },
+        {
+          "hymn": 24,
+          "verseCount": 5,
+          "wordCount": 54,
+          "avgWordsPerVerse": 10.8
+        },
+        {
+          "hymn": 25,
+          "verseCount": 5,
+          "wordCount": 74,
+          "avgWordsPerVerse": 14.8
+        },
+        {
+          "hymn": 26,
+          "verseCount": 9,
+          "wordCount": 149,
+          "avgWordsPerVerse": 16.56
+        },
+        {
+          "hymn": 27,
+          "verseCount": 15,
+          "wordCount": 138,
+          "avgWordsPerVerse": 9.2
+        },
+        {
+          "hymn": 28,
+          "verseCount": 6,
+          "wordCount": 71,
+          "avgWordsPerVerse": 11.83
+        },
+        {
+          "hymn": 29,
+          "verseCount": 16,
+          "wordCount": 255,
+          "avgWordsPerVerse": 15.94
+        },
+        {
+          "hymn": 30,
+          "verseCount": 22,
+          "wordCount": 414,
+          "avgWordsPerVerse": 18.82
+        },
+        {
+          "hymn": 31,
+          "verseCount": 22,
+          "wordCount": 420,
+          "avgWordsPerVerse": 19.09
+        },
+        {
+          "hymn": 32,
+          "verseCount": 17,
+          "wordCount": 323,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 33,
+          "verseCount": 13,
+          "wordCount": 248,
+          "avgWordsPerVerse": 19.08
+        },
+        {
+          "hymn": 34,
+          "verseCount": 11,
+          "wordCount": 188,
+          "avgWordsPerVerse": 17.09
+        },
+        {
+          "hymn": 35,
+          "verseCount": 11,
+          "wordCount": 219,
+          "avgWordsPerVerse": 19.91
+        },
+        {
+          "hymn": 36,
+          "verseCount": 11,
+          "wordCount": 205,
+          "avgWordsPerVerse": 18.64
+        },
+        {
+          "hymn": 37,
+          "verseCount": 11,
+          "wordCount": 117,
+          "avgWordsPerVerse": 10.64
+        },
+        {
+          "hymn": 38,
+          "verseCount": 10,
+          "wordCount": 189,
+          "avgWordsPerVerse": 18.9
+        },
+        {
+          "hymn": 39,
+          "verseCount": 9,
+          "wordCount": 163,
+          "avgWordsPerVerse": 18.11
+        },
+        {
+          "hymn": 40,
+          "verseCount": 9,
+          "wordCount": 93,
+          "avgWordsPerVerse": 10.33
+        },
+        {
+          "hymn": 41,
+          "verseCount": 9,
+          "wordCount": 94,
+          "avgWordsPerVerse": 10.44
+        },
+        {
+          "hymn": 42,
+          "verseCount": 9,
+          "wordCount": 97,
+          "avgWordsPerVerse": 10.78
+        },
+        {
+          "hymn": 43,
+          "verseCount": 8,
+          "wordCount": 150,
+          "avgWordsPerVerse": 18.75
+        },
+        {
+          "hymn": 44,
+          "verseCount": 5,
+          "wordCount": 75,
+          "avgWordsPerVerse": 15.0
+        },
+        {
+          "hymn": 45,
+          "verseCount": 5,
+          "wordCount": 75,
+          "avgWordsPerVerse": 15.0
+        },
+        {
+          "hymn": 46,
+          "verseCount": 5,
+          "wordCount": 90,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 47,
+          "verseCount": 5,
+          "wordCount": 94,
+          "avgWordsPerVerse": 18.8
+        },
+        {
+          "hymn": 48,
+          "verseCount": 5,
+          "wordCount": 86,
+          "avgWordsPerVerse": 17.2
+        },
+        {
+          "hymn": 49,
+          "verseCount": 5,
+          "wordCount": 89,
+          "avgWordsPerVerse": 17.8
+        },
+        {
+          "hymn": 50,
+          "verseCount": 5,
+          "wordCount": 91,
+          "avgWordsPerVerse": 18.2
+        },
+        {
+          "hymn": 51,
+          "verseCount": 12,
+          "wordCount": 196,
+          "avgWordsPerVerse": 16.33
+        },
+        {
+          "hymn": 52,
+          "verseCount": 8,
+          "wordCount": 104,
+          "avgWordsPerVerse": 13.0
+        },
+        {
+          "hymn": 53,
+          "verseCount": 24,
+          "wordCount": 431,
+          "avgWordsPerVerse": 17.96
+        },
+        {
+          "hymn": 54,
+          "verseCount": 22,
+          "wordCount": 420,
+          "avgWordsPerVerse": 19.09
+        },
+        {
+          "hymn": 55,
+          "verseCount": 22,
+          "wordCount": 412,
+          "avgWordsPerVerse": 18.73
+        },
+        {
+          "hymn": 56,
+          "verseCount": 8,
+          "wordCount": 153,
+          "avgWordsPerVerse": 19.12
+        },
+        {
+          "hymn": 57,
+          "verseCount": 6,
+          "wordCount": 116,
+          "avgWordsPerVerse": 19.33
+        },
+        {
+          "hymn": 58,
+          "verseCount": 9,
+          "wordCount": 168,
+          "avgWordsPerVerse": 18.67
+        },
+        {
+          "hymn": 59,
+          "verseCount": 9,
+          "wordCount": 121,
+          "avgWordsPerVerse": 13.44
+        },
+        {
+          "hymn": 60,
+          "verseCount": 7,
+          "wordCount": 127,
+          "avgWordsPerVerse": 18.14
+        },
+        {
+          "hymn": 61,
+          "verseCount": 7,
+          "wordCount": 122,
+          "avgWordsPerVerse": 17.43
+        },
+        {
+          "hymn": 62,
+          "verseCount": 18,
+          "wordCount": 191,
+          "avgWordsPerVerse": 10.61
+        }
+      ]
+    },
+    {
+      "mandala": 4,
+      "hymnCount": 58,
+      "verseCount": 589,
+      "wordCount": 9897,
+      "rishi": "Vamadeva",
+      "avgVersesPerHymn": 10.16,
+      "avgWordsPerVerse": 16.8,
+      "analyzedHymns": [
+        {
+          "hymn": 1,
+          "verseCount": 20,
+          "wordCount": 378,
+          "avgWordsPerVerse": 18.9
+        },
+        {
+          "hymn": 2,
+          "verseCount": 20,
+          "wordCount": 372,
+          "avgWordsPerVerse": 18.6
+        },
+        {
+          "hymn": 3,
+          "verseCount": 16,
+          "wordCount": 289,
+          "avgWordsPerVerse": 18.06
+        },
+        {
+          "hymn": 4,
+          "verseCount": 15,
+          "wordCount": 286,
+          "avgWordsPerVerse": 19.07
+        },
+        {
+          "hymn": 5,
+          "verseCount": 15,
+          "wordCount": 284,
+          "avgWordsPerVerse": 18.93
+        },
+        {
+          "hymn": 6,
+          "verseCount": 11,
+          "wordCount": 206,
+          "avgWordsPerVerse": 18.73
+        },
+        {
+          "hymn": 7,
+          "verseCount": 11,
+          "wordCount": 175,
+          "avgWordsPerVerse": 15.91
+        },
+        {
+          "hymn": 8,
+          "verseCount": 8,
+          "wordCount": 84,
+          "avgWordsPerVerse": 10.5
+        },
+        {
+          "hymn": 9,
+          "verseCount": 8,
+          "wordCount": 83,
+          "avgWordsPerVerse": 10.38
+        },
+        {
+          "hymn": 10,
+          "verseCount": 8,
+          "wordCount": 105,
+          "avgWordsPerVerse": 13.12
+        },
+        {
+          "hymn": 11,
+          "verseCount": 6,
+          "wordCount": 108,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 12,
+          "verseCount": 6,
+          "wordCount": 121,
+          "avgWordsPerVerse": 20.17
+        },
+        {
+          "hymn": 13,
+          "verseCount": 5,
+          "wordCount": 89,
+          "avgWordsPerVerse": 17.8
+        },
+        {
+          "hymn": 14,
+          "verseCount": 5,
+          "wordCount": 90,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 15,
+          "verseCount": 10,
+          "wordCount": 96,
+          "avgWordsPerVerse": 9.6
+        },
+        {
+          "hymn": 16,
+          "verseCount": 21,
+          "wordCount": 408,
+          "avgWordsPerVerse": 19.43
+        },
+        {
+          "hymn": 17,
+          "verseCount": 21,
+          "wordCount": 377,
+          "avgWordsPerVerse": 17.95
+        },
+        {
+          "hymn": 18,
+          "verseCount": 13,
+          "wordCount": 251,
+          "avgWordsPerVerse": 19.31
+        },
+        {
+          "hymn": 19,
+          "verseCount": 11,
+          "wordCount": 194,
+          "avgWordsPerVerse": 17.64
+        },
+        {
+          "hymn": 20,
+          "verseCount": 11,
+          "wordCount": 213,
+          "avgWordsPerVerse": 19.36
+        },
+        {
+          "hymn": 21,
+          "verseCount": 11,
+          "wordCount": 216,
+          "avgWordsPerVerse": 19.64
+        },
+        {
+          "hymn": 22,
+          "verseCount": 11,
+          "wordCount": 215,
+          "avgWordsPerVerse": 19.55
+        },
+        {
+          "hymn": 23,
+          "verseCount": 11,
+          "wordCount": 213,
+          "avgWordsPerVerse": 19.36
+        },
+        {
+          "hymn": 24,
+          "verseCount": 11,
+          "wordCount": 204,
+          "avgWordsPerVerse": 18.55
+        },
+        {
+          "hymn": 25,
+          "verseCount": 8,
+          "wordCount": 151,
+          "avgWordsPerVerse": 18.88
+        },
+        {
+          "hymn": 26,
+          "verseCount": 7,
+          "wordCount": 123,
+          "avgWordsPerVerse": 17.57
+        },
+        {
+          "hymn": 27,
+          "verseCount": 5,
+          "wordCount": 108,
+          "avgWordsPerVerse": 21.6
+        },
+        {
+          "hymn": 28,
+          "verseCount": 5,
+          "wordCount": 96,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 29,
+          "verseCount": 15,
+          "wordCount": 88,
+          "avgWordsPerVerse": 5.87
+        },
+        {
+          "hymn": 30,
+          "verseCount": 24,
+          "wordCount": 260,
+          "avgWordsPerVerse": 10.83
+        },
+        {
+          "hymn": 31,
+          "verseCount": 15,
+          "wordCount": 151,
+          "avgWordsPerVerse": 10.07
+        },
+        {
+          "hymn": 32,
+          "verseCount": 24,
+          "wordCount": 262,
+          "avgWordsPerVerse": 10.92
+        },
+        {
+          "hymn": 33,
+          "verseCount": 11,
+          "wordCount": 210,
+          "avgWordsPerVerse": 19.09
+        },
+        {
+          "hymn": 34,
+          "verseCount": 11,
+          "wordCount": 204,
+          "avgWordsPerVerse": 18.55
+        },
+        {
+          "hymn": 35,
+          "verseCount": 9,
+          "wordCount": 155,
+          "avgWordsPerVerse": 17.22
+        },
+        {
+          "hymn": 36,
+          "verseCount": 9,
+          "wordCount": 180,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 37,
+          "verseCount": 8,
+          "wordCount": 125,
+          "avgWordsPerVerse": 15.62
+        },
+        {
+          "hymn": 38,
+          "verseCount": 10,
+          "wordCount": 179,
+          "avgWordsPerVerse": 17.9
+        },
+        {
+          "hymn": 39,
+          "verseCount": 6,
+          "wordCount": 96,
+          "avgWordsPerVerse": 16.0
+        },
+        {
+          "hymn": 40,
+          "verseCount": 5,
+          "wordCount": 88,
+          "avgWordsPerVerse": 17.6
+        },
+        {
+          "hymn": 41,
+          "verseCount": 11,
+          "wordCount": 209,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 42,
+          "verseCount": 10,
+          "wordCount": 182,
+          "avgWordsPerVerse": 18.2
+        },
+        {
+          "hymn": 43,
+          "verseCount": 7,
+          "wordCount": 144,
+          "avgWordsPerVerse": 20.57
+        },
+        {
+          "hymn": 44,
+          "verseCount": 7,
+          "wordCount": 132,
+          "avgWordsPerVerse": 18.86
+        },
+        {
+          "hymn": 45,
+          "verseCount": 7,
+          "wordCount": 129,
+          "avgWordsPerVerse": 18.43
+        },
+        {
+          "hymn": 46,
+          "verseCount": 7,
+          "wordCount": 69,
+          "avgWordsPerVerse": 9.86
+        },
+        {
+          "hymn": 47,
+          "verseCount": 4,
+          "wordCount": 60,
+          "avgWordsPerVerse": 15.0
+        },
+        {
+          "hymn": 48,
+          "verseCount": 5,
+          "wordCount": 72,
+          "avgWordsPerVerse": 14.4
+        },
+        {
+          "hymn": 49,
+          "verseCount": 6,
+          "wordCount": 57,
+          "avgWordsPerVerse": 9.5
+        },
+        {
+          "hymn": 50,
+          "verseCount": 11,
+          "wordCount": 190,
+          "avgWordsPerVerse": 17.27
+        },
+        {
+          "hymn": 51,
+          "verseCount": 11,
+          "wordCount": 191,
+          "avgWordsPerVerse": 17.36
+        },
+        {
+          "hymn": 52,
+          "verseCount": 7,
+          "wordCount": 72,
+          "avgWordsPerVerse": 10.29
+        },
+        {
+          "hymn": 53,
+          "verseCount": 7,
+          "wordCount": 137,
+          "avgWordsPerVerse": 19.57
+        },
+        {
+          "hymn": 54,
+          "verseCount": 6,
+          "wordCount": 112,
+          "avgWordsPerVerse": 18.67
+        },
+        {
+          "hymn": 55,
+          "verseCount": 10,
+          "wordCount": 166,
+          "avgWordsPerVerse": 16.6
+        },
+        {
+          "hymn": 56,
+          "verseCount": 7,
+          "wordCount": 128,
+          "avgWordsPerVerse": 18.29
+        },
+        {
+          "hymn": 57,
+          "verseCount": 8,
+          "wordCount": 118,
+          "avgWordsPerVerse": 14.75
+        },
+        {
+          "hymn": 58,
+          "verseCount": 11,
+          "wordCount": 196,
+          "avgWordsPerVerse": 17.82
+        }
+      ]
+    },
+    {
+      "mandala": 5,
+      "hymnCount": 87,
+      "verseCount": 727,
+      "wordCount": 11718,
+      "rishi": "Atri",
+      "avgVersesPerHymn": 8.36,
+      "avgWordsPerVerse": 16.12,
+      "analyzedHymns": [
+        {
+          "hymn": 1,
+          "verseCount": 12,
+          "wordCount": 219,
+          "avgWordsPerVerse": 18.25
+        },
+        {
+          "hymn": 2,
+          "verseCount": 12,
+          "wordCount": 235,
+          "avgWordsPerVerse": 19.58
+        },
+        {
+          "hymn": 3,
+          "verseCount": 12,
+          "wordCount": 229,
+          "avgWordsPerVerse": 19.08
+        },
+        {
+          "hymn": 4,
+          "verseCount": 11,
+          "wordCount": 194,
+          "avgWordsPerVerse": 17.64
+        },
+        {
+          "hymn": 5,
+          "verseCount": 11,
+          "wordCount": 108,
+          "avgWordsPerVerse": 9.82
+        },
+        {
+          "hymn": 6,
+          "verseCount": 10,
+          "wordCount": 183,
+          "avgWordsPerVerse": 18.3
+        },
+        {
+          "hymn": 7,
+          "verseCount": 10,
+          "wordCount": 145,
+          "avgWordsPerVerse": 14.5
+        },
+        {
+          "hymn": 8,
+          "verseCount": 7,
+          "wordCount": 116,
+          "avgWordsPerVerse": 16.57
+        },
+        {
+          "hymn": 9,
+          "verseCount": 7,
+          "wordCount": 105,
+          "avgWordsPerVerse": 15.0
+        },
+        {
+          "hymn": 10,
+          "verseCount": 7,
+          "wordCount": 110,
+          "avgWordsPerVerse": 15.71
+        },
+        {
+          "hymn": 11,
+          "verseCount": 6,
+          "wordCount": 114,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 12,
+          "verseCount": 6,
+          "wordCount": 112,
+          "avgWordsPerVerse": 18.67
+        },
+        {
+          "hymn": 13,
+          "verseCount": 6,
+          "wordCount": 61,
+          "avgWordsPerVerse": 10.17
+        },
+        {
+          "hymn": 14,
+          "verseCount": 6,
+          "wordCount": 55,
+          "avgWordsPerVerse": 9.17
+        },
+        {
+          "hymn": 15,
+          "verseCount": 5,
+          "wordCount": 89,
+          "avgWordsPerVerse": 17.8
+        },
+        {
+          "hymn": 16,
+          "verseCount": 5,
+          "wordCount": 78,
+          "avgWordsPerVerse": 15.6
+        },
+        {
+          "hymn": 17,
+          "verseCount": 5,
+          "wordCount": 75,
+          "avgWordsPerVerse": 15.0
+        },
+        {
+          "hymn": 18,
+          "verseCount": 5,
+          "wordCount": 67,
+          "avgWordsPerVerse": 13.4
+        },
+        {
+          "hymn": 19,
+          "verseCount": 5,
+          "wordCount": 65,
+          "avgWordsPerVerse": 13.0
+        },
+        {
+          "hymn": 20,
+          "verseCount": 4,
+          "wordCount": 56,
+          "avgWordsPerVerse": 14.0
+        },
+        {
+          "hymn": 21,
+          "verseCount": 4,
+          "wordCount": 55,
+          "avgWordsPerVerse": 13.75
+        },
+        {
+          "hymn": 22,
+          "verseCount": 4,
+          "wordCount": 50,
+          "avgWordsPerVerse": 12.5
+        },
+        {
+          "hymn": 23,
+          "verseCount": 4,
+          "wordCount": 58,
+          "avgWordsPerVerse": 14.5
+        },
+        {
+          "hymn": 24,
+          "verseCount": 4,
+          "wordCount": 34,
+          "avgWordsPerVerse": 8.5
+        },
+        {
+          "hymn": 25,
+          "verseCount": 9,
+          "wordCount": 120,
+          "avgWordsPerVerse": 13.33
+        },
+        {
+          "hymn": 26,
+          "verseCount": 9,
+          "wordCount": 88,
+          "avgWordsPerVerse": 9.78
+        },
+        {
+          "hymn": 27,
+          "verseCount": 6,
+          "wordCount": 86,
+          "avgWordsPerVerse": 14.33
+        },
+        {
+          "hymn": 28,
+          "verseCount": 6,
+          "wordCount": 85,
+          "avgWordsPerVerse": 14.17
+        },
+        {
+          "hymn": 29,
+          "verseCount": 15,
+          "wordCount": 291,
+          "avgWordsPerVerse": 19.4
+        },
+        {
+          "hymn": 30,
+          "verseCount": 15,
+          "wordCount": 286,
+          "avgWordsPerVerse": 19.07
+        },
+        {
+          "hymn": 31,
+          "verseCount": 13,
+          "wordCount": 255,
+          "avgWordsPerVerse": 19.62
+        },
+        {
+          "hymn": 32,
+          "verseCount": 12,
+          "wordCount": 225,
+          "avgWordsPerVerse": 18.75
+        },
+        {
+          "hymn": 33,
+          "verseCount": 10,
+          "wordCount": 191,
+          "avgWordsPerVerse": 19.1
+        },
+        {
+          "hymn": 34,
+          "verseCount": 9,
+          "wordCount": 172,
+          "avgWordsPerVerse": 19.11
+        },
+        {
+          "hymn": 35,
+          "verseCount": 8,
+          "wordCount": 110,
+          "avgWordsPerVerse": 13.75
+        },
+        {
+          "hymn": 36,
+          "verseCount": 6,
+          "wordCount": 119,
+          "avgWordsPerVerse": 19.83
+        },
+        {
+          "hymn": 37,
+          "verseCount": 5,
+          "wordCount": 95,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 38,
+          "verseCount": 5,
+          "wordCount": 70,
+          "avgWordsPerVerse": 14.0
+        },
+        {
+          "hymn": 39,
+          "verseCount": 5,
+          "wordCount": 74,
+          "avgWordsPerVerse": 14.8
+        },
+        {
+          "hymn": 40,
+          "verseCount": 9,
+          "wordCount": 134,
+          "avgWordsPerVerse": 14.89
+        },
+        {
+          "hymn": 41,
+          "verseCount": 20,
+          "wordCount": 367,
+          "avgWordsPerVerse": 18.35
+        },
+        {
+          "hymn": 42,
+          "verseCount": 18,
+          "wordCount": 306,
+          "avgWordsPerVerse": 17.0
+        },
+        {
+          "hymn": 43,
+          "verseCount": 17,
+          "wordCount": 288,
+          "avgWordsPerVerse": 16.94
+        },
+        {
+          "hymn": 44,
+          "verseCount": 15,
+          "wordCount": 289,
+          "avgWordsPerVerse": 19.27
+        },
+        {
+          "hymn": 45,
+          "verseCount": 11,
+          "wordCount": 0,
+          "avgWordsPerVerse": 0.0
+        },
+        {
+          "hymn": 46,
+          "verseCount": 8,
+          "wordCount": 168,
+          "avgWordsPerVerse": 21.0
+        },
+        {
+          "hymn": 47,
+          "verseCount": 7,
+          "wordCount": 126,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 48,
+          "verseCount": 5,
+          "wordCount": 96,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 49,
+          "verseCount": 5,
+          "wordCount": 92,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 50,
+          "verseCount": 5,
+          "wordCount": 67,
+          "avgWordsPerVerse": 13.4
+        },
+        {
+          "hymn": 51,
+          "verseCount": 15,
+          "wordCount": 185,
+          "avgWordsPerVerse": 12.33
+        },
+        {
+          "hymn": 52,
+          "verseCount": 17,
+          "wordCount": 238,
+          "avgWordsPerVerse": 14.0
+        },
+        {
+          "hymn": 53,
+          "verseCount": 16,
+          "wordCount": 227,
+          "avgWordsPerVerse": 14.19
+        },
+        {
+          "hymn": 54,
+          "verseCount": 15,
+          "wordCount": 277,
+          "avgWordsPerVerse": 18.47
+        },
+        {
+          "hymn": 55,
+          "verseCount": 10,
+          "wordCount": 192,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 56,
+          "verseCount": 9,
+          "wordCount": 142,
+          "avgWordsPerVerse": 15.78
+        },
+        {
+          "hymn": 57,
+          "verseCount": 8,
+          "wordCount": 130,
+          "avgWordsPerVerse": 16.25
+        },
+        {
+          "hymn": 58,
+          "verseCount": 8,
+          "wordCount": 135,
+          "avgWordsPerVerse": 16.88
+        },
+        {
+          "hymn": 59,
+          "verseCount": 8,
+          "wordCount": 155,
+          "avgWordsPerVerse": 19.38
+        },
+        {
+          "hymn": 60,
+          "verseCount": 8,
+          "wordCount": 145,
+          "avgWordsPerVerse": 18.12
+        },
+        {
+          "hymn": 61,
+          "verseCount": 19,
+          "wordCount": 191,
+          "avgWordsPerVerse": 10.05
+        },
+        {
+          "hymn": 62,
+          "verseCount": 9,
+          "wordCount": 158,
+          "avgWordsPerVerse": 17.56
+        },
+        {
+          "hymn": 63,
+          "verseCount": 7,
+          "wordCount": 129,
+          "avgWordsPerVerse": 18.43
+        },
+        {
+          "hymn": 64,
+          "verseCount": 7,
+          "wordCount": 92,
+          "avgWordsPerVerse": 13.14
+        },
+        {
+          "hymn": 65,
+          "verseCount": 6,
+          "wordCount": 84,
+          "avgWordsPerVerse": 14.0
+        },
+        {
+          "hymn": 66,
+          "verseCount": 6,
+          "wordCount": 77,
+          "avgWordsPerVerse": 12.83
+        },
+        {
+          "hymn": 67,
+          "verseCount": 5,
+          "wordCount": 67,
+          "avgWordsPerVerse": 13.4
+        },
+        {
+          "hymn": 68,
+          "verseCount": 5,
+          "wordCount": 55,
+          "avgWordsPerVerse": 11.0
+        },
+        {
+          "hymn": 69,
+          "verseCount": 4,
+          "wordCount": 66,
+          "avgWordsPerVerse": 16.5
+        },
+        {
+          "hymn": 70,
+          "verseCount": 4,
+          "wordCount": 44,
+          "avgWordsPerVerse": 11.0
+        },
+        {
+          "hymn": 71,
+          "verseCount": 3,
+          "wordCount": 31,
+          "avgWordsPerVerse": 10.33
+        },
+        {
+          "hymn": 72,
+          "verseCount": 3,
+          "wordCount": 32,
+          "avgWordsPerVerse": 10.67
+        },
+        {
+          "hymn": 73,
+          "verseCount": 10,
+          "wordCount": 148,
+          "avgWordsPerVerse": 14.8
+        },
+        {
+          "hymn": 74,
+          "verseCount": 10,
+          "wordCount": 156,
+          "avgWordsPerVerse": 15.6
+        },
+        {
+          "hymn": 75,
+          "verseCount": 9,
+          "wordCount": 164,
+          "avgWordsPerVerse": 18.22
+        },
+        {
+          "hymn": 76,
+          "verseCount": 5,
+          "wordCount": 96,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 77,
+          "verseCount": 5,
+          "wordCount": 87,
+          "avgWordsPerVerse": 17.4
+        },
+        {
+          "hymn": 78,
+          "verseCount": 9,
+          "wordCount": 113,
+          "avgWordsPerVerse": 12.56
+        },
+        {
+          "hymn": 79,
+          "verseCount": 10,
+          "wordCount": 163,
+          "avgWordsPerVerse": 16.3
+        },
+        {
+          "hymn": 80,
+          "verseCount": 6,
+          "wordCount": 101,
+          "avgWordsPerVerse": 16.83
+        },
+        {
+          "hymn": 81,
+          "verseCount": 5,
+          "wordCount": 100,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 82,
+          "verseCount": 9,
+          "wordCount": 93,
+          "avgWordsPerVerse": 10.33
+        },
+        {
+          "hymn": 83,
+          "verseCount": 10,
+          "wordCount": 184,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 84,
+          "verseCount": 3,
+          "wordCount": 41,
+          "avgWordsPerVerse": 13.67
+        },
+        {
+          "hymn": 85,
+          "verseCount": 8,
+          "wordCount": 156,
+          "avgWordsPerVerse": 19.5
+        },
+        {
+          "hymn": 86,
+          "verseCount": 6,
+          "wordCount": 89,
+          "avgWordsPerVerse": 14.83
+        },
+        {
+          "hymn": 87,
+          "verseCount": 9,
+          "wordCount": 180,
+          "avgWordsPerVerse": 20.0
+        }
+      ]
+    },
+    {
+      "mandala": 6,
+      "hymnCount": 75,
+      "verseCount": 765,
+      "wordCount": 12856,
+      "rishi": "Bharadvaja",
+      "avgVersesPerHymn": 10.2,
+      "avgWordsPerVerse": 16.81,
+      "analyzedHymns": [
+        {
+          "hymn": 1,
+          "verseCount": 13,
+          "wordCount": 249,
+          "avgWordsPerVerse": 19.15
+        },
+        {
+          "hymn": 2,
+          "verseCount": 11,
+          "wordCount": 169,
+          "avgWordsPerVerse": 15.36
+        },
+        {
+          "hymn": 3,
+          "verseCount": 8,
+          "wordCount": 164,
+          "avgWordsPerVerse": 20.5
+        },
+        {
+          "hymn": 4,
+          "verseCount": 8,
+          "wordCount": 157,
+          "avgWordsPerVerse": 19.62
+        },
+        {
+          "hymn": 5,
+          "verseCount": 7,
+          "wordCount": 127,
+          "avgWordsPerVerse": 18.14
+        },
+        {
+          "hymn": 6,
+          "verseCount": 7,
+          "wordCount": 118,
+          "avgWordsPerVerse": 16.86
+        },
+        {
+          "hymn": 7,
+          "verseCount": 7,
+          "wordCount": 122,
+          "avgWordsPerVerse": 17.43
+        },
+        {
+          "hymn": 8,
+          "verseCount": 7,
+          "wordCount": 126,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 9,
+          "verseCount": 7,
+          "wordCount": 141,
+          "avgWordsPerVerse": 20.14
+        },
+        {
+          "hymn": 10,
+          "verseCount": 7,
+          "wordCount": 121,
+          "avgWordsPerVerse": 17.29
+        },
+        {
+          "hymn": 11,
+          "verseCount": 6,
+          "wordCount": 114,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 12,
+          "verseCount": 6,
+          "wordCount": 114,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 13,
+          "verseCount": 6,
+          "wordCount": 121,
+          "avgWordsPerVerse": 20.17
+        },
+        {
+          "hymn": 14,
+          "verseCount": 6,
+          "wordCount": 89,
+          "avgWordsPerVerse": 14.83
+        },
+        {
+          "hymn": 15,
+          "verseCount": 19,
+          "wordCount": 372,
+          "avgWordsPerVerse": 19.58
+        },
+        {
+          "hymn": 16,
+          "verseCount": 48,
+          "wordCount": 505,
+          "avgWordsPerVerse": 10.52
+        },
+        {
+          "hymn": 17,
+          "verseCount": 15,
+          "wordCount": 289,
+          "avgWordsPerVerse": 19.27
+        },
+        {
+          "hymn": 18,
+          "verseCount": 15,
+          "wordCount": 289,
+          "avgWordsPerVerse": 19.27
+        },
+        {
+          "hymn": 19,
+          "verseCount": 13,
+          "wordCount": 235,
+          "avgWordsPerVerse": 18.08
+        },
+        {
+          "hymn": 20,
+          "verseCount": 13,
+          "wordCount": 245,
+          "avgWordsPerVerse": 18.85
+        },
+        {
+          "hymn": 21,
+          "verseCount": 12,
+          "wordCount": 235,
+          "avgWordsPerVerse": 19.58
+        },
+        {
+          "hymn": 22,
+          "verseCount": 11,
+          "wordCount": 202,
+          "avgWordsPerVerse": 18.36
+        },
+        {
+          "hymn": 23,
+          "verseCount": 10,
+          "wordCount": 201,
+          "avgWordsPerVerse": 20.1
+        },
+        {
+          "hymn": 24,
+          "verseCount": 10,
+          "wordCount": 188,
+          "avgWordsPerVerse": 18.8
+        },
+        {
+          "hymn": 25,
+          "verseCount": 9,
+          "wordCount": 180,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 26,
+          "verseCount": 8,
+          "wordCount": 151,
+          "avgWordsPerVerse": 18.88
+        },
+        {
+          "hymn": 27,
+          "verseCount": 8,
+          "wordCount": 154,
+          "avgWordsPerVerse": 19.25
+        },
+        {
+          "hymn": 28,
+          "verseCount": 8,
+          "wordCount": 157,
+          "avgWordsPerVerse": 19.62
+        },
+        {
+          "hymn": 29,
+          "verseCount": 6,
+          "wordCount": 117,
+          "avgWordsPerVerse": 19.5
+        },
+        {
+          "hymn": 30,
+          "verseCount": 5,
+          "wordCount": 102,
+          "avgWordsPerVerse": 20.4
+        },
+        {
+          "hymn": 31,
+          "verseCount": 5,
+          "wordCount": 90,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 32,
+          "verseCount": 5,
+          "wordCount": 79,
+          "avgWordsPerVerse": 15.8
+        },
+        {
+          "hymn": 33,
+          "verseCount": 5,
+          "wordCount": 94,
+          "avgWordsPerVerse": 18.8
+        },
+        {
+          "hymn": 34,
+          "verseCount": 5,
+          "wordCount": 100,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 35,
+          "verseCount": 5,
+          "wordCount": 96,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 36,
+          "verseCount": 5,
+          "wordCount": 89,
+          "avgWordsPerVerse": 17.8
+        },
+        {
+          "hymn": 37,
+          "verseCount": 5,
+          "wordCount": 91,
+          "avgWordsPerVerse": 18.2
+        },
+        {
+          "hymn": 38,
+          "verseCount": 5,
+          "wordCount": 99,
+          "avgWordsPerVerse": 19.8
+        },
+        {
+          "hymn": 39,
+          "verseCount": 5,
+          "wordCount": 87,
+          "avgWordsPerVerse": 17.4
+        },
+        {
+          "hymn": 40,
+          "verseCount": 5,
+          "wordCount": 107,
+          "avgWordsPerVerse": 21.4
+        },
+        {
+          "hymn": 41,
+          "verseCount": 5,
+          "wordCount": 103,
+          "avgWordsPerVerse": 20.6
+        },
+        {
+          "hymn": 42,
+          "verseCount": 4,
+          "wordCount": 48,
+          "avgWordsPerVerse": 12.0
+        },
+        {
+          "hymn": 43,
+          "verseCount": 4,
+          "wordCount": 54,
+          "avgWordsPerVerse": 13.5
+        },
+        {
+          "hymn": 44,
+          "verseCount": 24,
+          "wordCount": 415,
+          "avgWordsPerVerse": 17.29
+        },
+        {
+          "hymn": 45,
+          "verseCount": 33,
+          "wordCount": 353,
+          "avgWordsPerVerse": 10.7
+        },
+        {
+          "hymn": 46,
+          "verseCount": 14,
+          "wordCount": 228,
+          "avgWordsPerVerse": 16.29
+        },
+        {
+          "hymn": 47,
+          "verseCount": 29,
+          "wordCount": 500,
+          "avgWordsPerVerse": 17.24
+        },
+        {
+          "hymn": 48,
+          "verseCount": 22,
+          "wordCount": 350,
+          "avgWordsPerVerse": 15.91
+        },
+        {
+          "hymn": 49,
+          "verseCount": 15,
+          "wordCount": 265,
+          "avgWordsPerVerse": 17.67
+        },
+        {
+          "hymn": 50,
+          "verseCount": 15,
+          "wordCount": 275,
+          "avgWordsPerVerse": 18.33
+        },
+        {
+          "hymn": 51,
+          "verseCount": 15,
+          "wordCount": 263,
+          "avgWordsPerVerse": 17.53
+        },
+        {
+          "hymn": 52,
+          "verseCount": 16,
+          "wordCount": 252,
+          "avgWordsPerVerse": 15.75
+        },
+        {
+          "hymn": 53,
+          "verseCount": 10,
+          "wordCount": 109,
+          "avgWordsPerVerse": 10.9
+        },
+        {
+          "hymn": 54,
+          "verseCount": 10,
+          "wordCount": 115,
+          "avgWordsPerVerse": 11.5
+        },
+        {
+          "hymn": 55,
+          "verseCount": 6,
+          "wordCount": 60,
+          "avgWordsPerVerse": 10.0
+        },
+        {
+          "hymn": 56,
+          "verseCount": 6,
+          "wordCount": 65,
+          "avgWordsPerVerse": 10.83
+        },
+        {
+          "hymn": 57,
+          "verseCount": 6,
+          "wordCount": 58,
+          "avgWordsPerVerse": 9.67
+        },
+        {
+          "hymn": 58,
+          "verseCount": 4,
+          "wordCount": 73,
+          "avgWordsPerVerse": 18.25
+        },
+        {
+          "hymn": 59,
+          "verseCount": 10,
+          "wordCount": 152,
+          "avgWordsPerVerse": 15.2
+        },
+        {
+          "hymn": 60,
+          "verseCount": 15,
+          "wordCount": 200,
+          "avgWordsPerVerse": 13.33
+        },
+        {
+          "hymn": 61,
+          "verseCount": 14,
+          "wordCount": 171,
+          "avgWordsPerVerse": 12.21
+        },
+        {
+          "hymn": 62,
+          "verseCount": 11,
+          "wordCount": 198,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 63,
+          "verseCount": 11,
+          "wordCount": 200,
+          "avgWordsPerVerse": 18.18
+        },
+        {
+          "hymn": 64,
+          "verseCount": 6,
+          "wordCount": 120,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 65,
+          "verseCount": 6,
+          "wordCount": 110,
+          "avgWordsPerVerse": 18.33
+        },
+        {
+          "hymn": 66,
+          "verseCount": 11,
+          "wordCount": 216,
+          "avgWordsPerVerse": 19.64
+        },
+        {
+          "hymn": 67,
+          "verseCount": 11,
+          "wordCount": 221,
+          "avgWordsPerVerse": 20.09
+        },
+        {
+          "hymn": 68,
+          "verseCount": 11,
+          "wordCount": 198,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 69,
+          "verseCount": 8,
+          "wordCount": 152,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 70,
+          "verseCount": 6,
+          "wordCount": 141,
+          "avgWordsPerVerse": 23.5
+        },
+        {
+          "hymn": 71,
+          "verseCount": 6,
+          "wordCount": 116,
+          "avgWordsPerVerse": 19.33
+        },
+        {
+          "hymn": 72,
+          "verseCount": 5,
+          "wordCount": 85,
+          "avgWordsPerVerse": 17.0
+        },
+        {
+          "hymn": 73,
+          "verseCount": 3,
+          "wordCount": 53,
+          "avgWordsPerVerse": 17.67
+        },
+        {
+          "hymn": 74,
+          "verseCount": 4,
+          "wordCount": 74,
+          "avgWordsPerVerse": 18.5
+        },
+        {
+          "hymn": 75,
+          "verseCount": 19,
+          "wordCount": 316,
+          "avgWordsPerVerse": 16.63
+        }
+      ]
+    },
+    {
+      "mandala": 7,
+      "hymnCount": 104,
+      "verseCount": 841,
+      "wordCount": 14507,
+      "rishi": "Vasishtha",
+      "avgVersesPerHymn": 8.09,
+      "avgWordsPerVerse": 17.25,
+      "analyzedHymns": [
+        {
+          "hymn": 1,
+          "verseCount": 25,
+          "wordCount": 394,
+          "avgWordsPerVerse": 15.76
+        },
+        {
+          "hymn": 2,
+          "verseCount": 11,
+          "wordCount": 198,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 3,
+          "verseCount": 10,
+          "wordCount": 199,
+          "avgWordsPerVerse": 19.9
+        },
+        {
+          "hymn": 4,
+          "verseCount": 10,
+          "wordCount": 197,
+          "avgWordsPerVerse": 19.7
+        },
+        {
+          "hymn": 5,
+          "verseCount": 9,
+          "wordCount": 158,
+          "avgWordsPerVerse": 17.56
+        },
+        {
+          "hymn": 6,
+          "verseCount": 7,
+          "wordCount": 119,
+          "avgWordsPerVerse": 17.0
+        },
+        {
+          "hymn": 7,
+          "verseCount": 7,
+          "wordCount": 135,
+          "avgWordsPerVerse": 19.29
+        },
+        {
+          "hymn": 8,
+          "verseCount": 7,
+          "wordCount": 132,
+          "avgWordsPerVerse": 18.86
+        },
+        {
+          "hymn": 9,
+          "verseCount": 6,
+          "wordCount": 101,
+          "avgWordsPerVerse": 16.83
+        },
+        {
+          "hymn": 10,
+          "verseCount": 5,
+          "wordCount": 86,
+          "avgWordsPerVerse": 17.2
+        },
+        {
+          "hymn": 11,
+          "verseCount": 5,
+          "wordCount": 93,
+          "avgWordsPerVerse": 18.6
+        },
+        {
+          "hymn": 12,
+          "verseCount": 3,
+          "wordCount": 57,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 13,
+          "verseCount": 3,
+          "wordCount": 52,
+          "avgWordsPerVerse": 17.33
+        },
+        {
+          "hymn": 14,
+          "verseCount": 3,
+          "wordCount": 45,
+          "avgWordsPerVerse": 15.0
+        },
+        {
+          "hymn": 15,
+          "verseCount": 15,
+          "wordCount": 152,
+          "avgWordsPerVerse": 10.13
+        },
+        {
+          "hymn": 16,
+          "verseCount": 12,
+          "wordCount": 191,
+          "avgWordsPerVerse": 15.92
+        },
+        {
+          "hymn": 17,
+          "verseCount": 7,
+          "wordCount": 69,
+          "avgWordsPerVerse": 9.86
+        },
+        {
+          "hymn": 18,
+          "verseCount": 25,
+          "wordCount": 470,
+          "avgWordsPerVerse": 18.8
+        },
+        {
+          "hymn": 19,
+          "verseCount": 11,
+          "wordCount": 199,
+          "avgWordsPerVerse": 18.09
+        },
+        {
+          "hymn": 20,
+          "verseCount": 10,
+          "wordCount": 209,
+          "avgWordsPerVerse": 20.9
+        },
+        {
+          "hymn": 21,
+          "verseCount": 10,
+          "wordCount": 0,
+          "avgWordsPerVerse": 0.0
+        },
+        {
+          "hymn": 22,
+          "verseCount": 9,
+          "wordCount": 146,
+          "avgWordsPerVerse": 16.22
+        },
+        {
+          "hymn": 23,
+          "verseCount": 6,
+          "wordCount": 116,
+          "avgWordsPerVerse": 19.33
+        },
+        {
+          "hymn": 24,
+          "verseCount": 6,
+          "wordCount": 0,
+          "avgWordsPerVerse": 0.0
+        },
+        {
+          "hymn": 25,
+          "verseCount": 6,
+          "wordCount": 116,
+          "avgWordsPerVerse": 19.33
+        },
+        {
+          "hymn": 26,
+          "verseCount": 5,
+          "wordCount": 92,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 27,
+          "verseCount": 5,
+          "wordCount": 97,
+          "avgWordsPerVerse": 19.4
+        },
+        {
+          "hymn": 28,
+          "verseCount": 5,
+          "wordCount": 103,
+          "avgWordsPerVerse": 20.6
+        },
+        {
+          "hymn": 29,
+          "verseCount": 5,
+          "wordCount": 102,
+          "avgWordsPerVerse": 20.4
+        },
+        {
+          "hymn": 30,
+          "verseCount": 5,
+          "wordCount": 95,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 31,
+          "verseCount": 12,
+          "wordCount": 143,
+          "avgWordsPerVerse": 11.92
+        },
+        {
+          "hymn": 32,
+          "verseCount": 27,
+          "wordCount": 431,
+          "avgWordsPerVerse": 15.96
+        },
+        {
+          "hymn": 33,
+          "verseCount": 14,
+          "wordCount": 252,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 34,
+          "verseCount": 25,
+          "wordCount": 272,
+          "avgWordsPerVerse": 10.88
+        },
+        {
+          "hymn": 35,
+          "verseCount": 15,
+          "wordCount": 339,
+          "avgWordsPerVerse": 22.6
+        },
+        {
+          "hymn": 36,
+          "verseCount": 9,
+          "wordCount": 173,
+          "avgWordsPerVerse": 19.22
+        },
+        {
+          "hymn": 37,
+          "verseCount": 8,
+          "wordCount": 150,
+          "avgWordsPerVerse": 18.75
+        },
+        {
+          "hymn": 38,
+          "verseCount": 8,
+          "wordCount": 146,
+          "avgWordsPerVerse": 18.25
+        },
+        {
+          "hymn": 39,
+          "verseCount": 7,
+          "wordCount": 132,
+          "avgWordsPerVerse": 18.86
+        },
+        {
+          "hymn": 40,
+          "verseCount": 7,
+          "wordCount": 140,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 41,
+          "verseCount": 7,
+          "wordCount": 135,
+          "avgWordsPerVerse": 19.29
+        },
+        {
+          "hymn": 42,
+          "verseCount": 6,
+          "wordCount": 110,
+          "avgWordsPerVerse": 18.33
+        },
+        {
+          "hymn": 43,
+          "verseCount": 5,
+          "wordCount": 96,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 44,
+          "verseCount": 5,
+          "wordCount": 86,
+          "avgWordsPerVerse": 17.2
+        },
+        {
+          "hymn": 45,
+          "verseCount": 4,
+          "wordCount": 73,
+          "avgWordsPerVerse": 18.25
+        },
+        {
+          "hymn": 46,
+          "verseCount": 4,
+          "wordCount": 76,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 47,
+          "verseCount": 4,
+          "wordCount": 72,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 48,
+          "verseCount": 4,
+          "wordCount": 77,
+          "avgWordsPerVerse": 19.25
+        },
+        {
+          "hymn": 49,
+          "verseCount": 4,
+          "wordCount": 77,
+          "avgWordsPerVerse": 19.25
+        },
+        {
+          "hymn": 50,
+          "verseCount": 4,
+          "wordCount": 85,
+          "avgWordsPerVerse": 21.25
+        },
+        {
+          "hymn": 51,
+          "verseCount": 3,
+          "wordCount": 49,
+          "avgWordsPerVerse": 16.33
+        },
+        {
+          "hymn": 52,
+          "verseCount": 3,
+          "wordCount": 51,
+          "avgWordsPerVerse": 17.0
+        },
+        {
+          "hymn": 53,
+          "verseCount": 3,
+          "wordCount": 68,
+          "avgWordsPerVerse": 22.67
+        },
+        {
+          "hymn": 54,
+          "verseCount": 3,
+          "wordCount": 60,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 55,
+          "verseCount": 8,
+          "wordCount": 110,
+          "avgWordsPerVerse": 13.75
+        },
+        {
+          "hymn": 56,
+          "verseCount": 25,
+          "wordCount": 358,
+          "avgWordsPerVerse": 14.32
+        },
+        {
+          "hymn": 57,
+          "verseCount": 7,
+          "wordCount": 132,
+          "avgWordsPerVerse": 18.86
+        },
+        {
+          "hymn": 58,
+          "verseCount": 6,
+          "wordCount": 114,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 59,
+          "verseCount": 12,
+          "wordCount": 178,
+          "avgWordsPerVerse": 14.83
+        },
+        {
+          "hymn": 60,
+          "verseCount": 12,
+          "wordCount": 212,
+          "avgWordsPerVerse": 17.67
+        },
+        {
+          "hymn": 61,
+          "verseCount": 7,
+          "wordCount": 135,
+          "avgWordsPerVerse": 19.29
+        },
+        {
+          "hymn": 62,
+          "verseCount": 6,
+          "wordCount": 116,
+          "avgWordsPerVerse": 19.33
+        },
+        {
+          "hymn": 63,
+          "verseCount": 6,
+          "wordCount": 107,
+          "avgWordsPerVerse": 17.83
+        },
+        {
+          "hymn": 64,
+          "verseCount": 5,
+          "wordCount": 97,
+          "avgWordsPerVerse": 19.4
+        },
+        {
+          "hymn": 65,
+          "verseCount": 5,
+          "wordCount": 94,
+          "avgWordsPerVerse": 18.8
+        },
+        {
+          "hymn": 66,
+          "verseCount": 19,
+          "wordCount": 220,
+          "avgWordsPerVerse": 11.58
+        },
+        {
+          "hymn": 67,
+          "verseCount": 10,
+          "wordCount": 196,
+          "avgWordsPerVerse": 19.6
+        },
+        {
+          "hymn": 68,
+          "verseCount": 9,
+          "wordCount": 143,
+          "avgWordsPerVerse": 15.89
+        },
+        {
+          "hymn": 69,
+          "verseCount": 8,
+          "wordCount": 148,
+          "avgWordsPerVerse": 18.5
+        },
+        {
+          "hymn": 70,
+          "verseCount": 7,
+          "wordCount": 134,
+          "avgWordsPerVerse": 19.14
+        },
+        {
+          "hymn": 71,
+          "verseCount": 6,
+          "wordCount": 109,
+          "avgWordsPerVerse": 18.17
+        },
+        {
+          "hymn": 72,
+          "verseCount": 5,
+          "wordCount": 96,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 73,
+          "verseCount": 5,
+          "wordCount": 93,
+          "avgWordsPerVerse": 18.6
+        },
+        {
+          "hymn": 74,
+          "verseCount": 6,
+          "wordCount": 98,
+          "avgWordsPerVerse": 16.33
+        },
+        {
+          "hymn": 75,
+          "verseCount": 8,
+          "wordCount": 137,
+          "avgWordsPerVerse": 17.12
+        },
+        {
+          "hymn": 76,
+          "verseCount": 7,
+          "wordCount": 125,
+          "avgWordsPerVerse": 17.86
+        },
+        {
+          "hymn": 77,
+          "verseCount": 6,
+          "wordCount": 110,
+          "avgWordsPerVerse": 18.33
+        },
+        {
+          "hymn": 78,
+          "verseCount": 5,
+          "wordCount": 89,
+          "avgWordsPerVerse": 17.8
+        },
+        {
+          "hymn": 79,
+          "verseCount": 5,
+          "wordCount": 90,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 80,
+          "verseCount": 3,
+          "wordCount": 53,
+          "avgWordsPerVerse": 17.67
+        },
+        {
+          "hymn": 81,
+          "verseCount": 6,
+          "wordCount": 98,
+          "avgWordsPerVerse": 16.33
+        },
+        {
+          "hymn": 82,
+          "verseCount": 10,
+          "wordCount": 190,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 83,
+          "verseCount": 10,
+          "wordCount": 179,
+          "avgWordsPerVerse": 17.9
+        },
+        {
+          "hymn": 84,
+          "verseCount": 5,
+          "wordCount": 94,
+          "avgWordsPerVerse": 18.8
+        },
+        {
+          "hymn": 85,
+          "verseCount": 5,
+          "wordCount": 92,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 86,
+          "verseCount": 8,
+          "wordCount": 167,
+          "avgWordsPerVerse": 20.88
+        },
+        {
+          "hymn": 87,
+          "verseCount": 7,
+          "wordCount": 133,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 88,
+          "verseCount": 7,
+          "wordCount": 137,
+          "avgWordsPerVerse": 19.57
+        },
+        {
+          "hymn": 89,
+          "verseCount": 5,
+          "wordCount": 61,
+          "avgWordsPerVerse": 12.2
+        },
+        {
+          "hymn": 90,
+          "verseCount": 7,
+          "wordCount": 130,
+          "avgWordsPerVerse": 18.57
+        },
+        {
+          "hymn": 91,
+          "verseCount": 7,
+          "wordCount": 131,
+          "avgWordsPerVerse": 18.71
+        },
+        {
+          "hymn": 92,
+          "verseCount": 5,
+          "wordCount": 93,
+          "avgWordsPerVerse": 18.6
+        },
+        {
+          "hymn": 93,
+          "verseCount": 8,
+          "wordCount": 158,
+          "avgWordsPerVerse": 19.75
+        },
+        {
+          "hymn": 94,
+          "verseCount": 12,
+          "wordCount": 123,
+          "avgWordsPerVerse": 10.25
+        },
+        {
+          "hymn": 95,
+          "verseCount": 6,
+          "wordCount": 107,
+          "avgWordsPerVerse": 17.83
+        },
+        {
+          "hymn": 96,
+          "verseCount": 6,
+          "wordCount": 71,
+          "avgWordsPerVerse": 11.83
+        },
+        {
+          "hymn": 97,
+          "verseCount": 10,
+          "wordCount": 178,
+          "avgWordsPerVerse": 17.8
+        },
+        {
+          "hymn": 98,
+          "verseCount": 7,
+          "wordCount": 131,
+          "avgWordsPerVerse": 18.71
+        },
+        {
+          "hymn": 99,
+          "verseCount": 7,
+          "wordCount": 141,
+          "avgWordsPerVerse": 20.14
+        },
+        {
+          "hymn": 100,
+          "verseCount": 7,
+          "wordCount": 131,
+          "avgWordsPerVerse": 18.71
+        },
+        {
+          "hymn": 101,
+          "verseCount": 6,
+          "wordCount": 114,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 102,
+          "verseCount": 3,
+          "wordCount": 28,
+          "avgWordsPerVerse": 9.33
+        },
+        {
+          "hymn": 103,
+          "verseCount": 10,
+          "wordCount": 168,
+          "avgWordsPerVerse": 16.8
+        },
+        {
+          "hymn": 104,
+          "verseCount": 25,
+          "wordCount": 468,
+          "avgWordsPerVerse": 18.72
+        }
+      ]
+    },
+    {
+      "mandala": 8,
+      "hymnCount": 92,
+      "verseCount": 1638,
+      "wordCount": 18234,
+      "rishi": "Kanva",
+      "avgVersesPerHymn": 17.8,
+      "avgWordsPerVerse": 11.13,
+      "analyzedHymns": [
+        {
+          "hymn": 1,
+          "verseCount": 34,
+          "wordCount": 525,
+          "avgWordsPerVerse": 15.44
+        },
+        {
+          "hymn": 2,
+          "verseCount": 42,
+          "wordCount": 448,
+          "avgWordsPerVerse": 10.67
+        },
+        {
+          "hymn": 3,
+          "verseCount": 24,
+          "wordCount": 364,
+          "avgWordsPerVerse": 15.17
+        },
+        {
+          "hymn": 4,
+          "verseCount": 21,
+          "wordCount": 335,
+          "avgWordsPerVerse": 15.95
+        },
+        {
+          "hymn": 5,
+          "verseCount": 39,
+          "wordCount": 410,
+          "avgWordsPerVerse": 10.51
+        },
+        {
+          "hymn": 6,
+          "verseCount": 48,
+          "wordCount": 487,
+          "avgWordsPerVerse": 10.15
+        },
+        {
+          "hymn": 7,
+          "verseCount": 36,
+          "wordCount": 369,
+          "avgWordsPerVerse": 10.25
+        },
+        {
+          "hymn": 8,
+          "verseCount": 23,
+          "wordCount": 315,
+          "avgWordsPerVerse": 13.7
+        },
+        {
+          "hymn": 9,
+          "verseCount": 21,
+          "wordCount": 303,
+          "avgWordsPerVerse": 14.43
+        },
+        {
+          "hymn": 10,
+          "verseCount": 6,
+          "wordCount": 108,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 11,
+          "verseCount": 10,
+          "wordCount": 107,
+          "avgWordsPerVerse": 10.7
+        },
+        {
+          "hymn": 12,
+          "verseCount": 33,
+          "wordCount": 387,
+          "avgWordsPerVerse": 11.73
+        },
+        {
+          "hymn": 13,
+          "verseCount": 33,
+          "wordCount": 404,
+          "avgWordsPerVerse": 12.24
+        },
+        {
+          "hymn": 14,
+          "verseCount": 15,
+          "wordCount": 152,
+          "avgWordsPerVerse": 10.13
+        },
+        {
+          "hymn": 15,
+          "verseCount": 13,
+          "wordCount": 152,
+          "avgWordsPerVerse": 11.69
+        },
+        {
+          "hymn": 16,
+          "verseCount": 12,
+          "wordCount": 123,
+          "avgWordsPerVerse": 10.25
+        },
+        {
+          "hymn": 17,
+          "verseCount": 15,
+          "wordCount": 174,
+          "avgWordsPerVerse": 11.6
+        },
+        {
+          "hymn": 18,
+          "verseCount": 22,
+          "wordCount": 260,
+          "avgWordsPerVerse": 11.82
+        },
+        {
+          "hymn": 19,
+          "verseCount": 37,
+          "wordCount": 510,
+          "avgWordsPerVerse": 13.78
+        },
+        {
+          "hymn": 20,
+          "verseCount": 26,
+          "wordCount": 359,
+          "avgWordsPerVerse": 13.81
+        },
+        {
+          "hymn": 21,
+          "verseCount": 18,
+          "wordCount": 283,
+          "avgWordsPerVerse": 15.72
+        },
+        {
+          "hymn": 22,
+          "verseCount": 18,
+          "wordCount": 275,
+          "avgWordsPerVerse": 15.28
+        },
+        {
+          "hymn": 23,
+          "verseCount": 30,
+          "wordCount": 334,
+          "avgWordsPerVerse": 11.13
+        },
+        {
+          "hymn": 24,
+          "verseCount": 30,
+          "wordCount": 363,
+          "avgWordsPerVerse": 12.1
+        },
+        {
+          "hymn": 25,
+          "verseCount": 24,
+          "wordCount": 274,
+          "avgWordsPerVerse": 11.42
+        },
+        {
+          "hymn": 26,
+          "verseCount": 25,
+          "wordCount": 287,
+          "avgWordsPerVerse": 11.48
+        },
+        {
+          "hymn": 27,
+          "verseCount": 22,
+          "wordCount": 344,
+          "avgWordsPerVerse": 15.64
+        },
+        {
+          "hymn": 28,
+          "verseCount": 5,
+          "wordCount": 0,
+          "avgWordsPerVerse": 0.0
+        },
+        {
+          "hymn": 29,
+          "verseCount": 10,
+          "wordCount": 82,
+          "avgWordsPerVerse": 8.2
+        },
+        {
+          "hymn": 30,
+          "verseCount": 4,
+          "wordCount": 56,
+          "avgWordsPerVerse": 14.0
+        },
+        {
+          "hymn": 31,
+          "verseCount": 18,
+          "wordCount": 217,
+          "avgWordsPerVerse": 12.06
+        },
+        {
+          "hymn": 32,
+          "verseCount": 30,
+          "wordCount": 308,
+          "avgWordsPerVerse": 10.27
+        },
+        {
+          "hymn": 33,
+          "verseCount": 19,
+          "wordCount": 291,
+          "avgWordsPerVerse": 15.32
+        },
+        {
+          "hymn": 34,
+          "verseCount": 18,
+          "wordCount": 252,
+          "avgWordsPerVerse": 14.0
+        },
+        {
+          "hymn": 35,
+          "verseCount": 24,
+          "wordCount": 399,
+          "avgWordsPerVerse": 16.62
+        },
+        {
+          "hymn": 36,
+          "verseCount": 7,
+          "wordCount": 174,
+          "avgWordsPerVerse": 24.86
+        },
+        {
+          "hymn": 37,
+          "verseCount": 7,
+          "wordCount": 118,
+          "avgWordsPerVerse": 16.86
+        },
+        {
+          "hymn": 38,
+          "verseCount": 10,
+          "wordCount": 101,
+          "avgWordsPerVerse": 10.1
+        },
+        {
+          "hymn": 39,
+          "verseCount": 10,
+          "wordCount": 197,
+          "avgWordsPerVerse": 19.7
+        },
+        {
+          "hymn": 40,
+          "verseCount": 12,
+          "wordCount": 242,
+          "avgWordsPerVerse": 20.17
+        },
+        {
+          "hymn": 41,
+          "verseCount": 10,
+          "wordCount": 202,
+          "avgWordsPerVerse": 20.2
+        },
+        {
+          "hymn": 42,
+          "verseCount": 6,
+          "wordCount": 90,
+          "avgWordsPerVerse": 15.0
+        },
+        {
+          "hymn": 43,
+          "verseCount": 33,
+          "wordCount": 327,
+          "avgWordsPerVerse": 9.91
+        },
+        {
+          "hymn": 44,
+          "verseCount": 30,
+          "wordCount": 303,
+          "avgWordsPerVerse": 10.1
+        },
+        {
+          "hymn": 45,
+          "verseCount": 42,
+          "wordCount": 469,
+          "avgWordsPerVerse": 11.17
+        },
+        {
+          "hymn": 46,
+          "verseCount": 33,
+          "wordCount": 434,
+          "avgWordsPerVerse": 13.15
+        },
+        {
+          "hymn": 47,
+          "verseCount": 18,
+          "wordCount": 364,
+          "avgWordsPerVerse": 20.22
+        },
+        {
+          "hymn": 48,
+          "verseCount": 15,
+          "wordCount": 293,
+          "avgWordsPerVerse": 19.53
+        },
+        {
+          "hymn": 49,
+          "verseCount": 10,
+          "wordCount": 156,
+          "avgWordsPerVerse": 15.6
+        },
+        {
+          "hymn": 50,
+          "verseCount": 10,
+          "wordCount": 157,
+          "avgWordsPerVerse": 15.7
+        },
+        {
+          "hymn": 51,
+          "verseCount": 10,
+          "wordCount": 165,
+          "avgWordsPerVerse": 16.5
+        },
+        {
+          "hymn": 52,
+          "verseCount": 10,
+          "wordCount": 164,
+          "avgWordsPerVerse": 16.4
+        },
+        {
+          "hymn": 53,
+          "verseCount": 8,
+          "wordCount": 126,
+          "avgWordsPerVerse": 15.75
+        },
+        {
+          "hymn": 54,
+          "verseCount": 8,
+          "wordCount": 131,
+          "avgWordsPerVerse": 16.38
+        },
+        {
+          "hymn": 55,
+          "verseCount": 5,
+          "wordCount": 58,
+          "avgWordsPerVerse": 11.6
+        },
+        {
+          "hymn": 56,
+          "verseCount": 5,
+          "wordCount": 55,
+          "avgWordsPerVerse": 11.0
+        },
+        {
+          "hymn": 57,
+          "verseCount": 4,
+          "wordCount": 73,
+          "avgWordsPerVerse": 18.25
+        },
+        {
+          "hymn": 58,
+          "verseCount": 3,
+          "wordCount": 58,
+          "avgWordsPerVerse": 19.33
+        },
+        {
+          "hymn": 59,
+          "verseCount": 7,
+          "wordCount": 124,
+          "avgWordsPerVerse": 17.71
+        },
+        {
+          "hymn": 60,
+          "verseCount": 20,
+          "wordCount": 314,
+          "avgWordsPerVerse": 15.7
+        },
+        {
+          "hymn": 61,
+          "verseCount": 18,
+          "wordCount": 306,
+          "avgWordsPerVerse": 17.0
+        },
+        {
+          "hymn": 62,
+          "verseCount": 12,
+          "wordCount": 196,
+          "avgWordsPerVerse": 16.33
+        },
+        {
+          "hymn": 63,
+          "verseCount": 12,
+          "wordCount": 144,
+          "avgWordsPerVerse": 12.0
+        },
+        {
+          "hymn": 64,
+          "verseCount": 12,
+          "wordCount": 138,
+          "avgWordsPerVerse": 11.5
+        },
+        {
+          "hymn": 65,
+          "verseCount": 12,
+          "wordCount": 130,
+          "avgWordsPerVerse": 10.83
+        },
+        {
+          "hymn": 66,
+          "verseCount": 15,
+          "wordCount": 266,
+          "avgWordsPerVerse": 17.73
+        },
+        {
+          "hymn": 67,
+          "verseCount": 21,
+          "wordCount": 214,
+          "avgWordsPerVerse": 10.19
+        },
+        {
+          "hymn": 68,
+          "verseCount": 19,
+          "wordCount": 188,
+          "avgWordsPerVerse": 9.89
+        },
+        {
+          "hymn": 69,
+          "verseCount": 18,
+          "wordCount": 228,
+          "avgWordsPerVerse": 12.67
+        },
+        {
+          "hymn": 70,
+          "verseCount": 15,
+          "wordCount": 228,
+          "avgWordsPerVerse": 15.2
+        },
+        {
+          "hymn": 71,
+          "verseCount": 15,
+          "wordCount": 182,
+          "avgWordsPerVerse": 12.13
+        },
+        {
+          "hymn": 72,
+          "verseCount": 18,
+          "wordCount": 178,
+          "avgWordsPerVerse": 9.89
+        },
+        {
+          "hymn": 73,
+          "verseCount": 18,
+          "wordCount": 212,
+          "avgWordsPerVerse": 11.78
+        },
+        {
+          "hymn": 74,
+          "verseCount": 15,
+          "wordCount": 161,
+          "avgWordsPerVerse": 10.73
+        },
+        {
+          "hymn": 75,
+          "verseCount": 16,
+          "wordCount": 173,
+          "avgWordsPerVerse": 10.81
+        },
+        {
+          "hymn": 76,
+          "verseCount": 12,
+          "wordCount": 117,
+          "avgWordsPerVerse": 9.75
+        },
+        {
+          "hymn": 77,
+          "verseCount": 11,
+          "wordCount": 123,
+          "avgWordsPerVerse": 11.18
+        },
+        {
+          "hymn": 78,
+          "verseCount": 10,
+          "wordCount": 114,
+          "avgWordsPerVerse": 11.4
+        },
+        {
+          "hymn": 79,
+          "verseCount": 9,
+          "wordCount": 110,
+          "avgWordsPerVerse": 12.22
+        },
+        {
+          "hymn": 80,
+          "verseCount": 10,
+          "wordCount": 128,
+          "avgWordsPerVerse": 12.8
+        },
+        {
+          "hymn": 81,
+          "verseCount": 9,
+          "wordCount": 101,
+          "avgWordsPerVerse": 11.22
+        },
+        {
+          "hymn": 82,
+          "verseCount": 9,
+          "wordCount": 110,
+          "avgWordsPerVerse": 12.22
+        },
+        {
+          "hymn": 83,
+          "verseCount": 9,
+          "wordCount": 0,
+          "avgWordsPerVerse": 0.0
+        },
+        {
+          "hymn": 84,
+          "verseCount": 9,
+          "wordCount": 92,
+          "avgWordsPerVerse": 10.22
+        },
+        {
+          "hymn": 85,
+          "verseCount": 9,
+          "wordCount": 89,
+          "avgWordsPerVerse": 9.89
+        },
+        {
+          "hymn": 86,
+          "verseCount": 5,
+          "wordCount": 102,
+          "avgWordsPerVerse": 20.4
+        },
+        {
+          "hymn": 87,
+          "verseCount": 6,
+          "wordCount": 98,
+          "avgWordsPerVerse": 16.33
+        },
+        {
+          "hymn": 88,
+          "verseCount": 6,
+          "wordCount": 95,
+          "avgWordsPerVerse": 15.83
+        },
+        {
+          "hymn": 89,
+          "verseCount": 7,
+          "wordCount": 106,
+          "avgWordsPerVerse": 15.14
+        },
+        {
+          "hymn": 90,
+          "verseCount": 6,
+          "wordCount": 94,
+          "avgWordsPerVerse": 15.67
+        },
+        {
+          "hymn": 91,
+          "verseCount": 7,
+          "wordCount": 106,
+          "avgWordsPerVerse": 15.14
+        },
+        {
+          "hymn": 92,
+          "verseCount": 33,
+          "wordCount": 353,
+          "avgWordsPerVerse": 10.7
+        },
+        {
+          "hymn": 93,
+          "verseCount": 34,
+          "wordCount": 369,
+          "avgWordsPerVerse": 10.85
+        },
+        {
+          "hymn": 94,
+          "verseCount": 12,
+          "wordCount": 118,
+          "avgWordsPerVerse": 9.83
+        },
+        {
+          "hymn": 95,
+          "verseCount": 9,
+          "wordCount": 126,
+          "avgWordsPerVerse": 14.0
+        },
+        {
+          "hymn": 96,
+          "verseCount": 21,
+          "wordCount": 382,
+          "avgWordsPerVerse": 18.19
+        },
+        {
+          "hymn": 97,
+          "verseCount": 15,
+          "wordCount": 263,
+          "avgWordsPerVerse": 17.53
+        },
+        {
+          "hymn": 98,
+          "verseCount": 12,
+          "wordCount": 148,
+          "avgWordsPerVerse": 12.33
+        },
+        {
+          "hymn": 99,
+          "verseCount": 8,
+          "wordCount": 119,
+          "avgWordsPerVerse": 14.88
+        },
+        {
+          "hymn": 100,
+          "verseCount": 12,
+          "wordCount": 219,
+          "avgWordsPerVerse": 18.25
+        },
+        {
+          "hymn": 101,
+          "verseCount": 16,
+          "wordCount": 240,
+          "avgWordsPerVerse": 15.0
+        },
+        {
+          "hymn": 102,
+          "verseCount": 22,
+          "wordCount": 212,
+          "avgWordsPerVerse": 9.64
+        },
+        {
+          "hymn": 103,
+          "verseCount": 14,
+          "wordCount": 204,
+          "avgWordsPerVerse": 14.57
+        }
+      ]
+    },
+    {
+      "mandala": 9,
+      "hymnCount": 114,
+      "verseCount": 1108,
+      "wordCount": 13915,
+      "rishi": "Multiple Rishis",
+      "avgVersesPerHymn": 9.72,
+      "avgWordsPerVerse": 12.56,
+      "analyzedHymns": [
+        {
+          "hymn": 1,
+          "verseCount": 10,
+          "wordCount": 99,
+          "avgWordsPerVerse": 9.9
+        },
+        {
+          "hymn": 2,
+          "verseCount": 10,
+          "wordCount": 103,
+          "avgWordsPerVerse": 10.3
+        },
+        {
+          "hymn": 3,
+          "verseCount": 10,
+          "wordCount": 90,
+          "avgWordsPerVerse": 9.0
+        },
+        {
+          "hymn": 4,
+          "verseCount": 10,
+          "wordCount": 111,
+          "avgWordsPerVerse": 11.1
+        },
+        {
+          "hymn": 5,
+          "verseCount": 11,
+          "wordCount": 113,
+          "avgWordsPerVerse": 10.27
+        },
+        {
+          "hymn": 6,
+          "verseCount": 9,
+          "wordCount": 92,
+          "avgWordsPerVerse": 10.22
+        },
+        {
+          "hymn": 7,
+          "verseCount": 9,
+          "wordCount": 93,
+          "avgWordsPerVerse": 10.33
+        },
+        {
+          "hymn": 8,
+          "verseCount": 9,
+          "wordCount": 90,
+          "avgWordsPerVerse": 10.0
+        },
+        {
+          "hymn": 9,
+          "verseCount": 9,
+          "wordCount": 93,
+          "avgWordsPerVerse": 10.33
+        },
+        {
+          "hymn": 10,
+          "verseCount": 9,
+          "wordCount": 82,
+          "avgWordsPerVerse": 9.11
+        },
+        {
+          "hymn": 11,
+          "verseCount": 9,
+          "wordCount": 86,
+          "avgWordsPerVerse": 9.56
+        },
+        {
+          "hymn": 12,
+          "verseCount": 9,
+          "wordCount": 88,
+          "avgWordsPerVerse": 9.78
+        },
+        {
+          "hymn": 13,
+          "verseCount": 9,
+          "wordCount": 77,
+          "avgWordsPerVerse": 8.56
+        },
+        {
+          "hymn": 14,
+          "verseCount": 8,
+          "wordCount": 79,
+          "avgWordsPerVerse": 9.88
+        },
+        {
+          "hymn": 15,
+          "verseCount": 8,
+          "wordCount": 75,
+          "avgWordsPerVerse": 9.38
+        },
+        {
+          "hymn": 16,
+          "verseCount": 8,
+          "wordCount": 81,
+          "avgWordsPerVerse": 10.12
+        },
+        {
+          "hymn": 17,
+          "verseCount": 8,
+          "wordCount": 78,
+          "avgWordsPerVerse": 9.75
+        },
+        {
+          "hymn": 18,
+          "verseCount": 7,
+          "wordCount": 73,
+          "avgWordsPerVerse": 10.43
+        },
+        {
+          "hymn": 19,
+          "verseCount": 7,
+          "wordCount": 79,
+          "avgWordsPerVerse": 11.29
+        },
+        {
+          "hymn": 20,
+          "verseCount": 7,
+          "wordCount": 71,
+          "avgWordsPerVerse": 10.14
+        },
+        {
+          "hymn": 21,
+          "verseCount": 7,
+          "wordCount": 67,
+          "avgWordsPerVerse": 9.57
+        },
+        {
+          "hymn": 22,
+          "verseCount": 7,
+          "wordCount": 64,
+          "avgWordsPerVerse": 9.14
+        },
+        {
+          "hymn": 23,
+          "verseCount": 7,
+          "wordCount": 64,
+          "avgWordsPerVerse": 9.14
+        },
+        {
+          "hymn": 24,
+          "verseCount": 7,
+          "wordCount": 61,
+          "avgWordsPerVerse": 8.71
+        },
+        {
+          "hymn": 25,
+          "verseCount": 6,
+          "wordCount": 55,
+          "avgWordsPerVerse": 9.17
+        },
+        {
+          "hymn": 26,
+          "verseCount": 6,
+          "wordCount": 56,
+          "avgWordsPerVerse": 9.33
+        },
+        {
+          "hymn": 27,
+          "verseCount": 6,
+          "wordCount": 56,
+          "avgWordsPerVerse": 9.33
+        },
+        {
+          "hymn": 28,
+          "verseCount": 6,
+          "wordCount": 53,
+          "avgWordsPerVerse": 8.83
+        },
+        {
+          "hymn": 29,
+          "verseCount": 6,
+          "wordCount": 62,
+          "avgWordsPerVerse": 10.33
+        },
+        {
+          "hymn": 30,
+          "verseCount": 6,
+          "wordCount": 54,
+          "avgWordsPerVerse": 9.0
+        },
+        {
+          "hymn": 31,
+          "verseCount": 6,
+          "wordCount": 60,
+          "avgWordsPerVerse": 10.0
+        },
+        {
+          "hymn": 32,
+          "verseCount": 6,
+          "wordCount": 66,
+          "avgWordsPerVerse": 11.0
+        },
+        {
+          "hymn": 33,
+          "verseCount": 6,
+          "wordCount": 54,
+          "avgWordsPerVerse": 9.0
+        },
+        {
+          "hymn": 34,
+          "verseCount": 6,
+          "wordCount": 57,
+          "avgWordsPerVerse": 9.5
+        },
+        {
+          "hymn": 35,
+          "verseCount": 6,
+          "wordCount": 57,
+          "avgWordsPerVerse": 9.5
+        },
+        {
+          "hymn": 36,
+          "verseCount": 6,
+          "wordCount": 58,
+          "avgWordsPerVerse": 9.67
+        },
+        {
+          "hymn": 37,
+          "verseCount": 6,
+          "wordCount": 57,
+          "avgWordsPerVerse": 9.5
+        },
+        {
+          "hymn": 38,
+          "verseCount": 6,
+          "wordCount": 66,
+          "avgWordsPerVerse": 11.0
+        },
+        {
+          "hymn": 39,
+          "verseCount": 6,
+          "wordCount": 57,
+          "avgWordsPerVerse": 9.5
+        },
+        {
+          "hymn": 40,
+          "verseCount": 6,
+          "wordCount": 67,
+          "avgWordsPerVerse": 11.17
+        },
+        {
+          "hymn": 41,
+          "verseCount": 6,
+          "wordCount": 61,
+          "avgWordsPerVerse": 10.17
+        },
+        {
+          "hymn": 42,
+          "verseCount": 6,
+          "wordCount": 54,
+          "avgWordsPerVerse": 9.0
+        },
+        {
+          "hymn": 43,
+          "verseCount": 6,
+          "wordCount": 55,
+          "avgWordsPerVerse": 9.17
+        },
+        {
+          "hymn": 44,
+          "verseCount": 6,
+          "wordCount": 63,
+          "avgWordsPerVerse": 10.5
+        },
+        {
+          "hymn": 45,
+          "verseCount": 6,
+          "wordCount": 67,
+          "avgWordsPerVerse": 11.17
+        },
+        {
+          "hymn": 46,
+          "verseCount": 6,
+          "wordCount": 50,
+          "avgWordsPerVerse": 8.33
+        },
+        {
+          "hymn": 47,
+          "verseCount": 5,
+          "wordCount": 47,
+          "avgWordsPerVerse": 9.4
+        },
+        {
+          "hymn": 48,
+          "verseCount": 5,
+          "wordCount": 47,
+          "avgWordsPerVerse": 9.4
+        },
+        {
+          "hymn": 49,
+          "verseCount": 5,
+          "wordCount": 51,
+          "avgWordsPerVerse": 10.2
+        },
+        {
+          "hymn": 50,
+          "verseCount": 5,
+          "wordCount": 49,
+          "avgWordsPerVerse": 9.8
+        },
+        {
+          "hymn": 51,
+          "verseCount": 5,
+          "wordCount": 50,
+          "avgWordsPerVerse": 10.0
+        },
+        {
+          "hymn": 52,
+          "verseCount": 5,
+          "wordCount": 56,
+          "avgWordsPerVerse": 11.2
+        },
+        {
+          "hymn": 53,
+          "verseCount": 4,
+          "wordCount": 38,
+          "avgWordsPerVerse": 9.5
+        },
+        {
+          "hymn": 54,
+          "verseCount": 4,
+          "wordCount": 40,
+          "avgWordsPerVerse": 10.0
+        },
+        {
+          "hymn": 55,
+          "verseCount": 4,
+          "wordCount": 42,
+          "avgWordsPerVerse": 10.5
+        },
+        {
+          "hymn": 56,
+          "verseCount": 4,
+          "wordCount": 43,
+          "avgWordsPerVerse": 10.75
+        },
+        {
+          "hymn": 57,
+          "verseCount": 4,
+          "wordCount": 44,
+          "avgWordsPerVerse": 11.0
+        },
+        {
+          "hymn": 58,
+          "verseCount": 4,
+          "wordCount": 41,
+          "avgWordsPerVerse": 10.25
+        },
+        {
+          "hymn": 59,
+          "verseCount": 4,
+          "wordCount": 39,
+          "avgWordsPerVerse": 9.75
+        },
+        {
+          "hymn": 60,
+          "verseCount": 4,
+          "wordCount": 36,
+          "avgWordsPerVerse": 9.0
+        },
+        {
+          "hymn": 61,
+          "verseCount": 30,
+          "wordCount": 316,
+          "avgWordsPerVerse": 10.53
+        },
+        {
+          "hymn": 62,
+          "verseCount": 30,
+          "wordCount": 283,
+          "avgWordsPerVerse": 9.43
+        },
+        {
+          "hymn": 63,
+          "verseCount": 30,
+          "wordCount": 287,
+          "avgWordsPerVerse": 9.57
+        },
+        {
+          "hymn": 64,
+          "verseCount": 30,
+          "wordCount": 293,
+          "avgWordsPerVerse": 9.77
+        },
+        {
+          "hymn": 65,
+          "verseCount": 30,
+          "wordCount": 294,
+          "avgWordsPerVerse": 9.8
+        },
+        {
+          "hymn": 66,
+          "verseCount": 30,
+          "wordCount": 299,
+          "avgWordsPerVerse": 9.97
+        },
+        {
+          "hymn": 67,
+          "verseCount": 32,
+          "wordCount": 317,
+          "avgWordsPerVerse": 9.91
+        },
+        {
+          "hymn": 68,
+          "verseCount": 10,
+          "wordCount": 196,
+          "avgWordsPerVerse": 19.6
+        },
+        {
+          "hymn": 69,
+          "verseCount": 10,
+          "wordCount": 190,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 70,
+          "verseCount": 10,
+          "wordCount": 201,
+          "avgWordsPerVerse": 20.1
+        },
+        {
+          "hymn": 71,
+          "verseCount": 9,
+          "wordCount": 175,
+          "avgWordsPerVerse": 19.44
+        },
+        {
+          "hymn": 72,
+          "verseCount": 9,
+          "wordCount": 177,
+          "avgWordsPerVerse": 19.67
+        },
+        {
+          "hymn": 73,
+          "verseCount": 9,
+          "wordCount": 172,
+          "avgWordsPerVerse": 19.11
+        },
+        {
+          "hymn": 74,
+          "verseCount": 9,
+          "wordCount": 0,
+          "avgWordsPerVerse": 0.0
+        },
+        {
+          "hymn": 75,
+          "verseCount": 5,
+          "wordCount": 94,
+          "avgWordsPerVerse": 18.8
+        },
+        {
+          "hymn": 76,
+          "verseCount": 5,
+          "wordCount": 90,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 77,
+          "verseCount": 5,
+          "wordCount": 95,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 78,
+          "verseCount": 5,
+          "wordCount": 95,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 79,
+          "verseCount": 5,
+          "wordCount": 103,
+          "avgWordsPerVerse": 20.6
+        },
+        {
+          "hymn": 80,
+          "verseCount": 5,
+          "wordCount": 96,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 81,
+          "verseCount": 5,
+          "wordCount": 98,
+          "avgWordsPerVerse": 19.6
+        },
+        {
+          "hymn": 82,
+          "verseCount": 5,
+          "wordCount": 98,
+          "avgWordsPerVerse": 19.6
+        },
+        {
+          "hymn": 83,
+          "verseCount": 5,
+          "wordCount": 93,
+          "avgWordsPerVerse": 18.6
+        },
+        {
+          "hymn": 84,
+          "verseCount": 5,
+          "wordCount": 91,
+          "avgWordsPerVerse": 18.2
+        },
+        {
+          "hymn": 85,
+          "verseCount": 12,
+          "wordCount": 221,
+          "avgWordsPerVerse": 18.42
+        },
+        {
+          "hymn": 86,
+          "verseCount": 48,
+          "wordCount": 0,
+          "avgWordsPerVerse": 0.0
+        },
+        {
+          "hymn": 87,
+          "verseCount": 9,
+          "wordCount": 173,
+          "avgWordsPerVerse": 19.22
+        },
+        {
+          "hymn": 88,
+          "verseCount": 8,
+          "wordCount": 152,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 89,
+          "verseCount": 7,
+          "wordCount": 128,
+          "avgWordsPerVerse": 18.29
+        },
+        {
+          "hymn": 90,
+          "verseCount": 6,
+          "wordCount": 109,
+          "avgWordsPerVerse": 18.17
+        },
+        {
+          "hymn": 91,
+          "verseCount": 6,
+          "wordCount": 113,
+          "avgWordsPerVerse": 18.83
+        },
+        {
+          "hymn": 92,
+          "verseCount": 6,
+          "wordCount": 114,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 93,
+          "verseCount": 5,
+          "wordCount": 90,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 94,
+          "verseCount": 5,
+          "wordCount": 90,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 95,
+          "verseCount": 5,
+          "wordCount": 88,
+          "avgWordsPerVerse": 17.6
+        },
+        {
+          "hymn": 96,
+          "verseCount": 24,
+          "wordCount": 426,
+          "avgWordsPerVerse": 17.75
+        },
+        {
+          "hymn": 97,
+          "verseCount": 50,
+          "wordCount": 916,
+          "avgWordsPerVerse": 18.32
+        },
+        {
+          "hymn": 98,
+          "verseCount": 12,
+          "wordCount": 160,
+          "avgWordsPerVerse": 13.33
+        },
+        {
+          "hymn": 99,
+          "verseCount": 8,
+          "wordCount": 107,
+          "avgWordsPerVerse": 13.38
+        },
+        {
+          "hymn": 100,
+          "verseCount": 9,
+          "wordCount": 114,
+          "avgWordsPerVerse": 12.67
+        },
+        {
+          "hymn": 101,
+          "verseCount": 16,
+          "wordCount": 199,
+          "avgWordsPerVerse": 12.44
+        },
+        {
+          "hymn": 102,
+          "verseCount": 8,
+          "wordCount": 95,
+          "avgWordsPerVerse": 11.88
+        },
+        {
+          "hymn": 103,
+          "verseCount": 6,
+          "wordCount": 65,
+          "avgWordsPerVerse": 10.83
+        },
+        {
+          "hymn": 104,
+          "verseCount": 6,
+          "wordCount": 70,
+          "avgWordsPerVerse": 11.67
+        },
+        {
+          "hymn": 105,
+          "verseCount": 6,
+          "wordCount": 73,
+          "avgWordsPerVerse": 12.17
+        },
+        {
+          "hymn": 106,
+          "verseCount": 14,
+          "wordCount": 153,
+          "avgWordsPerVerse": 10.93
+        },
+        {
+          "hymn": 107,
+          "verseCount": 26,
+          "wordCount": 382,
+          "avgWordsPerVerse": 14.69
+        },
+        {
+          "hymn": 108,
+          "verseCount": 16,
+          "wordCount": 215,
+          "avgWordsPerVerse": 13.44
+        },
+        {
+          "hymn": 109,
+          "verseCount": 22,
+          "wordCount": 187,
+          "avgWordsPerVerse": 8.5
+        },
+        {
+          "hymn": 110,
+          "verseCount": 12,
+          "wordCount": 168,
+          "avgWordsPerVerse": 14.0
+        },
+        {
+          "hymn": 111,
+          "verseCount": 3,
+          "wordCount": 78,
+          "avgWordsPerVerse": 26.0
+        },
+        {
+          "hymn": 112,
+          "verseCount": 4,
+          "wordCount": 69,
+          "avgWordsPerVerse": 17.25
+        },
+        {
+          "hymn": 113,
+          "verseCount": 11,
+          "wordCount": 204,
+          "avgWordsPerVerse": 18.55
+        },
+        {
+          "hymn": 114,
+          "verseCount": 4,
+          "wordCount": 84,
+          "avgWordsPerVerse": 21.0
+        }
+      ]
+    },
+    {
+      "mandala": 10,
+      "hymnCount": 191,
+      "verseCount": 1860,
+      "wordCount": 29817,
+      "rishi": "Multiple Rishis",
+      "avgVersesPerHymn": 9.74,
+      "avgWordsPerVerse": 16.03,
+      "analyzedHymns": [
+        {
+          "hymn": 1,
+          "verseCount": 7,
+          "wordCount": 134,
+          "avgWordsPerVerse": 19.14
+        },
+        {
+          "hymn": 2,
+          "verseCount": 7,
+          "wordCount": 135,
+          "avgWordsPerVerse": 19.29
+        },
+        {
+          "hymn": 3,
+          "verseCount": 7,
+          "wordCount": 124,
+          "avgWordsPerVerse": 17.71
+        },
+        {
+          "hymn": 4,
+          "verseCount": 7,
+          "wordCount": 132,
+          "avgWordsPerVerse": 18.86
+        },
+        {
+          "hymn": 5,
+          "verseCount": 7,
+          "wordCount": 132,
+          "avgWordsPerVerse": 18.86
+        },
+        {
+          "hymn": 6,
+          "verseCount": 7,
+          "wordCount": 122,
+          "avgWordsPerVerse": 17.43
+        },
+        {
+          "hymn": 7,
+          "verseCount": 7,
+          "wordCount": 133,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 8,
+          "verseCount": 9,
+          "wordCount": 161,
+          "avgWordsPerVerse": 17.89
+        },
+        {
+          "hymn": 9,
+          "verseCount": 9,
+          "wordCount": 105,
+          "avgWordsPerVerse": 11.67
+        },
+        {
+          "hymn": 10,
+          "verseCount": 14,
+          "wordCount": 298,
+          "avgWordsPerVerse": 21.29
+        },
+        {
+          "hymn": 11,
+          "verseCount": 9,
+          "wordCount": 186,
+          "avgWordsPerVerse": 20.67
+        },
+        {
+          "hymn": 12,
+          "verseCount": 9,
+          "wordCount": 183,
+          "avgWordsPerVerse": 20.33
+        },
+        {
+          "hymn": 13,
+          "verseCount": 5,
+          "wordCount": 102,
+          "avgWordsPerVerse": 20.4
+        },
+        {
+          "hymn": 14,
+          "verseCount": 16,
+          "wordCount": 273,
+          "avgWordsPerVerse": 17.06
+        },
+        {
+          "hymn": 15,
+          "verseCount": 14,
+          "wordCount": 257,
+          "avgWordsPerVerse": 18.36
+        },
+        {
+          "hymn": 16,
+          "verseCount": 14,
+          "wordCount": 258,
+          "avgWordsPerVerse": 18.43
+        },
+        {
+          "hymn": 17,
+          "verseCount": 14,
+          "wordCount": 256,
+          "avgWordsPerVerse": 18.29
+        },
+        {
+          "hymn": 18,
+          "verseCount": 14,
+          "wordCount": 257,
+          "avgWordsPerVerse": 18.36
+        },
+        {
+          "hymn": 19,
+          "verseCount": 8,
+          "wordCount": 114,
+          "avgWordsPerVerse": 14.25
+        },
+        {
+          "hymn": 20,
+          "verseCount": 10,
+          "wordCount": 121,
+          "avgWordsPerVerse": 12.1
+        },
+        {
+          "hymn": 21,
+          "verseCount": 8,
+          "wordCount": 130,
+          "avgWordsPerVerse": 16.25
+        },
+        {
+          "hymn": 22,
+          "verseCount": 15,
+          "wordCount": 232,
+          "avgWordsPerVerse": 15.47
+        },
+        {
+          "hymn": 23,
+          "verseCount": 7,
+          "wordCount": 145,
+          "avgWordsPerVerse": 20.71
+        },
+        {
+          "hymn": 24,
+          "verseCount": 6,
+          "wordCount": 92,
+          "avgWordsPerVerse": 15.33
+        },
+        {
+          "hymn": 25,
+          "verseCount": 11,
+          "wordCount": 198,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 26,
+          "verseCount": 9,
+          "wordCount": 111,
+          "avgWordsPerVerse": 12.33
+        },
+        {
+          "hymn": 27,
+          "verseCount": 24,
+          "wordCount": 476,
+          "avgWordsPerVerse": 19.83
+        },
+        {
+          "hymn": 28,
+          "verseCount": 12,
+          "wordCount": 230,
+          "avgWordsPerVerse": 19.17
+        },
+        {
+          "hymn": 29,
+          "verseCount": 8,
+          "wordCount": 173,
+          "avgWordsPerVerse": 21.62
+        },
+        {
+          "hymn": 30,
+          "verseCount": 15,
+          "wordCount": 278,
+          "avgWordsPerVerse": 18.53
+        },
+        {
+          "hymn": 31,
+          "verseCount": 11,
+          "wordCount": 222,
+          "avgWordsPerVerse": 20.18
+        },
+        {
+          "hymn": 32,
+          "verseCount": 9,
+          "wordCount": 180,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 33,
+          "verseCount": 9,
+          "wordCount": 0,
+          "avgWordsPerVerse": 0.0
+        },
+        {
+          "hymn": 34,
+          "verseCount": 14,
+          "wordCount": 255,
+          "avgWordsPerVerse": 18.21
+        },
+        {
+          "hymn": 35,
+          "verseCount": 14,
+          "wordCount": 268,
+          "avgWordsPerVerse": 19.14
+        },
+        {
+          "hymn": 36,
+          "verseCount": 14,
+          "wordCount": 254,
+          "avgWordsPerVerse": 18.14
+        },
+        {
+          "hymn": 37,
+          "verseCount": 12,
+          "wordCount": 238,
+          "avgWordsPerVerse": 19.83
+        },
+        {
+          "hymn": 38,
+          "verseCount": 5,
+          "wordCount": 103,
+          "avgWordsPerVerse": 20.6
+        },
+        {
+          "hymn": 39,
+          "verseCount": 14,
+          "wordCount": 281,
+          "avgWordsPerVerse": 20.07
+        },
+        {
+          "hymn": 40,
+          "verseCount": 14,
+          "wordCount": 291,
+          "avgWordsPerVerse": 20.79
+        },
+        {
+          "hymn": 41,
+          "verseCount": 3,
+          "wordCount": 52,
+          "avgWordsPerVerse": 17.33
+        },
+        {
+          "hymn": 42,
+          "verseCount": 11,
+          "wordCount": 214,
+          "avgWordsPerVerse": 19.45
+        },
+        {
+          "hymn": 43,
+          "verseCount": 11,
+          "wordCount": 218,
+          "avgWordsPerVerse": 19.82
+        },
+        {
+          "hymn": 44,
+          "verseCount": 11,
+          "wordCount": 209,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 45,
+          "verseCount": 12,
+          "wordCount": 223,
+          "avgWordsPerVerse": 18.58
+        },
+        {
+          "hymn": 46,
+          "verseCount": 10,
+          "wordCount": 172,
+          "avgWordsPerVerse": 17.2
+        },
+        {
+          "hymn": 47,
+          "verseCount": 8,
+          "wordCount": 132,
+          "avgWordsPerVerse": 16.5
+        },
+        {
+          "hymn": 48,
+          "verseCount": 11,
+          "wordCount": 219,
+          "avgWordsPerVerse": 19.91
+        },
+        {
+          "hymn": 49,
+          "verseCount": 11,
+          "wordCount": 222,
+          "avgWordsPerVerse": 20.18
+        },
+        {
+          "hymn": 50,
+          "verseCount": 7,
+          "wordCount": 144,
+          "avgWordsPerVerse": 20.57
+        },
+        {
+          "hymn": 51,
+          "verseCount": 9,
+          "wordCount": 172,
+          "avgWordsPerVerse": 19.11
+        },
+        {
+          "hymn": 52,
+          "verseCount": 6,
+          "wordCount": 121,
+          "avgWordsPerVerse": 20.17
+        },
+        {
+          "hymn": 53,
+          "verseCount": 11,
+          "wordCount": 206,
+          "avgWordsPerVerse": 18.73
+        },
+        {
+          "hymn": 54,
+          "verseCount": 6,
+          "wordCount": 124,
+          "avgWordsPerVerse": 20.67
+        },
+        {
+          "hymn": 55,
+          "verseCount": 8,
+          "wordCount": 150,
+          "avgWordsPerVerse": 18.75
+        },
+        {
+          "hymn": 56,
+          "verseCount": 7,
+          "wordCount": 134,
+          "avgWordsPerVerse": 19.14
+        },
+        {
+          "hymn": 57,
+          "verseCount": 6,
+          "wordCount": 63,
+          "avgWordsPerVerse": 10.5
+        },
+        {
+          "hymn": 58,
+          "verseCount": 12,
+          "wordCount": 174,
+          "avgWordsPerVerse": 14.5
+        },
+        {
+          "hymn": 59,
+          "verseCount": 10,
+          "wordCount": 208,
+          "avgWordsPerVerse": 20.8
+        },
+        {
+          "hymn": 60,
+          "verseCount": 12,
+          "wordCount": 144,
+          "avgWordsPerVerse": 12.0
+        },
+        {
+          "hymn": 61,
+          "verseCount": 27,
+          "wordCount": 520,
+          "avgWordsPerVerse": 19.26
+        },
+        {
+          "hymn": 62,
+          "verseCount": 11,
+          "wordCount": 168,
+          "avgWordsPerVerse": 15.27
+        },
+        {
+          "hymn": 63,
+          "verseCount": 17,
+          "wordCount": 306,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 64,
+          "verseCount": 17,
+          "wordCount": 307,
+          "avgWordsPerVerse": 18.06
+        },
+        {
+          "hymn": 65,
+          "verseCount": 15,
+          "wordCount": 271,
+          "avgWordsPerVerse": 18.07
+        },
+        {
+          "hymn": 66,
+          "verseCount": 15,
+          "wordCount": 261,
+          "avgWordsPerVerse": 17.4
+        },
+        {
+          "hymn": 67,
+          "verseCount": 12,
+          "wordCount": 206,
+          "avgWordsPerVerse": 17.17
+        },
+        {
+          "hymn": 68,
+          "verseCount": 12,
+          "wordCount": 213,
+          "avgWordsPerVerse": 17.75
+        },
+        {
+          "hymn": 69,
+          "verseCount": 12,
+          "wordCount": 220,
+          "avgWordsPerVerse": 18.33
+        },
+        {
+          "hymn": 70,
+          "verseCount": 11,
+          "wordCount": 202,
+          "avgWordsPerVerse": 18.36
+        },
+        {
+          "hymn": 71,
+          "verseCount": 11,
+          "wordCount": 210,
+          "avgWordsPerVerse": 19.09
+        },
+        {
+          "hymn": 72,
+          "verseCount": 9,
+          "wordCount": 121,
+          "avgWordsPerVerse": 13.44
+        },
+        {
+          "hymn": 73,
+          "verseCount": 11,
+          "wordCount": 203,
+          "avgWordsPerVerse": 18.45
+        },
+        {
+          "hymn": 74,
+          "verseCount": 6,
+          "wordCount": 109,
+          "avgWordsPerVerse": 18.17
+        },
+        {
+          "hymn": 75,
+          "verseCount": 9,
+          "wordCount": 171,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 76,
+          "verseCount": 8,
+          "wordCount": 148,
+          "avgWordsPerVerse": 18.5
+        },
+        {
+          "hymn": 77,
+          "verseCount": 8,
+          "wordCount": 146,
+          "avgWordsPerVerse": 18.25
+        },
+        {
+          "hymn": 78,
+          "verseCount": 8,
+          "wordCount": 138,
+          "avgWordsPerVerse": 17.25
+        },
+        {
+          "hymn": 79,
+          "verseCount": 7,
+          "wordCount": 135,
+          "avgWordsPerVerse": 19.29
+        },
+        {
+          "hymn": 80,
+          "verseCount": 7,
+          "wordCount": 132,
+          "avgWordsPerVerse": 18.86
+        },
+        {
+          "hymn": 81,
+          "verseCount": 7,
+          "wordCount": 129,
+          "avgWordsPerVerse": 18.43
+        },
+        {
+          "hymn": 82,
+          "verseCount": 7,
+          "wordCount": 135,
+          "avgWordsPerVerse": 19.29
+        },
+        {
+          "hymn": 83,
+          "verseCount": 7,
+          "wordCount": 143,
+          "avgWordsPerVerse": 20.43
+        },
+        {
+          "hymn": 84,
+          "verseCount": 7,
+          "wordCount": 131,
+          "avgWordsPerVerse": 18.71
+        },
+        {
+          "hymn": 85,
+          "verseCount": 47,
+          "wordCount": 727,
+          "avgWordsPerVerse": 15.47
+        },
+        {
+          "hymn": 86,
+          "verseCount": 23,
+          "wordCount": 397,
+          "avgWordsPerVerse": 17.26
+        },
+        {
+          "hymn": 87,
+          "verseCount": 25,
+          "wordCount": 0,
+          "avgWordsPerVerse": 0.0
+        },
+        {
+          "hymn": 88,
+          "verseCount": 18,
+          "wordCount": 341,
+          "avgWordsPerVerse": 18.94
+        },
+        {
+          "hymn": 89,
+          "verseCount": 18,
+          "wordCount": 340,
+          "avgWordsPerVerse": 18.89
+        },
+        {
+          "hymn": 90,
+          "verseCount": 16,
+          "wordCount": 238,
+          "avgWordsPerVerse": 14.88
+        },
+        {
+          "hymn": 91,
+          "verseCount": 15,
+          "wordCount": 284,
+          "avgWordsPerVerse": 18.93
+        },
+        {
+          "hymn": 92,
+          "verseCount": 15,
+          "wordCount": 278,
+          "avgWordsPerVerse": 18.53
+        },
+        {
+          "hymn": 93,
+          "verseCount": 15,
+          "wordCount": 244,
+          "avgWordsPerVerse": 16.27
+        },
+        {
+          "hymn": 94,
+          "verseCount": 14,
+          "wordCount": 244,
+          "avgWordsPerVerse": 17.43
+        },
+        {
+          "hymn": 95,
+          "verseCount": 18,
+          "wordCount": 353,
+          "avgWordsPerVerse": 19.61
+        },
+        {
+          "hymn": 96,
+          "verseCount": 13,
+          "wordCount": 255,
+          "avgWordsPerVerse": 19.62
+        },
+        {
+          "hymn": 97,
+          "verseCount": 23,
+          "wordCount": 300,
+          "avgWordsPerVerse": 13.04
+        },
+        {
+          "hymn": 98,
+          "verseCount": 12,
+          "wordCount": 217,
+          "avgWordsPerVerse": 18.08
+        },
+        {
+          "hymn": 99,
+          "verseCount": 12,
+          "wordCount": 222,
+          "avgWordsPerVerse": 18.5
+        },
+        {
+          "hymn": 100,
+          "verseCount": 12,
+          "wordCount": 228,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 101,
+          "verseCount": 12,
+          "wordCount": 196,
+          "avgWordsPerVerse": 16.33
+        },
+        {
+          "hymn": 102,
+          "verseCount": 12,
+          "wordCount": 201,
+          "avgWordsPerVerse": 16.75
+        },
+        {
+          "hymn": 103,
+          "verseCount": 13,
+          "wordCount": 211,
+          "avgWordsPerVerse": 16.23
+        },
+        {
+          "hymn": 104,
+          "verseCount": 11,
+          "wordCount": 186,
+          "avgWordsPerVerse": 16.91
+        },
+        {
+          "hymn": 105,
+          "verseCount": 11,
+          "wordCount": 147,
+          "avgWordsPerVerse": 13.36
+        },
+        {
+          "hymn": 106,
+          "verseCount": 11,
+          "wordCount": 203,
+          "avgWordsPerVerse": 18.45
+        },
+        {
+          "hymn": 107,
+          "verseCount": 11,
+          "wordCount": 202,
+          "avgWordsPerVerse": 18.36
+        },
+        {
+          "hymn": 108,
+          "verseCount": 11,
+          "wordCount": 216,
+          "avgWordsPerVerse": 19.64
+        },
+        {
+          "hymn": 109,
+          "verseCount": 7,
+          "wordCount": 111,
+          "avgWordsPerVerse": 15.86
+        },
+        {
+          "hymn": 110,
+          "verseCount": 11,
+          "wordCount": 202,
+          "avgWordsPerVerse": 18.36
+        },
+        {
+          "hymn": 111,
+          "verseCount": 10,
+          "wordCount": 194,
+          "avgWordsPerVerse": 19.4
+        },
+        {
+          "hymn": 112,
+          "verseCount": 10,
+          "wordCount": 187,
+          "avgWordsPerVerse": 18.7
+        },
+        {
+          "hymn": 113,
+          "verseCount": 10,
+          "wordCount": 183,
+          "avgWordsPerVerse": 18.3
+        },
+        {
+          "hymn": 114,
+          "verseCount": 10,
+          "wordCount": 187,
+          "avgWordsPerVerse": 18.7
+        },
+        {
+          "hymn": 115,
+          "verseCount": 9,
+          "wordCount": 180,
+          "avgWordsPerVerse": 20.0
+        },
+        {
+          "hymn": 116,
+          "verseCount": 9,
+          "wordCount": 157,
+          "avgWordsPerVerse": 17.44
+        },
+        {
+          "hymn": 117,
+          "verseCount": 9,
+          "wordCount": 183,
+          "avgWordsPerVerse": 20.33
+        },
+        {
+          "hymn": 118,
+          "verseCount": 9,
+          "wordCount": 83,
+          "avgWordsPerVerse": 9.22
+        },
+        {
+          "hymn": 119,
+          "verseCount": 13,
+          "wordCount": 150,
+          "avgWordsPerVerse": 11.54
+        },
+        {
+          "hymn": 120,
+          "verseCount": 9,
+          "wordCount": 164,
+          "avgWordsPerVerse": 18.22
+        },
+        {
+          "hymn": 121,
+          "verseCount": 10,
+          "wordCount": 194,
+          "avgWordsPerVerse": 19.4
+        },
+        {
+          "hymn": 122,
+          "verseCount": 8,
+          "wordCount": 143,
+          "avgWordsPerVerse": 17.88
+        },
+        {
+          "hymn": 123,
+          "verseCount": 8,
+          "wordCount": 140,
+          "avgWordsPerVerse": 17.5
+        },
+        {
+          "hymn": 124,
+          "verseCount": 9,
+          "wordCount": 172,
+          "avgWordsPerVerse": 19.11
+        },
+        {
+          "hymn": 125,
+          "verseCount": 8,
+          "wordCount": 150,
+          "avgWordsPerVerse": 18.75
+        },
+        {
+          "hymn": 126,
+          "verseCount": 8,
+          "wordCount": 135,
+          "avgWordsPerVerse": 16.88
+        },
+        {
+          "hymn": 127,
+          "verseCount": 8,
+          "wordCount": 91,
+          "avgWordsPerVerse": 11.38
+        },
+        {
+          "hymn": 128,
+          "verseCount": 9,
+          "wordCount": 174,
+          "avgWordsPerVerse": 19.33
+        },
+        {
+          "hymn": 129,
+          "verseCount": 7,
+          "wordCount": 152,
+          "avgWordsPerVerse": 21.71
+        },
+        {
+          "hymn": 130,
+          "verseCount": 7,
+          "wordCount": 132,
+          "avgWordsPerVerse": 18.86
+        },
+        {
+          "hymn": 131,
+          "verseCount": 7,
+          "wordCount": 117,
+          "avgWordsPerVerse": 16.71
+        },
+        {
+          "hymn": 132,
+          "verseCount": 7,
+          "wordCount": 121,
+          "avgWordsPerVerse": 17.29
+        },
+        {
+          "hymn": 133,
+          "verseCount": 7,
+          "wordCount": 149,
+          "avgWordsPerVerse": 21.29
+        },
+        {
+          "hymn": 134,
+          "verseCount": 7,
+          "wordCount": 129,
+          "avgWordsPerVerse": 18.43
+        },
+        {
+          "hymn": 135,
+          "verseCount": 7,
+          "wordCount": 94,
+          "avgWordsPerVerse": 13.43
+        },
+        {
+          "hymn": 136,
+          "verseCount": 7,
+          "wordCount": 93,
+          "avgWordsPerVerse": 13.29
+        },
+        {
+          "hymn": 137,
+          "verseCount": 7,
+          "wordCount": 102,
+          "avgWordsPerVerse": 14.57
+        },
+        {
+          "hymn": 138,
+          "verseCount": 6,
+          "wordCount": 113,
+          "avgWordsPerVerse": 18.83
+        },
+        {
+          "hymn": 139,
+          "verseCount": 6,
+          "wordCount": 112,
+          "avgWordsPerVerse": 18.67
+        },
+        {
+          "hymn": 140,
+          "verseCount": 6,
+          "wordCount": 95,
+          "avgWordsPerVerse": 15.83
+        },
+        {
+          "hymn": 141,
+          "verseCount": 6,
+          "wordCount": 86,
+          "avgWordsPerVerse": 14.33
+        },
+        {
+          "hymn": 142,
+          "verseCount": 8,
+          "wordCount": 150,
+          "avgWordsPerVerse": 18.75
+        },
+        {
+          "hymn": 143,
+          "verseCount": 6,
+          "wordCount": 92,
+          "avgWordsPerVerse": 15.33
+        },
+        {
+          "hymn": 144,
+          "verseCount": 6,
+          "wordCount": 87,
+          "avgWordsPerVerse": 14.5
+        },
+        {
+          "hymn": 145,
+          "verseCount": 6,
+          "wordCount": 84,
+          "avgWordsPerVerse": 14.0
+        },
+        {
+          "hymn": 146,
+          "verseCount": 6,
+          "wordCount": 76,
+          "avgWordsPerVerse": 12.67
+        },
+        {
+          "hymn": 147,
+          "verseCount": 5,
+          "wordCount": 99,
+          "avgWordsPerVerse": 19.8
+        },
+        {
+          "hymn": 148,
+          "verseCount": 5,
+          "wordCount": 96,
+          "avgWordsPerVerse": 19.2
+        },
+        {
+          "hymn": 149,
+          "verseCount": 5,
+          "wordCount": 92,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 150,
+          "verseCount": 5,
+          "wordCount": 76,
+          "avgWordsPerVerse": 15.2
+        },
+        {
+          "hymn": 151,
+          "verseCount": 5,
+          "wordCount": 64,
+          "avgWordsPerVerse": 12.8
+        },
+        {
+          "hymn": 152,
+          "verseCount": 5,
+          "wordCount": 71,
+          "avgWordsPerVerse": 14.2
+        },
+        {
+          "hymn": 153,
+          "verseCount": 5,
+          "wordCount": 52,
+          "avgWordsPerVerse": 10.4
+        },
+        {
+          "hymn": 154,
+          "verseCount": 5,
+          "wordCount": 70,
+          "avgWordsPerVerse": 14.0
+        },
+        {
+          "hymn": 155,
+          "verseCount": 5,
+          "wordCount": 66,
+          "avgWordsPerVerse": 13.2
+        },
+        {
+          "hymn": 156,
+          "verseCount": 5,
+          "wordCount": 54,
+          "avgWordsPerVerse": 10.8
+        },
+        {
+          "hymn": 157,
+          "verseCount": 5,
+          "wordCount": 47,
+          "avgWordsPerVerse": 9.4
+        },
+        {
+          "hymn": 158,
+          "verseCount": 5,
+          "wordCount": 55,
+          "avgWordsPerVerse": 11.0
+        },
+        {
+          "hymn": 159,
+          "verseCount": 6,
+          "wordCount": 82,
+          "avgWordsPerVerse": 13.67
+        },
+        {
+          "hymn": 160,
+          "verseCount": 5,
+          "wordCount": 95,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 161,
+          "verseCount": 5,
+          "wordCount": 92,
+          "avgWordsPerVerse": 18.4
+        },
+        {
+          "hymn": 162,
+          "verseCount": 6,
+          "wordCount": 86,
+          "avgWordsPerVerse": 14.33
+        },
+        {
+          "hymn": 163,
+          "verseCount": 6,
+          "wordCount": 75,
+          "avgWordsPerVerse": 12.5
+        },
+        {
+          "hymn": 164,
+          "verseCount": 5,
+          "wordCount": 76,
+          "avgWordsPerVerse": 15.2
+        },
+        {
+          "hymn": 165,
+          "verseCount": 5,
+          "wordCount": 99,
+          "avgWordsPerVerse": 19.8
+        },
+        {
+          "hymn": 166,
+          "verseCount": 5,
+          "wordCount": 78,
+          "avgWordsPerVerse": 15.6
+        },
+        {
+          "hymn": 167,
+          "verseCount": 4,
+          "wordCount": 84,
+          "avgWordsPerVerse": 21.0
+        },
+        {
+          "hymn": 168,
+          "verseCount": 4,
+          "wordCount": 77,
+          "avgWordsPerVerse": 19.25
+        },
+        {
+          "hymn": 169,
+          "verseCount": 4,
+          "wordCount": 72,
+          "avgWordsPerVerse": 18.0
+        },
+        {
+          "hymn": 170,
+          "verseCount": 4,
+          "wordCount": 66,
+          "avgWordsPerVerse": 16.5
+        },
+        {
+          "hymn": 171,
+          "verseCount": 4,
+          "wordCount": 42,
+          "avgWordsPerVerse": 10.5
+        },
+        {
+          "hymn": 172,
+          "verseCount": 4,
+          "wordCount": 32,
+          "avgWordsPerVerse": 8.0
+        },
+        {
+          "hymn": 173,
+          "verseCount": 6,
+          "wordCount": 94,
+          "avgWordsPerVerse": 15.67
+        },
+        {
+          "hymn": 174,
+          "verseCount": 5,
+          "wordCount": 64,
+          "avgWordsPerVerse": 12.8
+        },
+        {
+          "hymn": 175,
+          "verseCount": 4,
+          "wordCount": 36,
+          "avgWordsPerVerse": 9.0
+        },
+        {
+          "hymn": 176,
+          "verseCount": 4,
+          "wordCount": 50,
+          "avgWordsPerVerse": 12.5
+        },
+        {
+          "hymn": 177,
+          "verseCount": 3,
+          "wordCount": 53,
+          "avgWordsPerVerse": 17.67
+        },
+        {
+          "hymn": 178,
+          "verseCount": 3,
+          "wordCount": 58,
+          "avgWordsPerVerse": 19.33
+        },
+        {
+          "hymn": 179,
+          "verseCount": 3,
+          "wordCount": 52,
+          "avgWordsPerVerse": 17.33
+        },
+        {
+          "hymn": 180,
+          "verseCount": 3,
+          "wordCount": 57,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 181,
+          "verseCount": 3,
+          "wordCount": 57,
+          "avgWordsPerVerse": 19.0
+        },
+        {
+          "hymn": 182,
+          "verseCount": 3,
+          "wordCount": 56,
+          "avgWordsPerVerse": 18.67
+        },
+        {
+          "hymn": 183,
+          "verseCount": 3,
+          "wordCount": 51,
+          "avgWordsPerVerse": 17.0
+        },
+        {
+          "hymn": 184,
+          "verseCount": 3,
+          "wordCount": 40,
+          "avgWordsPerVerse": 13.33
+        },
+        {
+          "hymn": 185,
+          "verseCount": 3,
+          "wordCount": 28,
+          "avgWordsPerVerse": 9.33
+        },
+        {
+          "hymn": 186,
+          "verseCount": 3,
+          "wordCount": 38,
+          "avgWordsPerVerse": 12.67
+        },
+        {
+          "hymn": 187,
+          "verseCount": 5,
+          "wordCount": 58,
+          "avgWordsPerVerse": 11.6
+        },
+        {
+          "hymn": 188,
+          "verseCount": 3,
+          "wordCount": 27,
+          "avgWordsPerVerse": 9.0
+        },
+        {
+          "hymn": 189,
+          "verseCount": 3,
+          "wordCount": 34,
+          "avgWordsPerVerse": 11.33
+        },
+        {
+          "hymn": 190,
+          "verseCount": 3,
+          "wordCount": 36,
+          "avgWordsPerVerse": 12.0
+        },
+        {
+          "hymn": 191,
+          "verseCount": 4,
+          "wordCount": 63,
+          "avgWordsPerVerse": 15.75
+        }
+      ]
+    }
+  ],
+  "overall": {
+    "totalHymns": 1017,
+    "totalVerses": 10580,
+    "totalWords": 153826,
+    "totalLetters": 432000,
+    "totalUniqueWords": 31000,
+    "analyzedUniqueWords": 29626,
+    "totalMeters": 25,
+    "totalDeities": 33,
+    "avgVersesPerHymn": 10.4,
+    "avgWordsPerVerse": 14.54
+  },
+  "facts": {
+    "oldest_mandala": "Books 2-7 (Family Books) - oldest",
+    "largest_mandala": "Mandala 1 and 10 (191 hymns each)",
+    "longest_hymn": "Hymn 10.90 (Purusha Sukta)",
+    "shortest_hymn": "Multiple hymns with 3 verses",
+    "most_common_meter": "Gayatri (2451 verses)",
+    "primary_language": "Vedic Sanskrit",
+    "approximate_age": "1500-1200 BCE (conservative estimate)"
+  }
+}
