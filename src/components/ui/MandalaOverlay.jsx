@@ -30,6 +30,7 @@ const getContentStyle = (isMobile) => {
 const getButtonContainerStyle = (isMobile) => {
   return {
     padding: isMobile ? "16px" : "20px 30px",
+    marginBottom: isMobile ? "60px" : "0",
     borderTop: "1px solid rgba(255, 255, 255, 0.1)",
     background: "rgba(0, 0, 0, 0.5)",
   };
