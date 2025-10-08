@@ -13,6 +13,7 @@ import FilterIndicator from "./components/ui/FilterIndicator";
 import Dictionary from "./components/ui/Dictionary";
 import StatisticsModal from "./components/ui/StatisticsModal";
 import MandalaOverlay from "./components/ui/MandalaOverlay";
+import MandalaNavigationArrows from "./components/ui/MandalaNavigationArrows";
 import HymnsSidebar2D from "./components/ui/HymnsSidebar2D";
 import WordMeaningSidebar from "./components/ui/WordMeaningSidebar";
 import IntroScreen from "./components/ui/IntroScreen";
@@ -437,6 +438,16 @@ export default function App() {
           setShowOverlay(false);
           stopNarration();
           setTimeout(() => setIsExploring(true), 500);
+        }}
+      />
+
+      <MandalaNavigationArrows
+        selectedAtom={selectedAtom}
+        mandalaData={MANDALA_DATA}
+        showOverlay={showOverlay && !skipOverlayAndNarration}
+        onNavigate={(newAtomIndex) => {
+          stopNarration();
+          setSelectedAtom(newAtomIndex);
         }}
       />
 
