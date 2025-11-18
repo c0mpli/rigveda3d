@@ -51,15 +51,14 @@ http://localhost:5173
 
 ## Roadmap
 
-- [ ] Bookmarking and favorites system
+- [ ] Bookmarking and favourites system
 - [ ] User annotations and notes
 - ✓ Mobile app version
 - [ ] Multi-language interface support
 - ✓ Social sharing capabilities
-- [ ] Statistics about Rig Veda
+- ✓ Statistics about the Rig Veda
 - [ ] Interactive dictionary to learn Sanskrit words from the Veda
 - [ ] Quiz mode for Vedic vocabulary
-- [ ] Dictionary-based quiz system
 - [ ] Backstory and context for each hymn
 
 ## Sources
